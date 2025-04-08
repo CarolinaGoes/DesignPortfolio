@@ -32,23 +32,18 @@ export const projects = [
 ];
 
 export const skills = {
-  technical: [
-    { name: "HTML5 & CSS3", percentage: 95 },
-    { name: "JavaScript / TypeScript", percentage: 90 },
-    { name: "React / Vue / Angular", percentage: 85 },
-    { name: "UI/UX Design", percentage: 80 },
-    { name: "Acessibilidade Web (WCAG)", percentage: 90 }
-  ],
   technologies: [
+    { name: "HTML5 & CSS3", icon: "html5-css3" },
+    { name: "JavaScript / TypeScript", icon: "js-square" },
     { name: "React", icon: "react" },
     { name: "Vue.js", icon: "vuejs" },
-    { name: "JavaScript", icon: "js-square" },
+    { name: "Angular", icon: "angular" },
+    { name: "UI/UX Design", icon: "figma" },
     { name: "Sass/SCSS", icon: "sass" },
     { name: "Git", icon: "git-alt" },
-    { name: "Figma", icon: "figma" },
     { name: "Node.js", icon: "node-js" },
     { name: "MongoDB", icon: "database" },
-    { name: "ARIA", icon: "universal-access" }
+    { name: "Acessibilidade Web", icon: "universal-access" }
   ]
 };
 

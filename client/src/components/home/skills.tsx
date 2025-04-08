@@ -2,10 +2,9 @@ import { skills } from '@/lib/data';
 import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem } from '@/lib/animations';
-import { useEffect, useState } from 'react';
 import { 
   SiReact, SiVuedotjs, SiJavascript, SiSass, 
-  SiGit, SiFigma, SiNodedotjs, SiMongodb 
+  SiGit, SiFigma, SiNodedotjs, SiMongodb, SiAngular, SiHtml5, SiCss3
 } from 'react-icons/si';
 import { AccessibilityIcon } from 'lucide-react';
 
@@ -30,37 +29,9 @@ export default function Skills() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <TechnicalSkills />
-          <Technologies />
-        </div>
+        <Technologies />
       </div>
     </section>
-  );
-}
-
-function TechnicalSkills() {
-  const [skillsRef, isSkillsVisible] = useScrollAnimation<HTMLDivElement>();
-  
-  return (
-    <motion.div 
-      ref={skillsRef}
-      initial="hidden"
-      animate={isSkillsVisible ? "visible" : "hidden"}
-      variants={staggerContainer}
-    >
-      <motion.h3 variants={staggerItem} className="text-2xl font-semibold mb-8">Habilidades Técnicas</motion.h3>
-      
-      {skills.technical.map((skill, index) => (
-        <ProgressBar 
-          key={index} 
-          skill={skill.name} 
-          percentage={skill.percentage} 
-          delay={index * 0.1}
-          isVisible={isSkillsVisible}
-        />
-      ))}
-    </motion.div>
   );
 }
 
@@ -73,10 +44,11 @@ function Technologies() {
       initial="hidden"
       animate={isTechVisible ? "visible" : "hidden"}
       variants={staggerContainer}
+      className="max-w-4xl mx-auto"
     >
-      <motion.h3 variants={staggerItem} className="text-2xl font-semibold mb-8">Tecnologias & Ferramentas</motion.h3>
+      <motion.h3 variants={staggerItem} className="text-2xl font-semibold mb-8 text-center">Tecnologias & Ferramentas</motion.h3>
       
-      <motion.div variants={staggerContainer} className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+      <motion.div variants={staggerContainer} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         {skills.technologies.map((tech, index) => (
           <TechnologyCard 
             key={index} 
@@ -90,46 +62,6 @@ function Technologies() {
   );
 }
 
-interface ProgressBarProps {
-  skill: string;
-  percentage: number;
-  delay: number;
-  isVisible: boolean;
-}
-
-function ProgressBar({ skill, percentage, delay, isVisible }: ProgressBarProps) {
-  const [width, setWidth] = useState(0);
-  
-  useEffect(() => {
-    if (isVisible) {
-      const timer = setTimeout(() => {
-        setWidth(percentage);
-      }, delay * 1000);
-      
-      return () => clearTimeout(timer);
-    } else {
-      setWidth(0);
-    }
-  }, [isVisible, percentage, delay]);
-  
-  return (
-    <motion.div 
-      className="mb-6"
-      variants={staggerItem}
-    >
-      <div className="flex items-center mb-2">
-        <span className="font-medium">{skill}</span>
-      </div>
-      <div className="w-full h-2 bg-secondary dark:bg-muted rounded-full overflow-hidden">
-        <div 
-          className="progress-bar-fill" 
-          style={{ width: `${width}%` }}
-        ></div>
-      </div>
-    </motion.div>
-  );
-}
-
 interface TechnologyCardProps {
   name: string;
   icon: string;
@@ -139,8 +71,15 @@ interface TechnologyCardProps {
 function TechnologyCard({ name, icon, delay }: TechnologyCardProps) {
   const getIcon = () => {
     switch (icon) {
+      case 'html5-css3': return (
+        <div className="flex gap-1 text-4xl text-primary mb-3">
+          <SiHtml5 />
+          <SiCss3 />
+        </div>
+      );
       case 'react': return <SiReact className="text-4xl text-primary mb-3" />;
       case 'vuejs': return <SiVuedotjs className="text-4xl text-primary mb-3" />;
+      case 'angular': return <SiAngular className="text-4xl text-primary mb-3" />;
       case 'js-square': return <SiJavascript className="text-4xl text-primary mb-3" />;
       case 'sass': return <SiSass className="text-4xl text-primary mb-3" />;
       case 'git-alt': return <SiGit className="text-4xl text-primary mb-3" />;
@@ -159,7 +98,7 @@ function TechnologyCard({ name, icon, delay }: TechnologyCardProps) {
       transition={{ delay }}
     >
       {getIcon()}
-      <span className="font-medium">{name}</span>
+      <span className="font-medium text-center">{name}</span>
     </motion.div>
   );
 }
