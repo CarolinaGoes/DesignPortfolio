@@ -1,0 +1,65 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, sou",
+    "description": "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
+    "contactButton": "Entre em contato",
+    "projectsButton": "Ver projetos"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "education": "Formação",
+    "experience": "Experiência"
+  },
+  "skills": {
+    "title": "Minhas Habilidades",
+    "description": "Sempre me mantendo atualizada com as tecnologias mais recentes e focando em criar experiências acessíveis e de alta qualidade.",
+    "technologiesTitle": "Tecnologias & Ferramentas"
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Aqui estão alguns dos projetos em que trabalhei recentemente, combinando design atraente com funcionalidade robusta.",
+    "viewLive": "Ver site",
+    "viewCode": "Ver código"
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "description": "Tem um projeto em mente ou quer conversar? Preencha o formulário abaixo ou use um dos canais alternativos.",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "submit": "Enviar mensagem"
+    },
+    "orReachOut": "Ou entre em contato através de:",
+    "messageSent": "Mensagem enviada com sucesso!",
+    "messageError": "Erro ao enviar mensagem. Tente novamente."
+  },
+  "chat": {
+    "title": "Chat",
+    "startChat": "Iniciar chat",
+    "message": "Mensagem",
+    "send": "Enviar"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "backToTop": "Voltar ao topo"
+  },
+  "accessibility": {
+    "menu": "Menu de Acessibilidade",
+    "fontSize": "Tamanho da fonte",
+    "highContrast": "Alto contraste",
+    "reduceMotion": "Reduzir animações",
+    "resetSettings": "Redefinir configurações"
+  },
+  "theme": {
+    "light": "Modo claro",
+    "dark": "Modo escuro"
+  }
+}

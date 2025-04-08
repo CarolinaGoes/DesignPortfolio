@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 import { fadeIn, slideUp } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Github, Linkedin, Phone, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section id="home" className="py-16 md:py-24 bg-secondary dark:bg-accent/10 transition-colors duration-300 overflow-hidden relative">
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl opacity-50"></div>
@@ -17,24 +20,24 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <p className="text-primary font-medium mb-2">Olá, eu sou</p>
+          <p className="text-primary font-medium mb-2">{t('hero.greeting')}</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             {personalInfo.name}
             <span className="block text-primary">{personalInfo.title}</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-            {personalInfo.description}
+            {t('hero.description')}
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild>
               <a href="#projects" className="flex items-center gap-2">
-                <span>Ver projetos</span>
+                <span>{t('hero.projectsButton')}</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
             <Button variant="outline" asChild>
               <a href="#contact">
-                Entrar em contato
+                {t('hero.contactButton')}
               </a>
             </Button>
           </div>

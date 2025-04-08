@@ -7,9 +7,11 @@ import {
   SiGit, SiFigma, SiNodedotjs, SiMongodb, SiAngular, SiHtml5, SiCss3
 } from 'react-icons/si';
 import { AccessibilityIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Skills() {
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
+  const { t } = useTranslation();
   
   return (
     <section id="skills" className="py-16 md:py-24 bg-secondary/50 dark:bg-accent/5 transition-colors duration-300">
@@ -20,11 +22,10 @@ export default function Skills() {
             animate={isSectionVisible ? "visible" : "hidden"}
             variants={staggerContainer}
           >
-            <motion.h2 variants={staggerItem} className="section-heading">Minhas Habilidades</motion.h2>
+            <motion.h2 variants={staggerItem} className="section-heading">{t('skills.title')}</motion.h2>
             <motion.div variants={staggerItem} className="section-divider"></motion.div>
             <motion.p variants={staggerItem} className="section-description">
-              Sempre me mantendo atualizada com as tecnologias mais recentes e focando em criar 
-              experiências acessíveis e de alta qualidade.
+              {t('skills.description')}
             </motion.p>
           </motion.div>
         </div>
@@ -37,6 +38,7 @@ export default function Skills() {
 
 function Technologies() {
   const [techRef, isTechVisible] = useScrollAnimation<HTMLDivElement>();
+  const { t } = useTranslation();
   
   return (
     <motion.div 
@@ -46,7 +48,7 @@ function Technologies() {
       variants={staggerContainer}
       className="max-w-4xl mx-auto"
     >
-      <motion.h3 variants={staggerItem} className="text-2xl font-semibold mb-8 text-center">Tecnologias & Ferramentas</motion.h3>
+      <motion.h3 variants={staggerItem} className="text-2xl font-semibold mb-8 text-center">{t('skills.technologiesTitle')}</motion.h3>
       
       <motion.div variants={staggerContainer} className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
         {skills.technologies.map((tech, index) => (

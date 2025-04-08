@@ -1,0 +1,65 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "description": "Transforming ideas into amazing digital experiences with a focus on accessibility, usability, and modern design.",
+    "contactButton": "Get in touch",
+    "projectsButton": "View projects"
+  },
+  "about": {
+    "title": "About me",
+    "education": "Education",
+    "experience": "Experience"
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "Always keeping up with the latest technologies and focusing on creating accessible and high-quality experiences.",
+    "technologiesTitle": "Technologies & Tools"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Here are some of the projects I've worked on recently, combining attractive design with robust functionality.",
+    "viewLive": "View live",
+    "viewCode": "View code"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "description": "Have a project in mind or want to chat? Fill out the form below or use one of the alternative channels.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send message"
+    },
+    "orReachOut": "Or reach out via:",
+    "messageSent": "Message sent successfully!",
+    "messageError": "Error sending message. Please try again."
+  },
+  "chat": {
+    "title": "Chat",
+    "startChat": "Start chat",
+    "message": "Message",
+    "send": "Send"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "backToTop": "Back to top"
+  },
+  "accessibility": {
+    "menu": "Accessibility Menu",
+    "fontSize": "Font size",
+    "highContrast": "High contrast",
+    "reduceMotion": "Reduce animations",
+    "resetSettings": "Reset settings"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode"
+  }
+}
