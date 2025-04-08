@@ -3,6 +3,8 @@ import {
   messages, type Message, type InsertMessage,
   chatMessages, type ChatMessage, type InsertChatMessage 
 } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -14,63 +16,50 @@ export interface IStorage {
   getChatMessages(): Promise<ChatMessage[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private messages: Map<number, Message>;
-  private chatMessages: Map<number, ChatMessage>;
-  currentUserId: number;
-  currentMessageId: number;
-  currentChatMessageId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.messages = new Map();
-    this.chatMessages = new Map();
-    this.currentUserId = 1;
-    this.currentMessageId = 1;
-    this.currentChatMessageId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createMessage(insertMessage: InsertMessage): Promise<Message> {
-    const id = this.currentMessageId++;
-    const createdAt = new Date().toISOString();
-    const message: Message = { ...insertMessage, id, createdAt };
-    this.messages.set(id, message);
+    const now = new Date().toISOString();
+    const [message] = await db
+      .insert(messages)
+      .values({ ...insertMessage, createdAt: now })
+      .returning();
     return message;
   }
 
   async createChatMessage(insertChatMessage: InsertChatMessage): Promise<ChatMessage> {
-    const id = this.currentChatMessageId++;
-    const createdAt = new Date().toISOString();
-    const chatMessage: ChatMessage = { ...insertChatMessage, id, createdAt };
-    this.chatMessages.set(id, chatMessage);
+    const now = new Date().toISOString();
+    const [chatMessage] = await db
+      .insert(chatMessages)
+      .values({ ...insertChatMessage, createdAt: now })
+      .returning();
     return chatMessage;
   }
 
   async getMessages(): Promise<Message[]> {
-    return Array.from(this.messages.values());
+    return await db.select().from(messages).orderBy(messages.createdAt);
   }
 
   async getChatMessages(): Promise<ChatMessage[]> {
-    return Array.from(this.chatMessages.values());
+    return await db.select().from(chatMessages).orderBy(chatMessages.createdAt);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
