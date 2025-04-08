@@ -5,11 +5,14 @@ import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { slideFromTop } from '@/lib/animations';
 import { Code, Moon, Sun, Menu, X } from 'lucide-react';
+import LanguageSelector from './language-selector';
+import { useTranslation } from 'react-i18next';
 
 export default function Navbar() {
   const { toggleTheme, isDarkMode } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,20 +38,22 @@ export default function Navbar() {
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">
-          <NavLink href="#home" label="Início" />
-          <NavLink href="#projects" label="Projetos" />
-          <NavLink href="#skills" label="Habilidades" />
-          <NavLink href="#about" label="Sobre" />
-          <NavLink href="#contact" label="Contato" />
+          <NavLink href="#home" label={t('navbar.home')} />
+          <NavLink href="#projects" label={t('navbar.projects')} />
+          <NavLink href="#skills" label={t('navbar.skills')} />
+          <NavLink href="#about" label={t('navbar.about')} />
+          <NavLink href="#contact" label={t('navbar.contact')} />
         </div>
 
         <div className="flex items-center space-x-4">
+          <LanguageSelector />
+          
           <Button 
             variant="ghost" 
             size="icon" 
             onClick={toggleTheme}
             className="rounded-full text-primary hover:bg-primary/10"
-            aria-label={isDarkMode ? "Mudar para tema claro" : "Mudar para tema escuro"}
+            aria-label={isDarkMode ? t('theme.light') : t('theme.dark')}
           >
             {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </Button>
@@ -78,11 +83,11 @@ export default function Navbar() {
             exit="exit"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              <MobileNavLink href="#home" label="Início" onClick={() => setIsMobileMenuOpen(false)} />
-              <MobileNavLink href="#projects" label="Projetos" onClick={() => setIsMobileMenuOpen(false)} />
-              <MobileNavLink href="#skills" label="Habilidades" onClick={() => setIsMobileMenuOpen(false)} />
-              <MobileNavLink href="#about" label="Sobre" onClick={() => setIsMobileMenuOpen(false)} />
-              <MobileNavLink href="#contact" label="Contato" onClick={() => setIsMobileMenuOpen(false)} />
+              <MobileNavLink href="#home" label={t('navbar.home')} onClick={() => setIsMobileMenuOpen(false)} />
+              <MobileNavLink href="#projects" label={t('navbar.projects')} onClick={() => setIsMobileMenuOpen(false)} />
+              <MobileNavLink href="#skills" label={t('navbar.skills')} onClick={() => setIsMobileMenuOpen(false)} />
+              <MobileNavLink href="#about" label={t('navbar.about')} onClick={() => setIsMobileMenuOpen(false)} />
+              <MobileNavLink href="#contact" label={t('navbar.contact')} onClick={() => setIsMobileMenuOpen(false)} />
             </div>
           </motion.div>
         )}
