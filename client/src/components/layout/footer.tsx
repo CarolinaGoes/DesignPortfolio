@@ -1,6 +1,6 @@
 import { Link } from 'wouter';
 import { personalInfo } from '@/lib/data';
-import { Code, Github, Linkedin, Twitter, Instagram, Send } from 'lucide-react';
+import { Code, Github, Linkedin, Phone, Mail, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
@@ -145,22 +145,22 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a 
-              href={personalInfo.socialLinks.twitter} 
+              href={personalInfo.socialLinks.whatsapp} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-primary transition-colors duration-300"
-              aria-label="Twitter"
+              aria-label="WhatsApp"
             >
-              <Twitter className="h-5 w-5" />
+              <Phone className="h-5 w-5" />
             </a>
             <a 
-              href={personalInfo.socialLinks.instagram} 
+              href={personalInfo.socialLinks.email} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-primary transition-colors duration-300"
-              aria-label="Instagram"
+              aria-label="Email"
             >
-              <Instagram className="h-5 w-5" />
+              <Mail className="h-5 w-5" />
             </a>
           </div>
         </div>
