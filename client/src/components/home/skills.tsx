@@ -117,9 +117,8 @@ function ProgressBar({ skill, percentage, delay, isVisible }: ProgressBarProps) 
       className="mb-6"
       variants={staggerItem}
     >
-      <div className="flex justify-between items-center mb-2">
+      <div className="flex items-center mb-2">
         <span className="font-medium">{skill}</span>
-        <span className="text-sm font-medium text-primary">{percentage}%</span>
       </div>
       <div className="w-full h-2 bg-secondary dark:bg-muted rounded-full overflow-hidden">
         <div 
