@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 265 89% 78%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 265 89% 96%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 265 89% 96%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 265 89% 78%;
+    --radius: 0.5rem;
+    --chart-1: 265 89% 78%;
+    --chart-2: 263 89% 68%;
+    --chart-3: 261 89% 58%;
+    --chart-4: 259 89% 48%;
+    --chart-5: 257 89% 38%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 263 85% 75%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 263 85% 75%;
+    --chart-1: 263 85% 75%;
+    --chart-2: 265 85% 65%;
+    --chart-3: 267 85% 55%;
+    --chart-4: 269 85% 45%;
+    --chart-5: 271 85% 35%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  /* Accessibility Focus Styles */
+  *:focus-visible {
+    outline: 3px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-sm;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/80;
+  }
+
+  /* High Contrast Mode */
+  .high-contrast {
+    --primary: 265 100% 60%;
+    --foreground: 0 0% 0%;
+    --background: 0 0% 100%;
+    --secondary: 0 0% 93%;
+    --muted: 0 0% 85%;
+    --border: 0 0% 0%;
+  }
+
+  .dark.high-contrast {
+    --primary: 265 100% 75%;
+    --foreground: 0 0% 100%;
+    --background: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --muted: 0 0% 20%;
+    --border: 0 0% 100%;
+  }
+
+  /* Reduced Motion */
+  .reduce-motion * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@layer components {
+  .project-card {
+    @apply rounded-xl overflow-hidden bg-card shadow-md hover:shadow-xl transition-all duration-300;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .reduce-motion .project-card:hover {
+    transform: none;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-primary rounded-full transition-all duration-1000 ease-out;
+  }
+
+  .chat-button {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-lg flex items-center justify-center transition-transform duration-300;
+  }
+
+  .chat-button:hover {
+    @apply transform -translate-y-1;
+  }
+
+  .reduce-motion .chat-button:hover {
+    @apply transform-none;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+  }
+  
+  .section-divider {
+    @apply h-1 w-20 bg-primary mx-auto rounded-full mb-6;
+  }
+  
+  .section-description {
+    @apply text-lg text-muted-foreground max-w-2xl mx-auto;
+  }
+}
