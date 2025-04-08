@@ -12,8 +12,7 @@ import {
   Send, 
   Github, 
   Linkedin, 
-  Twitter, 
-  Instagram 
+  Phone 
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
@@ -247,7 +246,7 @@ function ContactInfo() {
       </motion.div>
 
       <motion.div variants={staggerItem} className="mt-10">
-        <h4 className="font-medium mb-4">Me siga nas redes sociais</h4>
+        <h4 className="font-medium mb-4">Entre em contato</h4>
         <div className="flex space-x-4">
           <a 
             href={personalInfo.socialLinks.github} 
@@ -268,22 +267,22 @@ function ContactInfo() {
             <Linkedin className="h-5 w-5" />
           </a>
           <a 
-            href={personalInfo.socialLinks.twitter} 
+            href={personalInfo.socialLinks.whatsapp} 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-secondary dark:bg-muted text-primary p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors duration-300" 
-            aria-label="Twitter"
+            aria-label="WhatsApp"
           >
-            <Twitter className="h-5 w-5" />
+            <Phone className="h-5 w-5" />
           </a>
           <a 
-            href={personalInfo.socialLinks.instagram} 
+            href={personalInfo.socialLinks.email} 
             target="_blank" 
             rel="noopener noreferrer"
             className="bg-secondary dark:bg-muted text-primary p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors duration-300" 
-            aria-label="Instagram"
+            aria-label="Email"
           >
-            <Instagram className="h-5 w-5" />
+            <Mail className="h-5 w-5" />
           </a>
         </div>
       </motion.div>

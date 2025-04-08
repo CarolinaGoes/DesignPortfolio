@@ -2,7 +2,7 @@ import { personalInfo } from '@/lib/data';
 import { motion } from 'framer-motion';
 import { fadeIn, slideUp } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Github, Linkedin, Twitter, Codepen } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Phone, Mail } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -58,22 +58,22 @@ export default function Hero() {
               <Linkedin className="h-5 w-5" />
             </a>
             <a 
-              href={personalInfo.socialLinks.twitter} 
+              href={personalInfo.socialLinks.whatsapp} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300" 
-              aria-label="Twitter"
+              aria-label="WhatsApp"
             >
-              <Twitter className="h-5 w-5" />
+              <Phone className="h-5 w-5" />
             </a>
             <a 
-              href={personalInfo.socialLinks.codepen} 
+              href={personalInfo.socialLinks.email} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300" 
-              aria-label="Codepen"
+              aria-label="Email"
             >
-              <Codepen className="h-5 w-5" />
+              <Mail className="h-5 w-5" />
             </a>
           </div>
         </motion.div>
