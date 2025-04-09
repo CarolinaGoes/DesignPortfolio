@@ -14,7 +14,7 @@ export const projects = [
     id: 1,
     title: "E-commerce Modern",
     description: "Plataforma de comércio eletrônico completa com recursos de acessibilidade, filtros avançados e experiência de compra otimizada.",
-    image: "/images/profile.jpeg",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Imagem de Carolina Goes",
     tags: ["React", "Tailwind", "Acessibilidade"],
     category: "react",
@@ -134,7 +134,7 @@ export const personalInfo = {
   email: "contato@carolinagoes.dev",
   location: "São Paulo, SP - Brasil",
   availability: "Segunda a Sexta, 9h às 18h",
-  image: "/images/profile.jpeg",
+  image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&auto=format&fit=crop&w=800",
   imageAlt: "Foto de perfil de Carolina Goes",
   about: [
     "Olá! Sou Carolina, desenvolvedora frontend com 5 anos de experiência criando interfaces interativas e acessíveis. Minha paixão está em transformar designs complexos em experiências de usuário intuitivas e inclusivas.",
@@ -172,6 +172,6 @@ export const personalInfo = {
     codepen: "#",
     email: "mailto:contato@carolinagoes.dev"
   },
-  aboutImage: "/images/profile.jpeg",
+  aboutImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&auto=format&fit=crop&w=800",
   aboutImageAlt: "Carolina Goes trabalhando em seu computador"
 };
