@@ -35,8 +35,27 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Apply font size
-      document.documentElement.style.fontSize = `${options.fontSize}%`;
+      // Apply font size using data attribute
+      const htmlElement = document.documentElement;
+      
+      // Remove any existing data-font-size attributes
+      htmlElement.removeAttribute('data-font-size');
+      
+      // Calculate font size multiplier
+      if (options.fontSize > 100) {
+        const fontSizeMultiplier = options.fontSize / 100;
+        if (fontSizeMultiplier >= 1.25) {
+          if (fontSizeMultiplier >= 2) {
+            htmlElement.setAttribute('data-font-size', '2');
+          } else if (fontSizeMultiplier >= 1.75) {
+            htmlElement.setAttribute('data-font-size', '1.75');
+          } else if (fontSizeMultiplier >= 1.5) {
+            htmlElement.setAttribute('data-font-size', '1.5');
+          } else {
+            htmlElement.setAttribute('data-font-size', '1.25');
+          }
+        }
+      }
       
       // Apply high contrast
       if (options.highContrast) {

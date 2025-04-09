@@ -117,6 +117,57 @@
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
+  
+  /* Acessibilidade - Ajustes para tamanho de fonte aumentado */
+  html[data-font-size="1.25"] {
+    font-size: 125%;
+    line-height: 1.5;
+  }
+  
+  html[data-font-size="1.5"] {
+    font-size: 150%;
+    line-height: 1.7;
+  }
+  
+  html[data-font-size="1.75"] {
+    font-size: 175%;
+    line-height: 1.8;
+  }
+  
+  html[data-font-size="2"] {
+    font-size: 200%;
+    line-height: 2;
+  }
+  
+  /* Ajustes responsivos para texto maior */
+  @media (max-width: 1024px) {
+    html[data-font-size="1.5"] .grid,
+    html[data-font-size="1.75"] .grid,
+    html[data-font-size="2"] .grid {
+      display: block;
+    }
+    
+    html[data-font-size="1.5"] .grid > div,
+    html[data-font-size="1.75"] .grid > div,
+    html[data-font-size="2"] .grid > div {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  /* Aumentar espaçamento vertical quando o tamanho da fonte é aumentado */
+  html[data-font-size="1.5"] .py-16,
+  html[data-font-size="1.75"] .py-16,
+  html[data-font-size="2"] .py-16 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  html[data-font-size="1.5"] .py-24,
+  html[data-font-size="1.75"] .py-24,
+  html[data-font-size="2"] .py-24 {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
 }
 
 @layer components {
