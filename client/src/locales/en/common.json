@@ -29,10 +29,12 @@
     "viewCode": "View code",
     "categories": {
       "all": "All",
-      "web": "Web",
-      "mobile": "Mobile",
-      "design": "Design",
-      "outros": "Others"
+      "html-css": "HTML/CSS",
+      "javascript": "JavaScript",
+      "react": "React",
+      "tailwind": "Tailwind",
+      "vue": "Vue.js",
+      "php": "PHP"
     },
     "filter": "Filter by category",
     "viewAll": "View all projects"
