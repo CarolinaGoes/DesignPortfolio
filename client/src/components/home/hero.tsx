@@ -4,6 +4,7 @@ import { fadeIn, slideUp } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Github, Linkedin, Phone, Mail } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { profileImage } from '@/assets';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -114,7 +115,7 @@ export default function Hero() {
             />
             <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1.5 shadow-lg flex items-center justify-center overflow-hidden relative z-10">
               <img 
-                src={personalInfo.image} 
+                src={profileImage} 
                 alt={personalInfo.imageAlt} 
                 className="w-full h-full object-cover rounded-full"
               />
