@@ -2,7 +2,7 @@ import { projects, projectCategories } from '@/lib/data';
 import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { staggerContainer, staggerItem, cardHover, buttonHover, rotate3D, fadeInUp } from '@/lib/animations';
-import { ExternalLink, Github, ArrowRight, Filter, Code, FileCode, Brackets, PaintBucket, Layers, Database, Folder } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Filter, Code, FileCode, Brackets, PaintBucket, Layers, Database, Folder, Activity } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
@@ -27,6 +27,8 @@ export default function Projects() {
         return <FileCode className="h-4 w-4 mr-2" />;
       case 'react':
         return <Brackets className="h-4 w-4 mr-2" />;
+      case 'angular':
+        return <Activity className="h-4 w-4 mr-2" />;
       case 'tailwind':
         return <PaintBucket className="h-4 w-4 mr-2" />;
       case 'vue':
@@ -179,6 +181,8 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
         return <FileCode className="h-5 w-5 text-primary" />;
       case 'react':
         return <Brackets className="h-5 w-5 text-primary" />;
+      case 'angular':
+        return <Activity className="h-5 w-5 text-primary" />;
       case 'tailwind':
         return <PaintBucket className="h-5 w-5 text-primary" />;
       case 'vue':
