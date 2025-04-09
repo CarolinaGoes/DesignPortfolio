@@ -87,13 +87,65 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1.5 shadow-lg flex items-center justify-center overflow-hidden">
-            <img 
-              src={personalInfo.image} 
-              alt={personalInfo.imageAlt} 
-              className="w-full h-full object-cover rounded-full"
+          <motion.div 
+            className="relative"
+            animate={{
+              y: [0, -15, 0],
+              transition: {
+                duration: 4,
+                ease: "easeInOut",
+                repeat: Infinity,
+                repeatType: "loop"
+              }
+            }}
+          >
+            <motion.div
+              className="absolute -inset-4 bg-primary/20 blur-2xl rounded-full opacity-60"
+              animate={{
+                scale: [1, 1.1, 1],
+                opacity: [0.6, 0.8, 0.6],
+                transition: {
+                  duration: 6,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop"
+                }
+              }}
             />
-          </div>
+            <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1.5 shadow-lg flex items-center justify-center overflow-hidden relative z-10">
+              <img 
+                src={personalInfo.image} 
+                alt={personalInfo.imageAlt} 
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
+            <motion.div
+              className="absolute -bottom-6 -right-6 w-20 h-20 bg-primary/30 rounded-full blur-xl"
+              animate={{
+                scale: [1, 1.3, 1],
+                transition: {
+                  duration: 3,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay: 0.5
+                }
+              }}
+            />
+            <motion.div
+              className="absolute -top-4 -left-4 w-16 h-16 bg-primary/40 rounded-full blur-xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                transition: {
+                  duration: 5,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay: 1
+                }
+              }}
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>

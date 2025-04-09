@@ -97,25 +97,49 @@ export default function Navbar() {
 }
 
 function NavLink({ href, label }: { href: string; label: string }) {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
-    <a 
+    <motion.a 
       href={href} 
       className="text-foreground hover:text-primary transition-colors duration-300 relative group"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      whileHover={{ y: -2 }}
+      transition={{ duration: 0.2 }}
     >
       {label}
-      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-    </a>
+      <motion.span 
+        className="absolute bottom-0 left-0 h-0.5 bg-primary"
+        initial={{ width: 0 }}
+        animate={{ width: isHovered ? '100%' : 0 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+      />
+    </motion.a>
   );
 }
 
 function MobileNavLink({ href, label, onClick }: { href: string; label: string; onClick: () => void }) {
   return (
-    <a 
+    <motion.a 
       href={href} 
-      className="text-foreground hover:text-primary transition-colors duration-300 py-2"
+      className="text-foreground hover:text-primary transition-colors duration-300 py-2 block"
       onClick={onClick}
+      whileHover={{ x: 5 }}
+      whileTap={{ scale: 0.95 }}
+      transition={{ duration: 0.2 }}
     >
-      {label}
-    </a>
+      <span className="flex items-center">
+        <motion.span
+          initial={{ opacity: 0, x: -10 }}
+          whileHover={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.2 }}
+          className="mr-2 text-primary"
+        >
+          ▸
+        </motion.span>
+        {label}
+      </span>
+    </motion.a>
   );
 }
