@@ -13,9 +13,9 @@ export default function Hero() {
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl opacity-50"></div>
       <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-primary/30 rounded-full blur-3xl opacity-60"></div>
       
-      <div className="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div className="container mx-auto px-4 grid lg:grid-cols-2 gap-8 items-center">
         <motion.div 
-          className="order-2 md:order-1"
+          className="order-2 lg:order-1 z-10"
           variants={fadeIn}
           initial="hidden"
           animate="visible"
@@ -82,12 +82,12 @@ export default function Hero() {
         </motion.div>
         
         <motion.div 
-          className="order-1 md:order-2 flex justify-center"
+          className="order-1 lg:order-2 flex justify-center lg:justify-end"
           variants={slideUp}
           initial="hidden"
           animate="visible"
         >
-          <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1.5 shadow-lg flex items-center justify-center overflow-hidden">
+          <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1.5 shadow-lg flex items-center justify-center overflow-hidden">
             <img 
               src={personalInfo.image} 
               alt={personalInfo.imageAlt} 
