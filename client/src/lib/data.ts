@@ -3,6 +3,7 @@ export const projectCategories = [
   { id: "html-css", name: "HTML/CSS" },
   { id: "javascript", name: "JavaScript" },
   { id: "react", name: "React" },
+  { id: "angular", name: "Angular" },
   { id: "tailwind", name: "Tailwind" },
   { id: "vue", name: "Vue.js" },
   { id: "php", name: "PHP" }
@@ -94,6 +95,17 @@ export const projects = [
     imageAlt: "Screenshot do dashboard administrativo",
     tags: ["Tailwind", "Alpine.js", "HTML5"],
     category: "tailwind",
+    demoLink: "#",
+    repoLink: "https://github.com/CarolinaGoes"
+  },
+  {
+    id: 9,
+    title: "Sistema de Gestão Corporativa",
+    description: "Aplicação corporativa com múltiplos módulos para gerenciamento de recursos humanos, projetos e finanças.",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&auto=format&fit=crop&w=800",
+    imageAlt: "Screenshot do sistema de gestão corporativa",
+    tags: ["Angular", "TypeScript", "Material UI"],
+    category: "angular",
     demoLink: "#",
     repoLink: "https://github.com/CarolinaGoes"
   }
