@@ -9,6 +9,7 @@ import {
   Briefcase, 
   Download 
 } from 'lucide-react';
+import { profileImage } from '@/assets';
 
 export default function About() {
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
@@ -27,7 +28,7 @@ export default function About() {
             <div className="relative">
               <div className="w-full h-auto rounded-lg overflow-hidden">
                 <img 
-                  src={personalInfo.aboutImage} 
+                  src={profileImage} 
                   alt={personalInfo.aboutImageAlt} 
                   className="w-full h-full object-cover"
                 />
