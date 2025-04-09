@@ -1,3 +1,11 @@
+export const projectCategories = [
+  { id: "all", name: "Todos" },
+  { id: "web", name: "Web" },
+  { id: "mobile", name: "Mobile" },
+  { id: "design", name: "Design" },
+  { id: "outros", name: "Outros" }
+];
+
 export const projects = [
   {
     id: 1,
@@ -6,6 +14,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Screenshot do aplicativo de e-commerce moderno",
     tags: ["React", "Tailwind", "Acessibilidade"],
+    category: "web",
     demoLink: "#",
     repoLink: "#"
   },
@@ -16,6 +25,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Screenshot do dashboard de análise de dados",
     tags: ["Vue.js", "D3.js", "Firebase"],
+    category: "web",
     demoLink: "#",
     repoLink: "#"
   },
@@ -26,6 +36,40 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1601430854328-26d0d85ca7bf?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Screenshot do aplicativo de tarefas",
     tags: ["React", "TypeScript", "Redux"],
+    category: "mobile",
+    demoLink: "#",
+    repoLink: "#"
+  },
+  {
+    id: 4,
+    title: "Sistema de Identidade Visual",
+    description: "Redesign completo da identidade de marca para uma empresa de tecnologia, incluindo logo, guia de estilo e templates.",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&auto=format&fit=crop&w=800",
+    imageAlt: "Mockup de identidade visual",
+    tags: ["Figma", "Branding", "UI/UX"],
+    category: "design",
+    demoLink: "#",
+    repoLink: "#"
+  },
+  {
+    id: 5,
+    title: "App Financeiro",
+    description: "Aplicativo mobile para gestão de finanças pessoais com gráficos detalhados, controle de orçamento e recursos de planejamento.",
+    image: "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&auto=format&fit=crop&w=800",
+    imageAlt: "Interface do aplicativo financeiro",
+    tags: ["React Native", "Firebase", "ChartJS"],
+    category: "mobile",
+    demoLink: "#",
+    repoLink: "#"
+  },
+  {
+    id: 6,
+    title: "Portfólio Criativo",
+    description: "Site responsivo para exibição de trabalhos criativos com filtros dinâmicos, zoom em imagens e animações suaves.",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&auto=format&fit=crop&w=800",
+    imageAlt: "Screenshot do site de portfólio",
+    tags: ["HTML5", "CSS3", "JavaScript"],
+    category: "web",
     demoLink: "#",
     repoLink: "#"
   }
