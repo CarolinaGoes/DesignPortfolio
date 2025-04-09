@@ -1,9 +1,11 @@
 export const projectCategories = [
   { id: "all", name: "Todos" },
-  { id: "web", name: "Web" },
-  { id: "mobile", name: "Mobile" },
-  { id: "design", name: "Design" },
-  { id: "outros", name: "Outros" }
+  { id: "html-css", name: "HTML/CSS" },
+  { id: "javascript", name: "JavaScript" },
+  { id: "react", name: "React" },
+  { id: "tailwind", name: "Tailwind" },
+  { id: "vue", name: "Vue.js" },
+  { id: "php", name: "PHP" }
 ];
 
 export const projects = [
@@ -14,7 +16,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Screenshot do aplicativo de e-commerce moderno",
     tags: ["React", "Tailwind", "Acessibilidade"],
-    category: "web",
+    category: "react",
     demoLink: "#",
     repoLink: "#"
   },
@@ -25,7 +27,7 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Screenshot do dashboard de análise de dados",
     tags: ["Vue.js", "D3.js", "Firebase"],
-    category: "web",
+    category: "vue",
     demoLink: "#",
     repoLink: "#"
   },
@@ -36,18 +38,18 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1601430854328-26d0d85ca7bf?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Screenshot do aplicativo de tarefas",
     tags: ["React", "TypeScript", "Redux"],
-    category: "mobile",
+    category: "react",
     demoLink: "#",
     repoLink: "#"
   },
   {
     id: 4,
-    title: "Sistema de Identidade Visual",
-    description: "Redesign completo da identidade de marca para uma empresa de tecnologia, incluindo logo, guia de estilo e templates.",
+    title: "Sistema CMS Corporativo",
+    description: "Sistema de gerenciamento de conteúdo completo para empresas, com painel administrativo, templates personalizáveis e integrações.",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Mockup de identidade visual",
-    tags: ["Figma", "Branding", "UI/UX"],
-    category: "design",
+    imageAlt: "Screenshot do sistema CMS",
+    tags: ["PHP", "MySQL", "Bootstrap"],
+    category: "php",
     demoLink: "#",
     repoLink: "#"
   },
@@ -57,8 +59,8 @@ export const projects = [
     description: "Aplicativo mobile para gestão de finanças pessoais com gráficos detalhados, controle de orçamento e recursos de planejamento.",
     image: "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Interface do aplicativo financeiro",
-    tags: ["React Native", "Firebase", "ChartJS"],
-    category: "mobile",
+    tags: ["JavaScript", "Firebase", "ChartJS"],
+    category: "javascript",
     demoLink: "#",
     repoLink: "#"
   },
@@ -69,7 +71,29 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Screenshot do site de portfólio",
     tags: ["HTML5", "CSS3", "JavaScript"],
-    category: "web",
+    category: "html-css",
+    demoLink: "#",
+    repoLink: "#"
+  },
+  {
+    id: 7,
+    title: "API de Pagamentos",
+    description: "API segura e escalável para processamento de pagamentos online com integração a múltiplos gateways e sistema anti-fraude.",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&auto=format&fit=crop&w=800",
+    imageAlt: "Diagrama de API de pagamentos",
+    tags: ["PHP", "Laravel", "API REST"],
+    category: "php",
+    demoLink: "#",
+    repoLink: "#"
+  },
+  {
+    id: 8,
+    title: "Interface de Dashboard",
+    description: "Interface moderna e responsiva para dashboard administrativo com componentes reutilizáveis e tema customizável.",
+    image: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&auto=format&fit=crop&w=800",
+    imageAlt: "Screenshot do dashboard administrativo",
+    tags: ["Tailwind", "Alpine.js", "HTML5"],
+    category: "tailwind",
     demoLink: "#",
     repoLink: "#"
   }

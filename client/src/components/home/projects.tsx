@@ -2,7 +2,7 @@ import { projects, projectCategories } from '@/lib/data';
 import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { staggerContainer, staggerItem, cardHover, buttonHover, rotate3D, fadeInUp } from '@/lib/animations';
-import { ExternalLink, Github, ArrowRight, Filter, Globe, Smartphone, Palette, Folder } from 'lucide-react';
+import { ExternalLink, Github, ArrowRight, Filter, Code, FileCode, Brackets, PaintBucket, Layers, Database, Folder } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
@@ -21,12 +21,18 @@ export default function Projects() {
     switch (categoryId) {
       case 'all':
         return <Filter className="h-4 w-4 mr-2" />;
-      case 'web':
-        return <Globe className="h-4 w-4 mr-2" />;
-      case 'mobile':
-        return <Smartphone className="h-4 w-4 mr-2" />;
-      case 'design':
-        return <Palette className="h-4 w-4 mr-2" />;
+      case 'html-css':
+        return <Code className="h-4 w-4 mr-2" />;
+      case 'javascript':
+        return <FileCode className="h-4 w-4 mr-2" />;
+      case 'react':
+        return <Brackets className="h-4 w-4 mr-2" />;
+      case 'tailwind':
+        return <PaintBucket className="h-4 w-4 mr-2" />;
+      case 'vue':
+        return <Layers className="h-4 w-4 mr-2" />;
+      case 'php':
+        return <Database className="h-4 w-4 mr-2" />;
       default:
         return <Folder className="h-4 w-4 mr-2" />;
     }
@@ -167,12 +173,18 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
 
   const getCategoryIcon = () => {
     switch (project.category) {
-      case 'web':
-        return <Globe className="h-5 w-5 text-primary" />;
-      case 'mobile':
-        return <Smartphone className="h-5 w-5 text-primary" />;
-      case 'design':
-        return <Palette className="h-5 w-5 text-primary" />;
+      case 'html-css':
+        return <Code className="h-5 w-5 text-primary" />;
+      case 'javascript':
+        return <FileCode className="h-5 w-5 text-primary" />;
+      case 'react':
+        return <Brackets className="h-5 w-5 text-primary" />;
+      case 'tailwind':
+        return <PaintBucket className="h-5 w-5 text-primary" />;
+      case 'vue':
+        return <Layers className="h-5 w-5 text-primary" />;
+      case 'php':
+        return <Database className="h-5 w-5 text-primary" />;
       default:
         return <Folder className="h-5 w-5 text-primary" />;
     }
