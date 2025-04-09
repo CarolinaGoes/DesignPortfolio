@@ -26,7 +26,16 @@
     "title": "Projetos",
     "description": "Aqui estão alguns dos projetos em que trabalhei recentemente, combinando design atraente com funcionalidade robusta.",
     "viewLive": "Ver site",
-    "viewCode": "Ver código"
+    "viewCode": "Ver código",
+    "categories": {
+      "all": "Todos",
+      "web": "Web",
+      "mobile": "Mobile",
+      "design": "Design",
+      "outros": "Outros"
+    },
+    "filter": "Filtrar por categoria",
+    "viewAll": "Ver todos os projetos"
   },
   "contact": {
     "title": "Entre em contato",
