@@ -2,6 +2,7 @@ import { skills } from '@/lib/data';
 import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem } from '@/lib/animations';
+import React, { useState } from 'react';
 import { 
   SiReact, SiVuedotjs, SiJavascript, SiSass, 
   SiGit, SiFigma, SiNodedotjs, SiMongodb, SiAngular, SiHtml5, SiCss3
@@ -71,12 +72,19 @@ interface TechnologyCardProps {
 }
 
 function TechnologyCard({ name, icon, delay }: TechnologyCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
+  
   const getIcon = () => {
     switch (icon) {
       case 'html5-css3': return (
         <div className="flex gap-1 text-4xl text-primary mb-3">
-          <SiHtml5 />
-          <SiCss3 />
+          <SiHtml5 className="transition-transform duration-300" style={{
+            transform: isHovered ? 'translateY(-5px)' : 'none'
+          }} />
+          <SiCss3 className="transition-transform duration-300" style={{
+            transform: isHovered ? 'translateY(-5px)' : 'none',
+            transitionDelay: '0.1s'
+          }} />
         </div>
       );
       case 'react': return <SiReact className="text-4xl text-primary mb-3" />;
@@ -95,12 +103,42 @@ function TechnologyCard({ name, icon, delay }: TechnologyCardProps) {
   
   return (
     <motion.div 
-      className="flex flex-col items-center p-4 bg-card rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
+      className="flex flex-col items-center p-4 bg-card rounded-lg overflow-hidden"
       variants={staggerItem}
       transition={{ delay }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      whileHover={{
+        y: -8,
+        boxShadow: "0 15px 30px rgba(0, 0, 0, 0.1)",
+        transition: { type: "spring", stiffness: 400, damping: 15 }
+      }}
     >
-      {getIcon()}
-      <span className="font-medium text-center">{name}</span>
+      <motion.div
+        animate={isHovered ? {
+          scale: [1, 1.2, 1.1],
+          rotate: [0, 5, -5, 0],
+          transition: { duration: 0.6 }
+        } : {}}
+      >
+        {getIcon()}
+      </motion.div>
+      <motion.span 
+        className="font-medium text-center"
+        animate={isHovered ? { 
+          color: "hsl(var(--primary))",
+          transition: { duration: 0.3 }
+        } : {}}
+      >
+        {name}
+      </motion.span>
+      <motion.div
+        className="w-full h-0.5 bg-primary/50 mt-3"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: isHovered ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+        style={{ transformOrigin: "center" }}
+      />
     </motion.div>
   );
 }
