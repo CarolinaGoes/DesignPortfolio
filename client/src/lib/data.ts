@@ -13,12 +13,12 @@ export const projects = [
     id: 1,
     title: "E-commerce Modern",
     description: "Plataforma de comércio eletrônico completa com recursos de acessibilidade, filtros avançados e experiência de compra otimizada.",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Screenshot do aplicativo de e-commerce moderno",
+    image: "/images/profile.jpeg",
+    imageAlt: "Imagem de Carolina Goes",
     tags: ["React", "Tailwind", "Acessibilidade"],
     category: "react",
     demoLink: "#",
-    repoLink: "#"
+    repoLink: "https://github.com/CarolinaGoes"
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ export const projects = [
     tags: ["Vue.js", "D3.js", "Firebase"],
     category: "vue",
     demoLink: "#",
-    repoLink: "#"
+    repoLink: "https://github.com/CarolinaGoes"
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ export const projects = [
     tags: ["React", "TypeScript", "Redux"],
     category: "react",
     demoLink: "#",
-    repoLink: "#"
+    repoLink: "https://github.com/CarolinaGoes"
   },
   {
     id: 4,
@@ -51,7 +51,7 @@ export const projects = [
     tags: ["PHP", "MySQL", "Bootstrap"],
     category: "php",
     demoLink: "#",
-    repoLink: "#"
+    repoLink: "https://github.com/CarolinaGoes"
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ export const projects = [
     tags: ["JavaScript", "Firebase", "ChartJS"],
     category: "javascript",
     demoLink: "#",
-    repoLink: "#"
+    repoLink: "https://github.com/CarolinaGoes"
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ export const projects = [
     tags: ["HTML5", "CSS3", "JavaScript"],
     category: "html-css",
     demoLink: "#",
-    repoLink: "#"
+    repoLink: "https://github.com/CarolinaGoes"
   },
   {
     id: 7,
@@ -84,7 +84,7 @@ export const projects = [
     tags: ["PHP", "Laravel", "API REST"],
     category: "php",
     demoLink: "#",
-    repoLink: "#"
+    repoLink: "https://github.com/CarolinaGoes"
   },
   {
     id: 8,
@@ -95,7 +95,7 @@ export const projects = [
     tags: ["Tailwind", "Alpine.js", "HTML5"],
     category: "tailwind",
     demoLink: "#",
-    repoLink: "#"
+    repoLink: "https://github.com/CarolinaGoes"
   }
 ];
 
@@ -116,16 +116,16 @@ export const skills = {
 };
 
 export const personalInfo = {
-  name: "Ana Silva",
+  name: "Carolina Goes",
   title: "Desenvolvedora Frontend",
   description: "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
-  email: "contato@anasilva.dev",
+  email: "contato@carolinagoes.dev",
   location: "São Paulo, SP - Brasil",
   availability: "Segunda a Sexta, 9h às 18h",
-  image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&auto=format&fit=crop&w=800",
-  imageAlt: "Foto de perfil de Ana Silva",
+  image: "/images/profile.jpeg",
+  imageAlt: "Foto de perfil de Carolina Goes",
   about: [
-    "Olá! Sou Ana, desenvolvedora frontend com 5 anos de experiência criando interfaces interativas e acessíveis. Minha paixão está em transformar designs complexos em experiências de usuário intuitivas e inclusivas.",
+    "Olá! Sou Carolina, desenvolvedora frontend com 5 anos de experiência criando interfaces interativas e acessíveis. Minha paixão está em transformar designs complexos em experiências de usuário intuitivas e inclusivas.",
     "Tenho especialização em frameworks modernos como React, Vue.js e Angular, além de amplo conhecimento em técnicas de acessibilidade web e otimização de performance.",
     "Durante minha carreira, trabalhei com grandes empresas e startups, ajudando a construir produtos digitais que atendem milhões de usuários. Estou sempre aprendendo novas tecnologias e compartilhando conhecimento com a comunidade."
   ],
@@ -154,12 +154,12 @@ export const personalInfo = {
     }
   ],
   socialLinks: {
-    github: "#",
-    linkedin: "#",
+    github: "https://github.com/CarolinaGoes",
+    linkedin: "https://www.linkedin.com/in/carolina-goes/",
     whatsapp: "https://wa.me/5511999999999",
     codepen: "#",
-    email: "mailto:contato@anasilva.dev"
+    email: "mailto:contato@carolinagoes.dev"
   },
-  aboutImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&auto=format&fit=crop&w=800",
-  aboutImageAlt: "Ana Silva trabalhando em seu computador"
+  aboutImage: "/images/profile.jpeg",
+  aboutImageAlt: "Carolina Goes trabalhando em seu computador"
 };
