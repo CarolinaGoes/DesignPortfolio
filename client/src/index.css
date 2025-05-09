@@ -66,13 +66,11 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 
-  /* Accessibility Focus Styles */
   *:focus-visible {
     outline: 3px solid hsl(var(--primary));
     outline-offset: 2px;
   }
 
-  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -93,7 +91,6 @@
     @apply bg-primary/80;
   }
 
-  /* High Contrast Mode */
   .high-contrast {
     --primary: 265 100% 60%;
     --foreground: 0 0% 0%;
@@ -112,13 +109,11 @@
     --border: 0 0% 100%;
   }
 
-  /* Reduced Motion */
   .reduce-motion * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
   
-  /* Acessibilidade - Ajustes para tamanho de fonte aumentado */
   html[data-font-size="1.25"] {
     font-size: 125%;
     line-height: 1.5;
@@ -139,7 +134,6 @@
     line-height: 2;
   }
   
-  /* Ajustes responsivos para texto maior */
   @media (max-width: 1024px) {
     html[data-font-size="1.5"] .grid,
     html[data-font-size="1.75"] .grid,
@@ -154,7 +148,6 @@
     }
   }
   
-  /* Aumentar espaçamento vertical quando o tamanho da fonte é aumentado */
   html[data-font-size="1.5"] .py-16,
   html[data-font-size="1.75"] .py-16,
   html[data-font-size="2"] .py-16 {

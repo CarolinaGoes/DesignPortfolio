@@ -26,17 +26,8 @@ export default function Projects() {
       case 'javascript':
         return <FileCode className="h-4 w-4 mr-2" />;
       case 'react':
+        default:
         return <Brackets className="h-4 w-4 mr-2" />;
-      case 'angular':
-        return <Activity className="h-4 w-4 mr-2" />;
-      case 'tailwind':
-        return <PaintBucket className="h-4 w-4 mr-2" />;
-      case 'vue':
-        return <Layers className="h-4 w-4 mr-2" />;
-      case 'php':
-        return <Database className="h-4 w-4 mr-2" />;
-      default:
-        return <Folder className="h-4 w-4 mr-2" />;
     }
   };
   
@@ -180,17 +171,8 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
       case 'javascript':
         return <FileCode className="h-5 w-5 text-primary" />;
       case 'react':
+        default:
         return <Brackets className="h-5 w-5 text-primary" />;
-      case 'angular':
-        return <Activity className="h-5 w-5 text-primary" />;
-      case 'tailwind':
-        return <PaintBucket className="h-5 w-5 text-primary" />;
-      case 'vue':
-        return <Layers className="h-5 w-5 text-primary" />;
-      case 'php':
-        return <Database className="h-5 w-5 text-primary" />;
-      default:
-        return <Folder className="h-5 w-5 text-primary" />;
     }
   };
 
