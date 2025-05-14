@@ -137,10 +137,11 @@ export const personalInfo = {
   image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&auto=format&fit=crop&w=800",
   imageAlt: "Foto de perfil de Carolina Goes",
   about: [
-    "Olá! Sou Carolina, desenvolvedora frontend com 5 anos de experiência criando interfaces interativas e acessíveis. Minha paixão está em transformar designs complexos em experiências de usuário intuitivas e inclusivas.",
-    "Tenho especialização em frameworks modernos como React, Vue.js e Angular, além de amplo conhecimento em técnicas de acessibilidade web e otimização de performance.",
-    "Durante minha carreira, trabalhei com grandes empresas e startups, ajudando a construir produtos digitais que atendem milhões de usuários. Estou sempre aprendendo novas tecnologias e compartilhando conhecimento com a comunidade."
-  ],
+  "Olá! Sou Carolina, estudante de Engenharia de Software em transição de carreira da educação para o desenvolvimento frontend. Depois de anos atuando como professora, descobri na tecnologia uma nova paixão: criar interfaces interativas e acessíveis que proporcionem boas experiências aos usuários.",
+  "Tenho me dedicado intensamente ao estudo de tecnologias como HTML, CSS, JavaScript e frameworks modernos como React. Valorizo a escrita de código limpo, responsivo e alinhado às boas práticas de acessibilidade e usabilidade.",
+  "Busco uma oportunidade de estágio para aplicar meus conhecimentos, crescer profissionalmente e contribuir ativamente em projetos reais. Estou sempre aberta a aprender, colaborar e evoluir com propósito e criatividade."
+],
+
   education: [
     {
       degree: "Ciência da Computação",
