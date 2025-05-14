@@ -169,9 +169,9 @@ export const personalInfo = {
   socialLinks: {
     github: "https://github.com/CarolinaGoes",
     linkedin: "https://www.linkedin.com/in/carolina-goes/",
-    whatsapp: "https://wa.me/5511999999999",
+    whatsapp: "https://wa.me/5511972230817",
     codepen: "#",
-    email: "mailto:contato@carolinagoes.dev"
+    email: "carolinarocha.89@hotmail.com"
   },
   aboutImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&auto=format&fit=crop&w=800",
   aboutImageAlt: "Carolina Goes trabalhando em seu computador"
