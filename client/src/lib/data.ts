@@ -174,5 +174,5 @@ export const personalInfo = {
     email: "carolinarocha.89@hotmail.com"
   },
   aboutImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&auto=format&fit=crop&w=800",
-  aboutImageAlt: "Carolina Goes trabalhando em seu computador"
+  aboutImageAlt: "Carolina Goes "
 };
