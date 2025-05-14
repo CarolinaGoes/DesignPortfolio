@@ -134,7 +134,7 @@ export const personalInfo = {
   email: "carolinarocha.89@hotmail.com",
   location: "São Paulo, SP - Brasil",
   availability: "Segunda a Sexta, 8h às 22h",
-  image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&auto=format&fit=crop&w=800",
+  image: "\public\images\profile.jpeg",
   imageAlt: "Foto de perfil de Carolina Goes",
   about: [
   "Olá! Sou Carolina, estudante de Engenharia de Software em transição de carreira da educação para o desenvolvimento frontend. Depois de anos atuando como professora, descobri na tecnologia uma nova paixão: criar interfaces interativas e acessíveis que proporcionem boas experiências aos usuários.",
@@ -144,9 +144,9 @@ export const personalInfo = {
 
   education: [
     {
-      degree: "Ciência da Computação",
-      institution: "Universidade Federal",
-      year: "2018"
+      degree: "Engenharia de Software",
+      institution: "Universidade Anhanguera",
+      year: "2025 - 2028"
     },
     {
       degree: "UX/UI Design",
