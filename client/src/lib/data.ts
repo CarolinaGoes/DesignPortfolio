@@ -131,9 +131,9 @@ export const personalInfo = {
   name: "Carolina Goes",
   title: "Desenvolvedora Frontend",
   description: "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
-  email: "contato@carolinagoes.dev",
+  email: "carolinarocha.89@hotmail.com",
   location: "São Paulo, SP - Brasil",
-  availability: "Segunda a Sexta, 9h às 18h",
+  availability: "Segunda a Sexta, 8h às 22h",
   image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&auto=format&fit=crop&w=800",
   imageAlt: "Foto de perfil de Carolina Goes",
   about: [
