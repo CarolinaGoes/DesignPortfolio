@@ -62,15 +62,16 @@ export default function About() {
                   <motion.ul variants={staggerContainer} className="space-y-2">
                     {personalInfo.education.map((edu, index) => (
                       <motion.li key={index} variants={staggerItem} className="flex items-start">
-                       {index === 0 && (
-                          <GraduationCap className="h-5 w-5 text-primary mt-1 mr-2" />
-                        )}
+                        <GraduationCap className="h-5 w-5 text-primary mt-1 mr-2" />
                         <div>
                           <p className="font-medium">{edu.degree}</p>
-                          <p className="text-sm text-muted-foreground">{edu.institution}, {edu.year}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {edu.institution}, {edu.year}
+                          </p>
                         </div>
                       </motion.li>
                     ))}
+
                   </motion.ul>
                 </div>
 
