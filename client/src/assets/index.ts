@@ -1,4 +1,4 @@
-import profileImage from './profile2.jfif';
+import profileImage from './profile.jpeg';
 
 export { 
   profileImage 
