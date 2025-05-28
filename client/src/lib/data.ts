@@ -3,10 +3,7 @@ export const projectCategories = [
   { id: "html-css", name: "HTML/CSS" },
   { id: "javascript", name: "JavaScript" },
   { id: "react", name: "React" },
-  { id: "angular", name: "Angular" },
-  { id: "tailwind", name: "Tailwind" },
-  { id: "vue", name: "Vue.js" },
-  { id: "php", name: "PHP" }
+ 
 ];
 
 export const projects = [
@@ -22,17 +19,6 @@ export const projects = [
     repoLink: "https://github.com/CarolinaGoes"
   },
   {
-    id: 2,
-    title: "Dashboard Analytics",
-    description: "Dashboard interativo com visualização de dados em tempo real, gráficos acessíveis e recursos de exportação de relatórios.",
-    image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Screenshot do dashboard de análise de dados",
-    tags: ["Vue.js", "D3.js", "Firebase"],
-    category: "vue",
-    demoLink: "#",
-    repoLink: "https://github.com/CarolinaGoes"
-  },
-  {
     id: 3,
     title: "TodoFlow Pro",
     description: "Aplicativo de gerenciamento de tarefas com categorização inteligente, lembretes personalizados e sincronização entre dispositivos.",
@@ -40,17 +26,6 @@ export const projects = [
     imageAlt: "Screenshot do aplicativo de tarefas",
     tags: ["React", "TypeScript", "Redux"],
     category: "react",
-    demoLink: "#",
-    repoLink: "https://github.com/CarolinaGoes"
-  },
-  {
-    id: 4,
-    title: "Sistema CMS Corporativo",
-    description: "Sistema de gerenciamento de conteúdo completo para empresas, com painel administrativo, templates personalizáveis e integrações.",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Screenshot do sistema CMS",
-    tags: ["PHP", "MySQL", "Bootstrap"],
-    category: "php",
     demoLink: "#",
     repoLink: "https://github.com/CarolinaGoes"
   },
@@ -76,39 +51,6 @@ export const projects = [
     demoLink: "#",
     repoLink: "https://github.com/CarolinaGoes"
   },
-  {
-    id: 7,
-    title: "API de Pagamentos",
-    description: "API segura e escalável para processamento de pagamentos online com integração a múltiplos gateways e sistema anti-fraude.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Diagrama de API de pagamentos",
-    tags: ["PHP", "Laravel", "API REST"],
-    category: "php",
-    demoLink: "#",
-    repoLink: "https://github.com/CarolinaGoes"
-  },
-  {
-    id: 8,
-    title: "Interface de Dashboard",
-    description: "Interface moderna e responsiva para dashboard administrativo com componentes reutilizáveis e tema customizável.",
-    image: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Screenshot do dashboard administrativo",
-    tags: ["Tailwind", "Alpine.js", "HTML5"],
-    category: "tailwind",
-    demoLink: "#",
-    repoLink: "https://github.com/CarolinaGoes"
-  },
-  {
-    id: 9,
-    title: "Sistema de Gestão Corporativa",
-    description: "Aplicação corporativa com múltiplos módulos para gerenciamento de recursos humanos, projetos e finanças.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Screenshot do sistema de gestão corporativa",
-    tags: ["Angular", "TypeScript", "Material UI"],
-    category: "angular",
-    demoLink: "#",
-    repoLink: "https://github.com/CarolinaGoes"
-  }
 ];
 
 export const skills = {
@@ -116,13 +58,7 @@ export const skills = {
     { name: "HTML5 & CSS3", icon: "html5-css3" },
     { name: "JavaScript / TypeScript", icon: "js-square" },
     { name: "React", icon: "react" },
-    { name: "Vue.js", icon: "vuejs" },
-    { name: "Angular", icon: "angular" },
-    { name: "UI/UX Design", icon: "figma" },
-    { name: "Sass/SCSS", icon: "sass" },
     { name: "Git", icon: "git-alt" },
-    { name: "Node.js", icon: "node-js" },
-    { name: "MongoDB", icon: "database" },
     { name: "Acessibilidade Web", icon: "universal-access" }
   ]
 };
@@ -133,14 +69,11 @@ export const personalInfo = {
   description: "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
   email: "carolinarocha.89@hotmail.com",
   location: "São Paulo, SP - Brasil",
-  availability: "Segunda a Sexta, 8h às 22h",
-  image: "\public\images\profile.jpeg",
   imageAlt: "Foto de perfil de Carolina Goes",
   about: [
-  "Olá! Sou Carolina, estudante de Engenharia de Software em transição de carreira da educação para o desenvolvimento frontend. Depois de anos atuando como professora, descobri na tecnologia uma nova paixão: criar interfaces interativas e acessíveis que proporcionem boas experiências aos usuários.",
-  "Tenho me dedicado intensamente ao estudo de tecnologias como HTML, CSS, JavaScript e frameworks modernos como React. Valorizo a escrita de código limpo, responsivo e alinhado às boas práticas de acessibilidade e usabilidade.",
-  "Busco uma oportunidade de estágio para aplicar meus conhecimentos, crescer profissionalmente e contribuir ativamente em projetos reais. Estou sempre aberta a aprender, colaborar e evoluir com propósito e criatividade."
-],
+  "Olá sou Carolina, sou estudante de Engenharia de Software com foco em desenvolvimento frontend, atualmente me especializando em tecnologias como HTML, CSS, JavaScript e React. Tenho me dedicado a projetos práticos, sempre buscando escrever código de forma estratégica, limpa e inovadora. Antes de ingressar na área de tecnologia, atuei como professora e também com rotinas administrativas no setor educacional. Essa vivência me proporcionou uma base sólida em organização, comunicação, resolução de problemas e aprendizado contínuo, habilidades que levo comigo para o universo da programação. Atualmente, estou em transição de carreira para a área de tecnologia e busco uma oportunidade de estágio em desenvolvimento frontend. Quero aliar minha experiência com educação ao mundo da tecnologia, contribuindo com soluções criativas, eficientes e adaptáveis.",
+  "📩 Estou aberta a novas oportunidades, conexões e aprendizados no ecossistema tech!"
+  ],
 
   education: [
     {
@@ -149,21 +82,41 @@ export const personalInfo = {
       year: "2025 - 2028"
     },
     {
-      degree: "UX/UI Design",
-      institution: "Design Academy",
-      year: "2019"
+      degree: "Licenciatura em Pedagogia",
+      institution: "UNICID",
+      year: "2015 - 2018"
+    },
+     {
+      degree: "Gestão em Contact Center",
+      institution: "UNINOVE",
+      year: "2008 - 2010"
     }
   ],
   experience: [
-    {
-      role: "Senior Frontend Dev",
-      company: "TechCorp Inc.",
-      period: "2020-Atual"
+      {
+      role: "Desenvolvedora Frontend",
+      company: "FreeLancer",
+      period: "2024-Atual"
     },
     {
-      role: "Frontend Developer",
-      company: "StartupXYZ",
-      period: "2018-2020"
+      role: "Professora",
+      company: "Prefeitura de São Paulo",
+      period: "2023-Atual"
+    },
+     {
+      role: "Auxiliar Técnico de Educação",
+      company: "Prefeitura de São Paulo",
+      period: "2021-2023"
+    },
+    {
+      role: "Recreadora de Festas",
+      company: "FreeLancer",
+      period: "2011-2021"
+    },
+    {
+      role: "Agente de Cobrança",
+      company: "CONTAX",
+      period: "2007-2011"
     }
   ],
   socialLinks: {
@@ -173,6 +126,6 @@ export const personalInfo = {
     codepen: "#",
     email: "carolinarocha.89@hotmail.com"
   },
-  aboutImage: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&auto=format&fit=crop&w=800",
+  aboutImage: "./assets/images/profile.jfif",
   aboutImageAlt: "Carolina Goes "
 };
