@@ -13,44 +13,13 @@ export const projects = [
     description: "Plataforma de comércio eletrônico completa com recursos de acessibilidade, filtros avançados e experiência de compra otimizada.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Imagem de Carolina Goes",
-    tags: ["React", "Tailwind", "Acessibilidade"],
+    tags: ["React", "Acessibilidade"],
     category: "react",
     demoLink: "#",
     repoLink: "https://github.com/CarolinaGoes"
-  },
-  {
-    id: 3,
-    title: "TodoFlow Pro",
-    description: "Aplicativo de gerenciamento de tarefas com categorização inteligente, lembretes personalizados e sincronização entre dispositivos.",
-    image: "https://images.unsplash.com/photo-1601430854328-26d0d85ca7bf?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Screenshot do aplicativo de tarefas",
-    tags: ["React", "TypeScript", "Redux"],
-    category: "react",
-    demoLink: "#",
-    repoLink: "https://github.com/CarolinaGoes"
-  },
-  {
-    id: 5,
-    title: "App Financeiro",
-    description: "Aplicativo mobile para gestão de finanças pessoais com gráficos detalhados, controle de orçamento e recursos de planejamento.",
-    image: "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Interface do aplicativo financeiro",
-    tags: ["JavaScript", "Firebase", "ChartJS"],
-    category: "javascript",
-    demoLink: "#",
-    repoLink: "https://github.com/CarolinaGoes"
-  },
-  {
-    id: 6,
-    title: "Portfólio Criativo",
-    description: "Site responsivo para exibição de trabalhos criativos com filtros dinâmicos, zoom em imagens e animações suaves.",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Screenshot do site de portfólio",
-    tags: ["HTML5", "CSS3", "JavaScript"],
-    category: "html-css",
-    demoLink: "#",
-    repoLink: "https://github.com/CarolinaGoes"
-  },
+  }
+ 
+  
 ];
 
 export const skills = {
