@@ -123,7 +123,7 @@ export const personalInfo = {
     github: "https://github.com/CarolinaGoes",
     linkedin: "https://www.linkedin.com/in/carolina-goes/",
     whatsapp: "https://wa.me/5511972230817",
-    codepen: "#",
+    codepen: "https://codepen.io/Carolina-Goes",
     email: "carolinarocha.89@hotmail.com"
   },
   aboutImage: "./assets/images/profile.jfif",
