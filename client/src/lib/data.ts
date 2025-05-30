@@ -9,7 +9,7 @@ export const projectCategories = [
 export const projects = [
   {
     id: 1,
-    title: "Cardápio Doces",
+    title: "Menu Doces",
     description: "Plataforma de comércio eletrônico completa com recursos de acessibilidade, filtros avançados e experiência de compra otimizada.",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&auto=format&fit=crop&w=800",
     imageAlt: "Imagem de Carolina Goes",
