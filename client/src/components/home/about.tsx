@@ -92,7 +92,7 @@ export default function About() {
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <a href="/CarolinaGoesCV.pdf" download>
+                <a href="/CV - Carolina Rocha Sampaio de Goes" download>
                   <Button variant="outline" className="flex items-center gap-2">
                     <Download className="h-4 w-4" />
                     <span>Download CV</span>
