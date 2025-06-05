@@ -1,9 +1,5 @@
 {
-  "default": {
-    "colors": {
-      "primary": "#3490dc",
-      "secondary": "#ffed4a",
-      "danger": "#e3342f"
-    }
-  }
+  "primary": "#6366f1",
+  "secondary": "#ffed4a",
+  "danger": "#e3342f"
 }
