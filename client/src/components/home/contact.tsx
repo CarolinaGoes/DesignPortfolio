@@ -8,7 +8,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { 
   Mail, 
   MapPin, 
-  Clock, 
   Send, 
   Github, 
   Linkedin, 
@@ -234,15 +233,7 @@ function ContactInfo() {
           </div>
         </motion.div>
         
-        <motion.div variants={staggerItem} className="flex items-start">
-          <div className="bg-secondary dark:bg-muted p-3 rounded-full mr-4">
-            <Clock className="h-5 w-5 text-primary" />
-          </div>
-          <div>
-            <h4 className="font-medium mb-1">Disponibilidade</h4>
-            <p className="text-muted-foreground">{personalInfo.availability}</p>
-          </div>
-        </motion.div>
+    
       </motion.div>
 
       <motion.div variants={staggerItem} className="mt-10">
