@@ -91,33 +91,23 @@
     @apply bg-primary/80;
   }
 
- /* Dentro do seu .high-contrast ou .dark.high-contrast */
-.high-contrast {
-  --background: 0 0% 100% !important;
-  --foreground: 0 0% 0% !important;
-  --card: 0 0% 100% !important; /* Certifique-se de que o card também mude */
-  --card-foreground: 0 0% 100% !important;
-  --primary: 265 100% 60% !important;
-  --secondary: 0 0% 93% !important;
-  --muted: 0 0% 85% !important;
-  --border: 0 0% 0% !important;
-  /* Adicione outras variáveis que o menu de acessibilidade usa */
-  --input: 0 0% 0% !important; /* Se o input do slider for impactado */
-  --ring: 265 100% 60% !important; /* Se o ring do foco for impactado */
-}
+  .high-contrast {
+    --primary: 265 100% 60%;
+    --foreground: 0 0% 0%;
+    --background: 0 0% 100%;
+    --secondary: 0 0% 93%;
+    --muted: 0 0% 85%;
+    --border: 0 0% 0%;
+  }
 
-.dark.high-contrast {
-  --background: 0 0% 0% !important;
-  --foreground: 0 0% 100% !important;
-  --card: 0 0% 0% !important;
-  --card-foreground: 0 0% 100% !important;
-  --primary: 265 100% 75% !important;
-  --secondary: 0 0% 15% !important;
-  --muted: 0 0% 20% !important;
-  --border: 0 0% 100% !important;
-  --input: 0 0% 100% !important;
-  --ring: 265 100% 75% !important;
-}
+  .dark.high-contrast {
+    --primary: 265 100% 75%;
+    --foreground: 0 0% 100%;
+    --background: 0 0% 0%;
+    --secondary: 0 0% 15%;
+    --muted: 0 0% 20%;
+    --border: 0 0% 100%;
+  }
 
   .reduce-motion * {
     animation-duration: 0.001ms !important;
