@@ -96,7 +96,7 @@
   --background: 0 0% 100% !important;
   --foreground: 0 0% 0% !important;
   --card: 0 0% 100% !important; /* Certifique-se de que o card também mude */
-  --card-foreground: 0 0% 0% !important;
+  --card-foreground: 0 0% 100% !important;
   --primary: 265 100% 60% !important;
   --secondary: 0 0% 93% !important;
   --muted: 0 0% 85% !important;
