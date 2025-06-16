@@ -9,12 +9,11 @@ export default defineConfig({
     react(),
     runtimeErrorOverlay(),
     themePlugin(),
-    // Remova o trecho assíncrono do cartographer para evitar erros
   ],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
+      "@shared": path.resolve(import.meta.dirname, "../shared"), // ⬅️ corrigido aqui
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
