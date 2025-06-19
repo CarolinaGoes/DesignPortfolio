@@ -1,13 +1,20 @@
 {
   "version": 2,
-  "builds": [{
-    "src": "client/package.json",
-    "use": "@vercel/static-build",
-    "config": {
-      "distDir": "dist",
-      "installCommand": "cd client && npm install --force && npm install vite",
-      "buildCommand": "cd client && npm run build"
-      
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist",
+        "installCommand": "cd client && npm install --force && npm install vite@latest",
+        "buildCommand": "cd client && npm run build"
+      }
     }
-  }]
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "client/index.html"
+    }
+  ]
 }
