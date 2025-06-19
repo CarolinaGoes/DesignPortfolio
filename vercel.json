@@ -5,16 +5,23 @@
       "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist",
-        "installCommand": "cd client && npm install --force && npm install vite@latest",
+        "distDir": "client/dist",
+        "installCommand": "cd client && npm install",
         "buildCommand": "cd client && npm run build"
       }
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "client/index.html"
-    }
-  ]
+ "routes": [
+  {
+    "src": "/(.*)",
+    "dest": "client/dist/index.html"
+  },
+  {
+    "src": "/assets/(.*)",
+    "headers": {
+      "Cache-Control": "public, max-age=31536000, immutable"
+    },
+    "continue": true
+  }
+]
 }
