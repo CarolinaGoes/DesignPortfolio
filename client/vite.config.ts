@@ -1,25 +1,12 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-//import themePlugin from "@replit/vite-plugin-shadcn-theme-json";
-import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  plugins: [
-    react(),
-    runtimeErrorOverlay(),
-    //themePlugin(),
-  ],
-  resolve: {
-    alias: {
-      "@": path.resolve(import.meta.dirname, "src"),
-      "@shared": path.resolve(import.meta.dirname, "../shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
-    },
-  },
- build: {
-  outDir: "dist", // agora será client/dist
-  emptyOutDir: true,
-}
-,
-});
+  plugins: [react()],
+  base: '/', // Esta linha é crucial
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    sourcemap: true // Ative para debug
+  }
+})
