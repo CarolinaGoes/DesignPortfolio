@@ -2,7 +2,7 @@ import {
   users, type User, type InsertUser,
   messages, type Message, type InsertMessage,
   chatMessages, type ChatMessage, type InsertChatMessage 
-} from "@shared/schema";
+} from "@
 import { db } from "./db";
 import { eq } from "drizzle-orm";
 

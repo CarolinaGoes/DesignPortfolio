@@ -16,7 +16,6 @@ export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [filteredProjects, setFilteredProjects] = useState(projects);
   
-  // Função para retornar o ícone de cada categoria nos botões de filtro
   const getCategoryButtonIcon = (categoryId: string) => {
     switch (categoryId) {
       case 'all':
