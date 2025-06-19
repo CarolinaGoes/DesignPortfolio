@@ -1,24 +1,16 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "include": ["client/src/**/*", "client/shared/**/*", "server/**/*"],
-  "exclude": ["node_modules", "build", "dist", "**/*.test.ts"],
   "compilerOptions": {
-    "incremental": true,
-    "tsBuildInfoFile": "./node_modules/typescript/tsbuildinfo",
-    "noEmit": true,
-    "module": "ESNext",
-    "strict": true,
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "jsx": "preserve",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "allowImportingTsExtensions": true,
-    "moduleResolution": "bundler",
+    // ... mantenha suas configurações atuais ...
     "baseUrl": ".",
-    "types": ["node", "vite/client"],
     "paths": {
       "@/*": ["./client/src/*"],
-      "@shared/*": ["client/shared/*"]
-    }
-  }
+      "@shared/*": ["./client/shared/*"]
+    },
+    "types": ["vite/client"] // Adicione isso
+  },
+  "include": [
+    "client/src/**/*",
+    "client/vite.config.ts" // Adicione isso
+  ]
 }
