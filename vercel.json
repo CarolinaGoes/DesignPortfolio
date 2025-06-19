@@ -6,15 +6,8 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist",
-        "installCommand": "npm install && npm install vite"
+        "installCommand": "cd client && npm install && npm install vite-tsconfig-paths"
       }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html",
-      "status": 200
     }
   ]
 }
