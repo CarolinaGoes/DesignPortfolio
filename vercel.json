@@ -5,12 +5,8 @@
     "use": "@vercel/static-build",
     "config": {
       "distDir": "dist",
-      "installCommand": "cd client && npm ci --force",
+      "installCommand": "cd client && npm install --force && npm install vite",
       "buildCommand": "cd client && npm run build"
     }
-  }],
-  "routes": [{
-    "src": "/(.*)", 
-    "dest": "client/index.html"
   }]
 }
