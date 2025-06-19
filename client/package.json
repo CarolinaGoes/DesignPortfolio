@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^5.1.4",
+    "@vitejs/plugin-react": "^4.2.1"
+  }
+}
