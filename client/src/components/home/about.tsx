@@ -1,25 +1,25 @@
-import { personalInfo } from '../../lib/data.ts';
-import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation.js';
+import { personalInfo } from '../../lib/data';
+import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
 import { Button } from '../../components/ui/button';
-import { 
-  GraduationCap, 
-  Briefcase, 
-  Download 
-} from 'lucide-react';
-// Update the path below to the actual location of your profile image file
+import { GraduationCap, Briefcase, Download } from 'lucide-react';
 import profileImage from '../../assets/profileImage.jpg';
+import { Button } from '../../components/ui/button';
+import { Download } from 'lucide-react';
+
+// PDF file path (ensure the file exists in public/assets/)
+const pdfUrl = '/assets/CV%20-%20Carolina%20Rocha%20Sampaio%20de%20Goes.pdf';
 
 export default function About() {
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
   const [imageRef, isImageVisible] = useScrollAnimation<HTMLDivElement>();
-  
+
   return (
     <section id="about" className="py-16 md:py-24 transition-colors duration-300">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <motion.div 
+          <motion.div
             ref={imageRef}
             initial="hidden"
             animate={isImageVisible ? "visible" : "hidden"}
@@ -27,9 +27,9 @@ export default function About() {
           >
             <div className="relative">
               <div className="w-full h-auto rounded-lg overflow-hidden">
-                <img 
-                  src={profileImage} 
-                  alt={personalInfo.aboutImageAlt} 
+                <img
+                  src={profileImage}
+                  alt={personalInfo.aboutImageAlt}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -48,9 +48,9 @@ export default function About() {
               <motion.div variants={staggerItem} className="h-1 w-20 bg-primary rounded-full mb-6"></motion.div>
 
               {personalInfo.about.map((paragraph, index) => (
-                <motion.p 
-                  key={index} 
-                  variants={staggerItem} 
+                <motion.p
+                  key={index}
+                  variants={staggerItem}
                   className="text-muted-foreground mb-4"
                 >
                   {paragraph}
@@ -72,7 +72,6 @@ export default function About() {
                         </div>
                       </motion.li>
                     ))}
-
                   </motion.ul>
                 </div>
 
@@ -93,12 +92,17 @@ export default function About() {
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <a href="/assets/CV - Carolina Rocha Sampaio de Goes.pdf" download="CV-Carolina-Rocha.pdf">
-  <Button variant="outline" className="flex items-center gap-2">
-    <Download className="h-4 w-4" />
-    <span>Download CV</span>
-  </Button>
-</a>
+                <a
+                  href={pdfUrl}
+                  download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="flex items-center gap-2">
+                    <Download className="h-4 w-4" />
+                    <span>Download CV</span>
+                  </Button>
+                </a>
               </motion.div>
             </motion.div>
           </div>
