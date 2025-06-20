@@ -3,7 +3,14 @@ import react from '@vitejs/plugin-react'
 import path from 'node:path'
 import { fileURLToPath } from 'url'
 
+
+ 
+
+
 export default defineConfig({
+  
+
+  
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
@@ -55,21 +62,11 @@ build: {
     open: true,
     cors: true,
     host: true, // Permite acesso na rede local
-    strictPort: true
-  },
-  preview: {
-    port: 3001,
-    open: true,
-    host: true
-  },
-  optimizeDeps: {
-    include: [
-      'react',
-      'react-dom',
-      '@emotion/react',
-      '@emotion/styled'
-    ],
-    exclude: ['js-big-decimal']
+    strictPort: true,
+    headers: {
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'attachment'
+    }
   },
   css: {
     modules: {
