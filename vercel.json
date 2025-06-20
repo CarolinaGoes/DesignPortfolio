@@ -1,20 +1,21 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "client/dist",
-        "installCommand": "cd client && npm install",
-        "buildCommand": "cd client && npm run build"
-      }
-    }
-  ],
+  "version": 3,
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "distDir": "dist"
+  },
   "routes": [
     {
+      "src": "/assets/(.*)",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
       "src": "/(.*)",
-      "dest": "client/dist/index.html"
+      "dest": "/index.html"
     }
   ]
 }
