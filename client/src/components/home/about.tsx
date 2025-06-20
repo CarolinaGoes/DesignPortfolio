@@ -1,14 +1,15 @@
-import { personalInfo } from '@/lib/data';
-import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
+import { personalInfo } from '../../lib/data.ts';
+import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation.js';
 import { motion } from 'framer-motion';
-import { staggerContainer, staggerItem, slideRight } from '@/lib/animations';
-import { Button } from '@/components/ui/button';
+import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
+import { Button } from '../../components/ui/button';
 import { 
   GraduationCap, 
   Briefcase, 
   Download 
 } from 'lucide-react';
-import { profileImage } from '@/assets';
+// Update the path below to the actual location of your profile image file
+import profileImage from '../../assets/profileImage.jpg';
 
 export default function About() {
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
@@ -92,12 +93,12 @@ export default function About() {
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <a href="client\public\assets\CV - Carolina Rocha Sampaio de Goes.pdf" download>
-                  <Button variant="outline" className="flex items-center gap-2">
-                    <Download className="h-4 w-4" />
-                    <span>Download CV</span>
-                  </Button>
-                </a>
+                <a href="/assets/CV - Carolina Rocha Sampaio de Goes.pdf" download="CV-Carolina-Rocha.pdf">
+  <Button variant="outline" className="flex items-center gap-2">
+    <Download className="h-4 w-4" />
+    <span>Download CV</span>
+  </Button>
+</a>
               </motion.div>
             </motion.div>
           </div>
