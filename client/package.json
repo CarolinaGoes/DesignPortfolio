@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "vercel-build": "npm install && vite build"
+    "vercel-build": "vite build --mode production"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
