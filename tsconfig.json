@@ -1,16 +1,30 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    // ... mantenha suas configurações atuais ...
+    "target": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "jsx": "preserve",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./client/src/*"],
       "@shared/*": ["./client/shared/*"]
     },
-    "types": ["vite/client"] // Adicione isso
+    "types": ["vite/client"],
+    "outDir": "./dist",
+    "rootDir": "./client"
   },
   "include": [
     "client/src/**/*",
-    "client/vite.config.ts" // Adicione isso
+    "client/shared/**/*",
+    "client/vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }
