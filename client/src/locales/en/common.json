@@ -13,61 +13,62 @@
     "projectsButton": "View projects"
   },
   "personalInfo": {
-    "name": "Carolina Goes",
-    "title": "Frontend Developer",
-    "description": "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
-    "email": "carolinarocha.89@hotmail.com",
-    "location": "São Paulo, SP - Brasil",
-    "imageAlt": "Foto de perfil de Carolina Goes",
-    "about": [
-      "Olá sou Carolina, sou estudante de Engenharia de Software com foco em desenvolvimento frontend, atualmente me especializando em tecnologias como HTML, CSS, JavaScript e React. Tenho me dedicado a projetos práticos, sempre buscando escrever código de forma estratégica, limpa e inovadora. Antes de ingressar na área de tecnologia, atuei como professora e também com rotinas administrativas no setor educacional. Essa vivência me proporcionou uma base sólida em organização, comunicação, resolução de problemas e aprendizado contínuo, habilidades que levo comigo para o universo da programação. Atualmente, estou em transição de carreira para a área de tecnologia e busco uma oportunidade de estágio em desenvolvimento frontend. Quero aliar minha experiência com educação ao mundo da tecnologia, contribuindo com soluções criativas, eficientes e adaptáveis.",
-      "📩 Estou aberta a novas oportunidades, conexões e aprendizados no ecossistema tech!"
-    ],
-    "education": [
-      {
-        "degree": "Engenharia de Software",
-        "institution": "Universidade Anhanguera",
-        "year": "2025 - 2028"
-      },
-      {
-        "degree": "Licenciatura em Pedagogia",
-        "institution": "UNICID",
-        "year": "2015 - 2018"
-      },
-      {
-        "degree": "Gestão em Contact Center",
-        "institution": "UNINOVE",
-        "year": "2008 - 2010"
-      }
-    ],
-    "experience": [
-      {
-        "role": "Desenvolvedora Frontend",
-        "company": "FreeLancer",
-        "period": "2024-Atual"
-      },
-      {
-        "role": "Professora",
-        "company": "Prefeitura de São Paulo",
-        "period": "2023-Atual"
-      },
-      {
-        "role": "Auxiliar Técnico de Educação",
-        "company": "Prefeitura de São Paulo",
-        "period": "2021-2023"
-      },
-      {
-        "role": "Recreadora de Festas",
-        "company": "FreeLancer",
-        "period": "2011-2021"
-      },
-      {
-        "role": "Agente de Cobrança",
-        "company": "CONTAX",
-        "period": "2007-2011"
-      }
-    ]
-  },
+  "name": "Carolina Goes",
+  "title": "Frontend Developer",
+  "description": "Turning ideas into incredible digital experiences with a focus on accessibility, usability, and modern design.",
+  "email": "carolinarocha.89@hotmail.com",
+  "location": "São Paulo, SP - Brazil",
+  "imageAlt": "Profile photo of Carolina Goes",
+  "about": [
+    "Hi, I'm Carolina, a Software Engineering student focused on frontend development, currently specializing in technologies like HTML, CSS, JavaScript, and React. I’ve been dedicating myself to hands-on projects, always aiming to write code that is strategic, clean, and innovative. Before transitioning into tech, I worked as a teacher and in administrative roles within the education sector. That experience gave me a strong foundation in organization, communication, problem-solving, and continuous learning—skills I now bring into the programming world. I am currently transitioning into the tech field and seeking a frontend development internship. I want to combine my background in education with technology, contributing with creative, efficient, and adaptable solutions.",
+    "📩 I'm open to new opportunities, networking, and continuous learning in the tech ecosystem!"
+  ],
+  "education": [
+    {
+      "degree": "Software Engineering",
+      "institution": "Anhanguera University",
+      "year": "2025 - 2028"
+    },
+    {
+      "degree": "Bachelor's Degree in Pedagogy",
+      "institution": "UNICID",
+      "year": "2015 - 2018"
+    },
+    {
+      "degree": "Call Center Management",
+      "institution": "UNINOVE",
+      "year": "2008 - 2010"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Frontend Developer",
+      "company": "Freelancer",
+      "period": "2024–Present"
+    },
+    {
+      "role": "Teacher",
+      "company": "São Paulo City Hall",
+      "period": "2023–Present"
+    },
+    {
+      "role": "Education Technical Assistant",
+      "company": "São Paulo City Hall",
+      "period": "2021–2023"
+    },
+    {
+      "role": "Party Entertainer",
+      "company": "Freelancer",
+      "period": "2011–2021"
+    },
+    {
+      "role": "Collection Agent",
+      "company": "CONTAX",
+      "period": "2007–2011"
+    }
+  ]
+}
+
   "about": {
     "title": "About me",
     "education": "Education",
