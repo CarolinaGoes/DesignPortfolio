@@ -13,10 +13,10 @@
     "projectsButton": "View projects"
   },
  
- "personalInfo" : {
+ "personalInfo": {
+  "title": "Frontend Developer",
   "name": "Carolina Goes",
-  "titleKey": "personalInfo.title",
-  "description": "Turning ideas into incredible digital experiences with a focus on accessibility, usability, and modern design.",
+  "description": "Turning ideas into incredible digital experiences...",
   "email": "carolinarocha.89@hotmail.com",
   "location": "São Paulo, SP - Brazil",
   "imageAlt": "Profile photo of Carolina Goes",
