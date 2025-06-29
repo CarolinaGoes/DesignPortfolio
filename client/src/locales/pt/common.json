@@ -13,11 +13,7 @@
     "projectsButton": "Ver projetos"
   },
   "personalInfo": {
-    "name": "Carolina Goes",
     "title": "Desenvolvedora Frontend",
-    "description": "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
-    "email": "carolinarocha.89@hotmail.com",
-    "location": "São Paulo, SP - Brasil",
     "imageAlt": "Foto de perfil de Carolina Goes",
     "about": [
       "Olá, sou Carolina, estudante de Engenharia de Software com foco em desenvolvimento frontend, atualmente me especializando em tecnologias como HTML, CSS, JavaScript e React. Tenho me dedicado a projetos práticos, sempre buscando escrever código de forma estratégica, limpa e inovadora. Antes de ingressar na área de tecnologia, atuei como professora e também com rotinas administrativas no setor educacional. Essa vivência me proporcionou uma base sólida em organização, comunicação, resolução de problemas e aprendizado contínuo, habilidades que levo comigo para o universo da programação. Atualmente, estou em transição de carreira para a área de tecnologia e busco uma oportunidade de estágio em desenvolvimento frontend. Quero aliar minha experiência com educação ao mundo da tecnologia, contribuindo com soluções criativas, eficientes e adaptáveis.",
@@ -76,7 +72,14 @@
   "skills": {
     "title": "Minhas Habilidades",
     "description": "Sempre me mantendo atualizada com as tecnologias mais recentes e focando em criar experiências acessíveis e de alta qualidade.",
-    "technologiesTitle": "Tecnologias & Ferramentas"
+    "technologiesTitle": "Tecnologias & Ferramentas",
+    "items": {
+      "htmlCss": "HTML5 & CSS3",
+      "javascript": "JavaScript / TypeScript",
+      "react": "React",
+      "git": "Git",
+      "accessibility": "Acessibilidade Web"
+    }
   },
   "projects": {
     "title": "Projetos",
@@ -87,14 +90,15 @@
       "all": "Todos",
       "html-css": "HTML/CSS",
       "javascript": "JavaScript",
-      "react": "React",
-      "angular": "Angular",
-      "tailwind": "Tailwind",
-      "vue": "Vue.js",
-      "php": "PHP"
+      "react": "React"
     },
-    "filter": "Filtrar por categoria",
-    "viewAll": "Ver todos os projetos"
+    "items": {
+      "menuDoces": {
+        "title": "Menu Doces",
+        "description": "Plataforma de comércio eletrônico completa com recursos de acessibilidade, filtros avançados e experiência de compra otimizada.",
+        "imageAlt": "Imagem do projeto Menu Doces"
+      }
+    }
   },
   "contact": {
     "title": "Entre em contato",
