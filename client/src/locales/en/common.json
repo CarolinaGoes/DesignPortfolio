@@ -13,7 +13,7 @@
     "projectsButton": "View projects"
   },
  
- export const personalInfo = {
+ "personalInfo" = {
   name: "Carolina Goes",
   titleKey: "personalInfo.title",
   "description": "Turning ideas into incredible digital experiences with a focus on accessibility, usability, and modern design.",
