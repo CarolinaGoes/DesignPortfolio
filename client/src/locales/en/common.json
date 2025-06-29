@@ -12,7 +12,7 @@
     "contactButton": "Get in touch",
     "projectsButton": "View projects"
   },
-  "personalInfo": {
+ 
  export const personalInfo = {
   name: "Carolina Goes",
   titleKey: "personalInfo.title",
