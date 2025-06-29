@@ -34,7 +34,7 @@ export const skills = {
 
 export const personalInfo = {
   name: "Carolina Goes",
-  title: "Desenvolvedora Frontend",
+  titleKey: "personalInfo.title",
   description: "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
   email: "carolinarocha.89@hotmail.com",
   location: "São Paulo, SP - Brasil",
