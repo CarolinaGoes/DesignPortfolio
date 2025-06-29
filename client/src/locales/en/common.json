@@ -13,8 +13,9 @@
     "projectsButton": "View projects"
   },
   "personalInfo": {
-  "name": "Carolina Goes",
-  "title": "Frontend Developer",
+ export const personalInfo = {
+  name: "Carolina Goes",
+  titleKey: "personalInfo.title",
   "description": "Turning ideas into incredible digital experiences with a focus on accessibility, usability, and modern design.",
   "email": "carolinarocha.89@hotmail.com",
   "location": "São Paulo, SP - Brazil",
