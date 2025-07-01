@@ -183,7 +183,7 @@ export const floatingAnimation = {
 
 export const pulseAnimation = {
   animate: {
-    scale: [1, 1.05, 1],
+    scale: [1, 2, 1],
     transition: {
       duration: 2,
       ease: "easeInOut",
