@@ -67,7 +67,8 @@
   "about": {
     "title": "Sobre mim",
     "education": "Formação",
-    "experience": "Experiência"
+    "experience": "Experiência",
+    "cvButton": "Baixar CV"
   },
   "skills": {
     "title": "Minhas Habilidades",
