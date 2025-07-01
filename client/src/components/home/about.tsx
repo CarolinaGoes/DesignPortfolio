@@ -1,24 +1,27 @@
 import { personalInfo } from '../../lib/data';
-import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
 import { Button } from '../../components/ui/button';
-import { GraduationCap, Briefcase, Download } from 'lucide-react';
+import { GraduationCap, Briefcase } from 'lucide-react';
 import profileImage from '../../assets/profileImage.jpg';
+import { useRef, useState, useEffect } from 'react';
 
-// PDF file path (ensure the file exists in public/assets/)
-const handleDownload = () => {
-  const link = document.createElement('a');
-  link.href = pdfUrl;
-  link.download = 'CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}; const pdfUrl = '/assets/CV%20-%20Carolina%20Rocha%20Sampaio%20de%20Goes.pdf';
+
+export function useScrollAnimation() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // ...rest of the hook
+  }, []);
+
+  return [ref, isVisible] as const;
+}
+
 
 export default function About() {
-  const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
-  const [imageRef, isImageVisible] = useScrollAnimation<HTMLDivElement>();
+  const [sectionRef, isSectionVisible] = useScrollAnimation();
+  const [imageRef, isImageVisible] = useScrollAnimation();
 
   return (
     <section id="about" className="py-16 md:py-24 transition-colors duration-300">
@@ -103,15 +106,7 @@ export default function About() {
                 </div>
               </motion.div>
 
-              <motion.div variants={staggerItem}>
-                <a
-                  href={pdfUrl}
-                  download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button onClick={handleDownload}>
-                    <Download className="h-4 w-4" />
+                  <Button>
                     Download CV
                   </Button>
                 </a>
