@@ -84,15 +84,18 @@ export default function About() {
               <motion.div variants={staggerItem} className="h-1 w-20 bg-primary rounded-full mb-6"></motion.div>
 
               {/* --- PASSO 4: Usar as listas que buscamos do JSON --- */}
-              {Array.isArray(aboutParagraphs) && aboutParagraphs.map((paragraph: string, index: number) => (
-                <motion.p
-                  key={index}
-                  variants={staggerItem}
-                  className="text-muted-foreground mb-4"
-                >
-                  {paragraph}
-                </motion.p>
-              ))}
+              {Array.isArray(aboutParagraphs) &&
+                aboutParagraphs
+                  .filter((paragraph): paragraph is string => typeof paragraph === "string")
+                  .map((paragraph, index) => (
+                    <motion.p
+                      key={index}
+                      variants={staggerItem}
+                      className="text-muted-foreground mb-4"
+                    >
+                      {paragraph}
+                    </motion.p>
+                  ))}
 
               <motion.div variants={staggerContainer} className="grid grid-cols-2 gap-6 mb-8">
                 <div>
@@ -100,19 +103,29 @@ export default function About() {
                   <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">{t('about.education')}</motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
                     {/* Mapeando a lista de educação vinda do JSON */}
-                    {Array.isArray(educationList) && educationList.map(
-                      (edu: { degree: string; institution: string; year: string }, index: number) => (
-                        <motion.li key={index} variants={staggerItem} className="flex items-start">
-                          <GraduationCap className="h-5 w-5 text-primary mt-1 mr-2" />
-                          <div>
-                            <p className="font-medium">{edu.degree}</p>
-                            <p className="text-sm text-muted-foreground">
-                              {edu.institution}, {edu.year}
-                            </p>
-                          </div>
-                        </motion.li>
-                      )
-                    )}
+                    {Array.isArray(educationList) &&
+                      educationList
+                        .filter(
+                          (edu): edu is { degree: string; institution: string; year: string } =>
+                            typeof edu === "object" &&
+                            edu !== null &&
+                            "degree" in edu &&
+                            "institution" in edu &&
+                            "year" in edu
+                        )
+                        .map(
+                          (edu, index) => (
+                            <motion.li key={index} variants={staggerItem} className="flex items-start">
+                              <GraduationCap className="h-5 w-5 text-primary mt-1 mr-2" />
+                              <div>
+                                <p className="font-medium">{edu.degree}</p>
+                                <p className="text-sm text-muted-foreground">
+                                  {edu.institution}, {edu.year}
+                                </p>
+                              </div>
+                            </motion.li>
+                          )
+                        )}
                   </motion.ul>
                 </div>
 
@@ -121,21 +134,29 @@ export default function About() {
                   <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">{t('about.experience')}</motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
                     {/* Mapeando a lista de experiência vinda do JSON */}
-                    {Array.isArray(experienceList) && experienceList.map(
-                      (
-                        exp: { company: string; role: string; period: string },
-                        index: number
-                      ) => (
-                        <motion.li key={index} variants={staggerItem} className="flex items-start">
-                          <Briefcase className="h-5 w-5 text-primary mt-1 mr-2" />
-                          <div>
-                            {/* A ordem aqui estava invertida, ajustei para ficar como no JSON */}
-                            <p className="font-medium">{exp.role}</p>
-                            <p className="text-sm text-muted-foreground">{exp.company}, {exp.period}</p>
-                          </div>
-                        </motion.li>
-                      )
-                    )}
+                    {Array.isArray(experienceList) &&
+                      experienceList
+                        .filter(
+                          (exp): exp is { company: string; role: string; period: string } =>
+                            typeof exp === "object" &&
+                            exp !== null &&
+                            "company" in exp &&
+                            "role" in exp &&
+                            "period" in exp
+                        )
+                        .map(
+                          (exp, index) => (
+                            <motion.li key={index} variants={staggerItem} className="flex items-start">
+                              <Briefcase className="h-5 w-5 text-primary mt-1 mr-2" />
+                              <div>
+                                {/* A ordem aqui estava invertida, ajustei para ficar como no JSON */}
+                                <p className="font-medium">{exp.role}</p>
+                                <p className="text-sm text-muted-foreground">{exp.company}, {exp.period}</p>
+                              </div>
+                            </motion.li>
+                          )
+                        )
+                    }
                   </motion.ul>
                 </div>
               </motion.div>

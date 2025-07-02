@@ -1,16 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'node:path'
+import path from 'path'
 import { fileURLToPath } from 'url'
 
-
- 
-
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  
-
-  
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
@@ -19,20 +15,13 @@ export default defineConfig({
       }
     })
   ],
-// Remova a referência ao postcss.config.js se não estiver usando
-resolve: {
-  alias: [
-    {
-      find: '@',
-      replacement: path.resolve(__dirname, './src')
-    },
-    {
-      find: '@shared',
-      replacement: path.resolve(__dirname, './shared')
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@shared': path.resolve(__dirname, './shared')
     }
-  ]
-},
-build: {
+  },
+  build: {
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: process.env.NODE_ENV !== 'production',
@@ -58,20 +47,17 @@ build: {
     }
   },
   server: {
-    port: 3000,
+   
+    port: 5000, 
     open: true,
     cors: true,
-    host: true, // Permite acesso na rede local
+    host: true,
     strictPort: true,
-    headers: {
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': 'attachment'
-    }
   },
   css: {
     modules: {
       localsConvention: 'camelCaseOnly'
     },
-    postcss: './postcss.config.js' // Se estiver usando PostCSS
+    postcss: './postcss.config.js'
   }
 })
