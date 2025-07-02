@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^15.5.3",
     "vite": "^5.1.4"
   },
   "devDependencies": {
@@ -25,7 +26,7 @@
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.10",
-    "typescript": "^5.3.3",
-    "terser": "^5.27.0"
+    "terser": "^5.27.0",
+    "typescript": "^5.3.3"
   }
 }
