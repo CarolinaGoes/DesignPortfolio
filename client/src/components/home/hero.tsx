@@ -24,24 +24,26 @@ export default function Hero() {
           <p className="text-primary font-medium mb-2">{t('hero.greeting')}</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             {personalInfo.name}
-            {/* CORREÇÃO 1: Usar a função t() para buscar o título traduzível */}
+            {/* CORRIGIDO: Usa a função t() para buscar o título traduzível */}
             <span className="block text-primary">{t('personalInfo.title')}</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-8 max-w-xl">
             {t('hero.description')}
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button asChild>
-              <a href="#projects" className="flex items-center gap-2">
+            {/* CORRIGIDO: Botão envolvido pelo link, sem 'asChild' */}
+            <a href="#projects">
+              <Button className="flex items-center gap-2">
                 <span>{t('hero.projectsButton')}</span>
                 <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
-            <Button asChild>
-              <a href="#contact">
+              </Button>
+            </a>
+            {/* CORRIGIDO: Botão envolvido pelo link, sem 'asChild' */}
+            <a href="#contact">
+              <Button variant="outline">
                 {t('hero.contactButton')}
-              </a>
-            </Button>
+              </Button>
+            </a>
           </div>
           <div className="flex mt-8 gap-4">
             <a 
@@ -115,12 +117,37 @@ export default function Hero() {
             <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1.5 shadow-lg flex items-center justify-center overflow-hidden relative z-10">
               <img 
                 src={profileImage} 
-                // CORREÇÃO 2: Usar a função t() para o texto alternativo da imagem
+                // CORRIGIDO: Usa a função t() para o texto alternativo da imagem
                 alt={t('personalInfo.imageAlt')} 
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
-            {/* ... o resto das suas divs de animação ... */}
+            <motion.div
+              className="absolute -bottom-6 -right-6 w-20 h-20 bg-primary/30 rounded-full blur-xl"
+              animate={{
+                scale: [1, 1.3, 1],
+                transition: {
+                  duration: 3,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay: 0.5
+                }
+              }}
+            />
+            <motion.div
+              className="absolute -top-4 -left-4 w-16 h-16 bg-primary/40 rounded-full blur-xl"
+              animate={{
+                scale: [1, 1.2, 1],
+                transition: {
+                  duration: 5,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay: 1
+                }
+              }}
+            />
           </motion.div>
         </motion.div>
       </div>
