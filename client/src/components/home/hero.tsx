@@ -37,7 +37,7 @@ export default function Hero() {
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button variant="outline" asChild>
+            <Button asChild>
               <a href="#contact">
                 {t('hero.contactButton')}
               </a>
