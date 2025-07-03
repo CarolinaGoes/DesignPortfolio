@@ -5,11 +5,9 @@ import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
 import { Button } from '../../components/ui/button';
 import { GraduationCap, Briefcase } from 'lucide-react';
-import profileImage from '../../assets/profileImage.jpg';
+import profileImage from '@/assets/profileImage.jpg';
 import { useRef, useState, useEffect } from 'react';
-// 1.1 - Importar o hook de tradução
 import { useTranslation } from 'react-i18next';
-// 1.2 - Já não precisamos de 'personalInfo' do data.ts para este componente
 
 // O seu custom hook de animação (mantido como está)
 export function useScrollAnimation() {

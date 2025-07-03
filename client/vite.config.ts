@@ -12,14 +12,14 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    // Esta é a forma moderna e recomendada de criar aliases no Vite
-    alias: {
-      '@': new URL('./src', import.meta.url).pathname,
-    },
+  alias: {
+    '@': new URL('./src', import.meta.url).pathname,
+    '@shared': new URL('./shared', import.meta.url).pathname,
   },
+},
   server: {
-    port: 5000, // Mantive a sua porta 5000
-    open: true, // Abrirá o navegador automaticamente
+    port: 5173, 
+    open: true, 
   },
-  // A secção 'css' foi removida. O Vite detetará o seu postcss.config.js automaticamente.
+ 
 })
