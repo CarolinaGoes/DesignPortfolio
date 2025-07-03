@@ -12,7 +12,9 @@ import { z } from 'zod';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
-import { insertChatMessageSchema } from '@shared/validation';
+import { insertChatMessageSchema } from "../shared/schema";
+
+
 const chatFormSchema = insertChatMessageSchema.extend({
   name: z.string().min(2, "O nome deve ter pelo menos 2 caracteres"),
   message: z.string().min(5, "A mensagem deve ter pelo menos 5 caracteres")

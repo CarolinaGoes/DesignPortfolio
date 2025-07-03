@@ -24,26 +24,23 @@ export default function Hero() {
           <p className="text-primary font-medium mb-2">{t('hero.greeting')}</p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             {personalInfo.name}
-            {/* CORRIGIDO: Usa a função t() para buscar o título traduzível */}
-            <span className="block text-primary">{t('personalInfo.title')}</span>
+            <span className="block text-primary">{personalInfo.title}</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-8 max-w-xl">
             {t('hero.description')}
           </p>
           <div className="flex flex-wrap gap-4">
-            {/* CORRIGIDO: Botão envolvido pelo link, sem 'asChild' */}
-            <a href="#projects">
-              <Button className="flex items-center gap-2">
+            <Button asChild>
+              <a href="#projects" className="flex items-center gap-2">
                 <span>{t('hero.projectsButton')}</span>
                 <ArrowRight className="h-4 w-4" />
-              </Button>
-            </a>
-            {/* CORRIGIDO: Botão envolvido pelo link, sem 'asChild' */}
-            <a href="#contact">
-              <Button variant="outline">
+              </a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="#contact">
                 {t('hero.contactButton')}
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
           <div className="flex mt-8 gap-4">
             <a 
@@ -74,7 +71,9 @@ export default function Hero() {
               <Phone className="h-5 w-5" />
             </a>
             <a 
-              href={`mailto:${personalInfo.email}`} 
+              href={personalInfo.socialLinks.email} 
+              target="_blank" 
+              rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors duration-300" 
               aria-label="Email"
             >
@@ -117,8 +116,7 @@ export default function Hero() {
             <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-primary to-primary/70 p-1.5 shadow-lg flex items-center justify-center overflow-hidden relative z-10">
               <img 
                 src={profileImage} 
-                // CORRIGIDO: Usa a função t() para o texto alternativo da imagem
-                alt={t('personalInfo.imageAlt')} 
+                alt={personalInfo.imageAlt} 
                 className="w-full h-full object-cover rounded-full"
               />
             </div>
