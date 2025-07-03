@@ -18,14 +18,16 @@
     "vite": "^5.1.4"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^24.0.3",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.10",
-    "typescript": "^5.3.3",
-    "terser": "^5.27.0"
+    "tailwindcss": "^4.1.11",
+    "tailwindcss-animate": "^1.0.7",
+    "terser": "^5.27.0",
+    "typescript": "^5.3.3"
   }
 }
