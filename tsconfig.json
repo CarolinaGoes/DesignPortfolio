@@ -1,29 +1,11 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
-    "moduleResolution": "bundler", // 👈 isso evita os erros de extensão
     "target": "ESNext",
-    "jsx": "preserve",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./client/src/*"],
-      "@shared/*": ["./client/shared/*"]
-    },
-    "types": ["vite/client"],
-    "outDir": "./dist",
-    "rootDir": "./client"
-  },
-  "include": [
-    "client/src/**/*",
-    "client/shared/**/*",
-    "client/vite.config.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+    "forceConsistentCasingInFileNames": true
+  }
 }
