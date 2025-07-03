@@ -8,78 +8,19 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "description": "Transforming ideas into incredible digital experiences with a focus on accessibility, usability, and modern design.",
+    "description": "Transforming ideas into amazing digital experiences with a focus on accessibility, usability, and modern design.",
     "contactButton": "Get in touch",
     "projectsButton": "View projects"
   },
-  "personalInfo": {
-    "title": "Frontend Developer",
-    "imageAlt": "Profile picture of Carolina Goes",
-    "about": [
-      "Hi, I'm Carolina, a Software Engineering student focused on frontend development, currently specializing in technologies like HTML, CSS, JavaScript, and React. I have dedicated myself to practical projects, always seeking to write code that is strategic, clean, and innovative. Before entering the technology field, I worked as a teacher and also with administrative routines in the educational sector. This experience provided me with a solid foundation in organization, communication, problem-solving, and continuous learning, skills that I carry with me into the world of programming. I am currently transitioning my career to the technology area and seeking a frontend development internship opportunity. I want to combine my experience in education with the world of technology, contributing with creative, efficient, and adaptable solutions.",
-      "📩 I am open to new opportunities, connections, and learning in the tech ecosystem!"
-    ],
-    "education": [
-      {
-        "degree": "Software Engineering",
-        "institution": "Anhanguera University",
-        "year": "2025 - 2028"
-      },
-      {
-        "degree": "Degree in Pedagogy",
-        "institution": "UNICID",
-        "year": "2015 - 2018"
-      },
-      {
-        "degree": "Contact Center Management",
-        "institution": "UNINOVE",
-        "year": "2008 - 2010"
-      }
-    ],
-    "experience": [
-      {
-        "role": "Frontend Developer",
-        "company": "Freelancer",
-        "period": "2024-Present"
-      },
-      {
-        "role": "Teacher",
-        "company": "São Paulo City Hall",
-        "period": "2023-Present"
-      },
-      {
-        "role": "Technical Education Assistant",
-        "company": "São Paulo City Hall",
-        "period": "2021-2023"
-      },
-      {
-        "role": "Party Entertainer",
-        "company": "Freelancer",
-        "period": "2011-2021"
-      },
-      {
-        "role": "Collection Agent",
-        "company": "CONTAX",
-        "period": "2007-2011"
-      }
-    ]
-  },
   "about": {
-    "title": "About Me",
+    "title": "About me",
     "education": "Education",
     "experience": "Experience"
   },
   "skills": {
     "title": "My Skills",
     "description": "Always keeping up with the latest technologies and focusing on creating accessible and high-quality experiences.",
-    "technologiesTitle": "Technologies & Tools",
-    "items": {
-      "htmlCss": "HTML5 & CSS3",
-      "javascript": "JavaScript / TypeScript",
-      "react": "React",
-      "git": "Git",
-      "accessibility": "Web Accessibility"
-    }
+    "technologiesTitle": "Technologies & Tools"
   },
   "projects": {
     "title": "Projects",
@@ -90,15 +31,14 @@
       "all": "All",
       "html-css": "HTML/CSS",
       "javascript": "JavaScript",
-      "react": "React"
+      "react": "React",
+      "angular": "Angular",
+      "tailwind": "Tailwind",
+      "vue": "Vue.js",
+      "php": "PHP"
     },
-    "items": {
-      "menuDoces": {
-        "title": "Menu Doces",
-        "description": "A complete e-commerce platform with accessibility features, advanced filters, and an optimized shopping experience.",
-        "imageAlt": "Image of the Menu Doces project"
-      }
-    }
+    "filter": "Filter by category",
+    "viewAll": "View all projects"
   },
   "contact": {
     "title": "Get in touch",

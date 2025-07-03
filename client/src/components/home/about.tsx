@@ -1,51 +1,24 @@
-// client/src/components/home/about.tsx
-
-// --- PASSO 1: Mudar as importações ---
+import { personalInfo } from '../../lib/data';
+import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
 import { Button } from '../../components/ui/button';
-import { GraduationCap, Briefcase } from 'lucide-react';
-import profileImage from '@/assets/profileImage.jpg';
-import { useRef, useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { GraduationCap, Briefcase, Download } from 'lucide-react';
+import profileImage from '../../assets/profileImage.jpg';
 
-// O seu custom hook de animação (mantido como está)
-export function useScrollAnimation() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(element);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
-  return [ref, isVisible] as const;
-}
-
+// PDF file path (ensure the file exists in public/assets/)
+const handleDownload = () => {
+  const link = document.createElement('a');
+  link.href = pdfUrl;
+  link.download = 'CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}; const pdfUrl = '/assets/CV%20-%20Carolina%20Rocha%20Sampaio%20de%20Goes.pdf';
 
 export default function About() {
-  const [sectionRef, isSectionVisible] = useScrollAnimation();
-  const [imageRef, isImageVisible] = useScrollAnimation();
-
-  // --- PASSO 2: Ativar o hook e buscar os dados do JSON ---
-  const { t } = useTranslation();
-  
-  // 2.1 - Buscamos os dados complexos (listas) do common.json
-  const aboutParagraphs = t('personalInfo.about', { returnObjects: true });
-  const educationList = t('personalInfo.education', { returnObjects: true });
-  const experienceList = t('personalInfo.experience', { returnObjects: true });
-
+  const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
+  const [imageRef, isImageVisible] = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section id="about" className="py-16 md:py-24 transition-colors duration-300">
@@ -61,8 +34,7 @@ export default function About() {
               <div className="w-full h-auto rounded-lg overflow-hidden">
                 <img
                   src={profileImage}
-                  // --- PASSO 3: Usar 't()' para textos simples ---
-                  alt={t('personalInfo.imageAlt')}
+                  alt={personalInfo.aboutImageAlt}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -77,95 +49,73 @@ export default function About() {
               animate={isSectionVisible ? "visible" : "hidden"}
               variants={staggerContainer}
             >
-              {/* Usando a chave do JSON para o título */}
-              <motion.h2 variants={staggerItem} className="text-3xl md:text-4xl font-bold mb-4">{t('about.title')}</motion.h2>
+              <motion.h2 variants={staggerItem} className="text-3xl md:text-4xl font-bold mb-4">Sobre Mim</motion.h2>
               <motion.div variants={staggerItem} className="h-1 w-20 bg-primary rounded-full mb-6"></motion.div>
 
-              {/* --- PASSO 4: Usar as listas que buscamos do JSON --- */}
-              {Array.isArray(aboutParagraphs) &&
-                aboutParagraphs
-                  .filter((paragraph): paragraph is string => typeof paragraph === "string")
-                  .map((paragraph, index) => (
-                    <motion.p
-                      key={index}
-                      variants={staggerItem}
-                      className="text-muted-foreground mb-4"
-                    >
-                      {paragraph}
-                    </motion.p>
-                  ))}
+              {personalInfo.about.map((paragraph: string, index: number) => (
+                <motion.p
+                  key={index}
+                  variants={staggerItem}
+                  className="text-muted-foreground mb-4"
+                >
+                  {paragraph}
+                </motion.p>
+              ))}
 
               <motion.div variants={staggerContainer} className="grid grid-cols-2 gap-6 mb-8">
                 <div>
-                  {/* Usando a chave do JSON para o subtítulo */}
-                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">{t('about.education')}</motion.h3>
+                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">Educação</motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
-                    {/* Mapeando a lista de educação vinda do JSON */}
-                    {Array.isArray(educationList) &&
-                      educationList
-                        .filter(
-                          (edu): edu is { degree: string; institution: string; year: string } =>
-                            typeof edu === "object" &&
-                            edu !== null &&
-                            "degree" in edu &&
-                            "institution" in edu &&
-                            "year" in edu
-                        )
-                        .map(
-                          (edu, index) => (
-                            <motion.li key={index} variants={staggerItem} className="flex items-start">
-                              <GraduationCap className="h-5 w-5 text-primary mt-1 mr-2" />
-                              <div>
-                                <p className="font-medium">{edu.degree}</p>
-                                <p className="text-sm text-muted-foreground">
-                                  {edu.institution}, {edu.year}
-                                </p>
-                              </div>
-                            </motion.li>
-                          )
-                        )}
+                    {personalInfo.education.map(
+                      (edu: { degree: string; institution: string; year: string }, index: number) => (
+                        <motion.li key={index} variants={staggerItem} className="flex items-start">
+                          <GraduationCap className="h-5 w-5 text-primary mt-1 mr-2" />
+                          <div>
+                            <p className="font-medium">{edu.degree}</p>
+                            <p className="text-sm text-muted-foreground">
+                              {edu.institution}, {edu.year}
+                            </p>
+                          </div>
+                        </motion.li>
+                      )
+                    )}
                   </motion.ul>
                 </div>
 
                 <div>
-                  {/* Usando a chave do JSON para o subtítulo */}
-                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">{t('about.experience')}</motion.h3>
+                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">Experiência</motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
-                    {/* Mapeando a lista de experiência vinda do JSON */}
-                    {Array.isArray(experienceList) &&
-                      experienceList
-                        .filter(
-                          (exp): exp is { company: string; role: string; period: string } =>
-                            typeof exp === "object" &&
-                            exp !== null &&
-                            "company" in exp &&
-                            "role" in exp &&
-                            "period" in exp
-                        )
-                        .map(
-                          (exp, index) => (
-                            <motion.li key={index} variants={staggerItem} className="flex items-start">
-                              <Briefcase className="h-5 w-5 text-primary mt-1 mr-2" />
-                              <div>
-                                {/* A ordem aqui estava invertida, ajustei para ficar como no JSON */}
-                                <p className="font-medium">{exp.role}</p>
-                                <p className="text-sm text-muted-foreground">{exp.company}, {exp.period}</p>
-                              </div>
-                            </motion.li>
-                          )
-                        )
-                    }
+                    {personalInfo.experience.map(
+                      (
+                        exp: { company: string; role: string; period: string },
+                        index: number
+                      ) => (
+                        <motion.li key={index} variants={staggerItem} className="flex items-start">
+                          <Briefcase className="h-5 w-5 text-primary mt-1 mr-2" />
+                          <div>
+                            <p className="font-medium">{exp.company}</p>
+                            <p className="text-sm text-muted-foreground">{exp.role}, {exp.period}</p>
+                          </div>
+                        </motion.li>
+                      )
+                    )}
                   </motion.ul>
                 </div>
               </motion.div>
 
-              {/* Lembre-se de adicionar 'about.cvButton': 'Baixar CV' no seu JSON! */}
-              <a href="/curriculo.pdf" download>
-                <Button>
-                  {t('about.cvButton', 'Download CV')}
-                </Button>
-              </a>
-
+              <motion.div variants={staggerItem}>
+                <a
+                  href={pdfUrl}
+                  download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button onClick={handleDownload}>
+                    <Download className="h-4 w-4" />
+                    Download CV
+                  </Button>
+                </a>
+              </motion.div>
             </motion.div>
           </div>
         </div>
