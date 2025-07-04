@@ -61,12 +61,8 @@ build: {
     port: 3000,
     open: true,
     cors: true,
-    host: true, // Permite acesso na rede local
+    host: true, 
     strictPort: true,
-    headers: {
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': 'attachment'
-    }
   },
   css: {
     modules: {
