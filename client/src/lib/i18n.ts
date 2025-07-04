@@ -28,7 +28,7 @@ i18n
     defaultNS: 'common',
     
     interpolation: {
-      escapeValue: false // React já escapa valores
+      escapeValue: false 
     },
 
     detection: {
