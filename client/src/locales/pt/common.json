@@ -15,7 +15,40 @@
   "about": {
     "title": "Sobre mim",
     "education": "Formação",
-    "experience": "Experiência"
+    "experience": "Experiência",
+    "paragraphs": [
+      "Sou uma desenvolvedora frontend apaixonada por criar experiências digitais acessíveis e inclusivas. Com formação sólida em desenvolvimento web e uma abordagem centrada no usuário, busco sempre implementar soluções que não apenas funcionem bem, mas que sejam usáveis por todos.",
+      "Minha jornada no desenvolvimento começou com curiosidade sobre como as coisas funcionam na web, e evoluiu para uma paixão por criar interfaces que fazem a diferença na vida das pessoas. Acredito que a tecnologia deve ser uma ferramenta de inclusão, não de exclusão.",
+      "Quando não estou codificando, gosto de me manter atualizada com as últimas tendências em UX/UI, participar de comunidades de desenvolvedores e contribuir com projetos open source."
+    ],
+    "personalInfo": {
+      "name": "Carolina Goes",
+      "title": "Desenvolvedora Frontend",
+      "education": [
+        {
+          "degree": "Bacharelado em Ciência da Computação",
+          "institution": "Universidade de São Paulo",
+          "year": "2019-2023"
+        },
+        {
+          "degree": "Certificação em UX/UI Design",
+          "institution": "Google UX Design",
+          "year": "2023"
+        }
+      ],
+      "experience": [
+        {
+          "company": "Tech Solutions",
+          "role": "Frontend Developer",
+          "period": "2023-Presente"
+        },
+        {
+          "company": "StartupXYZ",
+          "role": "Junior Developer",
+          "period": "2022-2023"
+        }
+      ]
+    }
   },
   "skills": {
     "title": "Minhas Habilidades",
@@ -73,53 +106,5 @@
   "theme": {
     "light": "Modo claro",
     "dark": "Modo escuro"
-  },
-  "personal": {
-  "title": "Desenvolvedora Frontend",
-  "description": "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
-  "imageAlt": "Foto de perfil de Carolina Goes",
-  "about": [
-    "Olá, sou Carolina, estudante de Engenharia de Software com foco em desenvolvimento frontend. Atualmente estou me especializando em tecnologias como HTML, CSS, JavaScript e React. Me dedico a projetos práticos, sempre buscando escrever código de forma estratégica, limpa e inovadora. Antes de entrar na área de tecnologia, atuei como professora e com rotinas administrativas no setor educacional. Essa experiência me proporcionou uma base sólida em organização, comunicação, resolução de problemas e aprendizado contínuo — habilidades que levo comigo para o mundo da programação. Atualmente estou em transição de carreira para a área tech e busco uma oportunidade de estágio em desenvolvimento frontend. Quero aliar minha experiência com educação ao mundo da tecnologia, contribuindo com soluções criativas, eficientes e adaptáveis.",
-    "📩 Estou aberta a novas oportunidades, conexões e aprendizados no ecossistema tech!"
-  ],
-  "education": {
-    "degree1": "Engenharia de Software",
-    "institution1": "Universidade Anhanguera",
-    "year1": "2025 - 2028",
-    "degree2": "Licenciatura em Pedagogia",
-    "institution2": "UNICID",
-    "year2": "2015 - 2018",
-    "degree3": "Gestão em Contact Center",
-    "institution3": "UNINOVE",
-    "year3": "2008 - 2010"
-  },
-  "experience": {
-    "job1": {
-      "role": "Desenvolvedora Frontend",
-      "company": "Freelancer",
-      "period": "2024-Atual"
-    },
-    "job2": {
-      "role": "Professora",
-      "company": "Prefeitura de São Paulo",
-      "period": "2023-Atual"
-    },
-    "job3": {
-      "role": "Auxiliar Técnica de Educação",
-      "company": "Prefeitura de São Paulo",
-      "period": "2021-2023"
-    },
-    "job4": {
-      "role": "Recreadora de Festas",
-      "company": "Freelancer",
-      "period": "2011-2021"
-    },
-    "job5": {
-      "role": "Agente de Cobrança",
-      "company": "CONTAX",
-      "period": "2007-2011"
-    }
   }
-}
-
 }
