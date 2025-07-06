@@ -110,9 +110,7 @@ export default function About() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Button onClick={handleDownload}>
-                    <Download className="h-4 w-4" />
-                    Download CV
+                  <Button>
                   </Button>
                 </a>
               </motion.div>
