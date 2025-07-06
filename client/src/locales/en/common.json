@@ -15,7 +15,40 @@
   "about": {
     "title": "About me",
     "education": "Education",
-    "experience": "Experience"
+    "experience": "Experience",
+    "paragraphs": [
+      "I'm a frontend developer passionate about creating accessible and inclusive digital experiences. With a solid background in web development and a user-centered approach, I always strive to implement solutions that not only work well, but are usable by everyone.",
+      "My journey in development started with curiosity about how things work on the web, and evolved into a passion for creating interfaces that make a difference in people's lives. I believe technology should be a tool for inclusion, not exclusion.",
+      "When I'm not coding, I enjoy staying up-to-date with the latest UX/UI trends, participating in developer communities, and contributing to open source projects."
+    ],
+    "personalInfo": {
+      "name": "Carolina Goes",
+      "title": "Frontend Developer",
+      "education": [
+        {
+          "degree": "Bachelor's in Computer Science",
+          "institution": "University of São Paulo",
+          "year": "2019-2023"
+        },
+        {
+          "degree": "UX/UI Design Certification",
+          "institution": "Google UX Design",
+          "year": "2023"
+        }
+      ],
+      "experience": [
+        {
+          "company": "Tech Solutions",
+          "role": "Frontend Developer",
+          "period": "2023-Present"
+        },
+        {
+          "company": "StartupXYZ",
+          "role": "Junior Developer",
+          "period": "2022-2023"
+        }
+      ]
+    }
   },
   "skills": {
     "title": "My Skills",
@@ -73,53 +106,5 @@
   "theme": {
     "light": "Light mode",
     "dark": "Dark mode"
-  },
-  "personal": {
-  "title": "Frontend Developer",
-  "description": "Transforming ideas into amazing digital experiences with a focus on accessibility, usability, and modern design.",
-  "imageAlt": "Profile picture of Carolina Goes",
-  "about": [
-    "Hi, I'm Carolina, a Software Engineering student focused on frontend development. I'm currently specializing in technologies such as HTML, CSS, JavaScript, and React. I dedicate myself to practical projects, always aiming to write code strategically, cleanly, and innovatively. Before entering the tech field, I worked as a teacher and in administrative routines in the educational sector. That experience gave me a solid foundation in organization, communication, problem-solving, and continuous learning—skills I carry into the programming world. I'm currently transitioning into tech and looking for an internship in frontend development. I want to merge my experience in education with tech, contributing with creative, efficient, and adaptable solutions.",
-    "📩 I'm open to new opportunities, connections, and learning in the tech ecosystem!"
-  ],
-  "education": {
-    "degree1": "Software Engineering",
-    "institution1": "Universidade Anhanguera",
-    "year1": "2025 - 2028",
-    "degree2": "Bachelor in Pedagogy",
-    "institution2": "UNICID",
-    "year2": "2015 - 2018",
-    "degree3": "Contact Center Management",
-    "institution3": "UNINOVE",
-    "year3": "2008 - 2010"
-  },
-  "experience": {
-    "job1": {
-      "role": "Frontend Developer",
-      "company": "Freelancer",
-      "period": "2024-Present"
-    },
-    "job2": {
-      "role": "Teacher",
-      "company": "São Paulo City Hall",
-      "period": "2023-Present"
-    },
-    "job3": {
-      "role": "Education Technician Assistant",
-      "company": "São Paulo City Hall",
-      "period": "2021-2023"
-    },
-    "job4": {
-      "role": "Party Entertainer",
-      "company": "Freelancer",
-      "period": "2011-2021"
-    },
-    "job5": {
-      "role": "Debt Collection Agent",
-      "company": "CONTAX",
-      "period": "2007-2011"
-    }
   }
-}
-
 }
