@@ -37,51 +37,32 @@ export const personalInfo = {
   location: "São Paulo, SP - Brasil",
   imageAlt: "personal.imageAlt",
   about: [
-    "personal.about[0]",
-    "personal.about[1]"
+    "personal.about.p1",
+    "personal.about.p2",
+    "personal.about.p3"
   ],
   education: [
     {
-      degree: "personal.education.degree1",
-      institution: "personal.education.institution1",
-      year: "personal.education.year1"
+      degree: "personal.education.item1.degree",
+      institution: "personal.education.item1.institution",
+      year: "personal.education.item1.year"
     },
     {
-      degree: "personal.education.degree2",
-      institution: "personal.education.institution2",
-      year: "personal.education.year2"
-    },
-    {
-      degree: "personal.education.degree3",
-      institution: "personal.education.institution3",
-      year: "personal.education.year3"
+      degree: "personal.education.item2.degree",
+      institution: "personal.education.item2.institution",
+      year: "personal.education.item2.year"
     }
   ],
   experience: [
     {
-      role: "personal.experience.job1.role",
-      company: "personal.experience.job1.company",
-      period: "personal.experience.job1.period"
+      role: "personal.experience.item1.role",
+      company: "personal.experience.item1.company",
+      period: "personal.experience.item1.period"
     },
     {
-      role: "personal.experience.job2.role",
-      company: "personal.experience.job2.company",
-      period: "personal.experience.job2.period"
-    },
-    {
-      role: "personal.experience.job3.role",
-      company: "personal.experience.job3.company",
-      period: "personal.experience.job3.period"
-    },
-    {
-      role: "personal.experience.job4.role",
-      company: "personal.experience.job4.company",
-      period: "personal.experience.job4.period"
-    },
-    {
-      role: "personal.experience.job5.role",
-      company: "personal.experience.job5.company",
-      period: "personal.experience.job5.period"
+      role: "personal.experience.item2.role",
+      company: "personal.experience.item2.company",
+      period: "personal.experience.item2.period"
     }
   ],
   socialLinks: {
@@ -92,5 +73,4 @@ export const personalInfo = {
     email: "carolinarocha.89@hotmail.com"
   },
   aboutImage: "./assets/images/profile.jfif",
-  aboutImageAlt: "Carolina Goes"
 };

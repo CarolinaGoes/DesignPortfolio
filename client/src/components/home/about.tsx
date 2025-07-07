@@ -46,13 +46,13 @@ export default function About() {
               <motion.h2 variants={staggerItem} className="text-3xl md:text-4xl font-bold mb-4">{t('about.title')}</motion.h2>
               <motion.div variants={staggerItem} className="h-1 w-20 bg-primary rounded-full mb-6"></motion.div>
 
-              {personalInfo.about.map((paragraph: string, index: number) => (
+              {personalInfo.about.map((paragraphKey) => (
                 <motion.p
-                  key={index}
+                  key={paragraphKey}
                   variants={staggerItem}
                   className="text-muted-foreground mb-4"
                 >
-                  {t(paragraph)}
+                  {t(paragraphKey)}
                 </motion.p>
               ))}
 
@@ -61,7 +61,7 @@ export default function About() {
                   <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">{t('about.education')}</motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
                     {personalInfo.education.map(
-                      (edu: { degree: string; institution: string; year: string }, index: number) => (
+                      (edu, index) => (
                         <motion.li key={index} variants={staggerItem} className="flex items-start">
                           <GraduationCap className="h-5 w-5 text-primary mt-1 mr-2" />
                           <div>
@@ -80,7 +80,7 @@ export default function About() {
                   <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">{t('about.experience')}</motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
                     {personalInfo.experience.map(
-                      (exp: { company: string; role: string; period: string }, index: number) => (
+                      (exp, index) => (
                         <motion.li key={index} variants={staggerItem} className="flex items-start">
                           <Briefcase className="h-5 w-5 text-primary mt-1 mr-2" />
                           <div>
@@ -98,7 +98,7 @@ export default function About() {
                 <Button asChild>
                   <a href={pdfUrl} download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf">
                     <Download className="h-4 w-4 mr-2" />
-                    Download CV
+                    {t('about.downloadButton')}
                   </a>
                 </Button>
               </motion.div>

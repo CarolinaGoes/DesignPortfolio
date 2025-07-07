@@ -13,98 +13,43 @@
     "projectsButton": "Ver projetos"
   },
   "about": {
-    "title": "Sobre mim",
+    "title": "Sobre Mim",
     "education": "Formação",
     "experience": "Experiência",
-    "paragraphs": [
-      "Sou uma desenvolvedora frontend apaixonada por criar experiências digitais acessíveis e inclusivas. Com formação sólida em desenvolvimento web e uma abordagem centrada no usuário, busco sempre implementar soluções que não apenas funcionem bem, mas que sejam usáveis por todos.",
-      "Minha jornada no desenvolvimento começou com curiosidade sobre como as coisas funcionam na web, e evoluiu para uma paixão por criar interfaces que fazem a diferença na vida das pessoas. Acredito que a tecnologia deve ser uma ferramenta de inclusão, não de exclusão.",
-      "Quando não estou codificando, gosto de me manter atualizada com as últimas tendências em UX/UI, participar de comunidades de desenvolvedores e contribuir com projetos open source."
-    ],
-    "personalInfo": {
-      "name": "Carolina Goes",
-      "title": "Desenvolvedora Frontend",
-      "education": [
-        {
-          "degree": "Bacharelado em Ciência da Computação",
-          "institution": "Universidade de São Paulo",
-          "year": "2019-2023"
-        },
-        {
-          "degree": "Certificação em UX/UI Design",
-          "institution": "Google UX Design",
-          "year": "2023"
-        }
-      ],
-      "experience": [
-        {
-          "company": "Tech Solutions",
-          "role": "Frontend Developer",
-          "period": "2023-Presente"
-        },
-        {
-          "company": "StartupXYZ",
-          "role": "Junior Developer",
-          "period": "2022-2023"
-        }
-      ]
+    "downloadButton": "Download CV"
+  },
+  "personal": {
+    "title": "Desenvolvedora Frontend",
+    "description": "Uma descrição profissional sua aqui.",
+    "imageAlt": "Foto de perfil de Carolina Goes",
+    "about": {
+      "p1": "Sou uma desenvolvedora frontend apaixonada por criar experiências digitais acessíveis e inclusivas. Com formação sólida em desenvolvimento web e uma abordagem centrada no usuário, busco sempre implementar soluções que não apenas funcionem bem, mas que sejam usáveis por todos.",
+      "p2": "Minha jornada no desenvolvimento começou com curiosidade sobre como as coisas funcionam na web, e evoluiu para uma paixão por criar interfaces que fazem a diferença na vida das pessoas. Acredito que a tecnologia deve ser uma ferramenta de inclusão, não de exclusão.",
+      "p3": "Quando não estou codificando, gosto de me manter atualizada com as últimas tendências em UX/UI, participar de comunidades de desenvolvedores e contribuir com projetos open source."
+    },
+    "education": {
+      "item1": {
+        "degree": "Bacharelado em Ciência da Computação",
+        "institution": "Universidade de São Paulo",
+        "year": "2019-2023"
+      },
+      "item2": {
+        "degree": "Certificação em UX/UI Design",
+        "institution": "Google UX Design",
+        "year": "2023"
+      }
+    },
+    "experience": {
+      "item1": {
+        "role": "Frontend Developer",
+        "company": "Tech Solutions",
+        "period": "2023-Presente"
+      },
+      "item2": {
+        "role": "Junior Developer",
+        "company": "StartupXYZ",
+        "period": "2022-2023"
+      }
     }
-  },
-  "skills": {
-    "title": "Minhas Habilidades",
-    "description": "Sempre me mantendo atualizada com as tecnologias mais recentes e focando em criar experiências acessíveis e de alta qualidade.",
-    "technologiesTitle": "Tecnologias & Ferramentas"
-  },
-  "projects": {
-    "title": "Projetos",
-    "description": "Aqui estão alguns dos projetos em que trabalhei recentemente, combinando design atraente com funcionalidade robusta.",
-    "viewLive": "Ver site",
-    "viewCode": "Ver código",
-    "categories": {
-      "all": "Todos",
-      "html-css": "HTML/CSS",
-      "javascript": "JavaScript",
-      "react": "React",
-      "angular": "Angular",
-      "tailwind": "Tailwind",
-      "vue": "Vue.js",
-      "php": "PHP"
-    },
-    "filter": "Filtrar por categoria",
-    "viewAll": "Ver todos os projetos"
-  },
-  "contact": {
-    "title": "Entre em contato",
-    "description": "Tem um projeto em mente ou quer conversar? Preencha o formulário abaixo ou use um dos canais alternativos.",
-    "form": {
-      "name": "Nome",
-      "email": "Email",
-      "message": "Mensagem",
-      "submit": "Enviar mensagem"
-    },
-    "orReachOut": "Ou entre em contato através de:",
-    "messageSent": "Mensagem enviada com sucesso!",
-    "messageError": "Erro ao enviar mensagem. Tente novamente."
-  },
-  "chat": {
-    "title": "Chat",
-    "startChat": "Iniciar chat",
-    "message": "Mensagem",
-    "send": "Enviar"
-  },
-  "footer": {
-    "rights": "Todos os direitos reservados",
-    "backToTop": "Voltar ao topo"
-  },
-  "accessibility": {
-    "menu": "Menu de Acessibilidade",
-    "fontSize": "Tamanho da fonte",
-    "highContrast": "Alto contraste",
-    "reduceMotion": "Reduzir animações",
-    "resetSettings": "Redefinir configurações"
-  },
-  "theme": {
-    "light": "Modo claro",
-    "dark": "Modo escuro"
   }
 }
