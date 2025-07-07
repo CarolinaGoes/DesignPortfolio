@@ -1,18 +1,8 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "jsx": "react-jsx",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "types": ["vite/client"],  // 👈 ADICIONE ESTA LINHA
-    "paths": {
-      "@/*": ["./src/*"],
-      "@shared/*": ["./shared/*"]
-    }
+    "noEmit": false, // Permite que o Vite emita arquivos
+    "jsx": "react-jsx" // Específico para React
   },
-  "include": ["src", "shared"]
+  "include": ["src/**/*", "vite.config.ts"]
 }
