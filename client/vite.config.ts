@@ -58,11 +58,15 @@ build: {
     }
   },
   server: {
-    port: 5173,
+    port: 3000,
     open: true,
     cors: true,
-    host: true, 
+    host: true, // Permite acesso na rede local
     strictPort: true,
+    headers: {
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'attachment'
+    }
   },
   css: {
     modules: {
