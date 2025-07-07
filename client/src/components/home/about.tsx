@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { personalInfo } from '../../lib/data';
 import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
@@ -6,17 +7,10 @@ import { Button } from '../../components/ui/button';
 import { GraduationCap, Briefcase, Download } from 'lucide-react';
 import profileImage from '../../assets/profileImage.jpg';
 
-// PDF file path (ensure the file exists in public/assets/)
-const handleDownload = () => {
-  const link = document.createElement('a');
-  link.href = pdfUrl;
-  link.download = 'CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}; const pdfUrl = '/assets/CV%20-%20Carolina%20Rocha%20Sampaio%20de%20Goes.pdf';
+const pdfUrl = '/assets/CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
 
 export default function About() {
+  const { t } = useTranslation();
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
   const [imageRef, isImageVisible] = useScrollAnimation<HTMLDivElement>();
 
@@ -34,7 +28,7 @@ export default function About() {
               <div className="w-full h-auto rounded-lg overflow-hidden">
                 <img
                   src={profileImage}
-                  alt={personalInfo.aboutImageAlt}
+                  alt={t(personalInfo.imageAlt)}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -49,7 +43,7 @@ export default function About() {
               animate={isSectionVisible ? "visible" : "hidden"}
               variants={staggerContainer}
             >
-              <motion.h2 variants={staggerItem} className="text-3xl md:text-4xl font-bold mb-4">Sobre Mim</motion.h2>
+              <motion.h2 variants={staggerItem} className="text-3xl md:text-4xl font-bold mb-4">{t('about.title')}</motion.h2>
               <motion.div variants={staggerItem} className="h-1 w-20 bg-primary rounded-full mb-6"></motion.div>
 
               {personalInfo.about.map((paragraph: string, index: number) => (
@@ -58,22 +52,22 @@ export default function About() {
                   variants={staggerItem}
                   className="text-muted-foreground mb-4"
                 >
-                  {paragraph}
+                  {t(paragraph)}
                 </motion.p>
               ))}
 
               <motion.div variants={staggerContainer} className="grid grid-cols-2 gap-6 mb-8">
                 <div>
-                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">Educação</motion.h3>
+                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">{t('about.education')}</motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
                     {personalInfo.education.map(
                       (edu: { degree: string; institution: string; year: string }, index: number) => (
                         <motion.li key={index} variants={staggerItem} className="flex items-start">
                           <GraduationCap className="h-5 w-5 text-primary mt-1 mr-2" />
                           <div>
-                            <p className="font-medium">{edu.degree}</p>
+                            <p className="font-medium">{t(edu.degree)}</p>
                             <p className="text-sm text-muted-foreground">
-                              {edu.institution}, {edu.year}
+                              {t(edu.institution)}, {t(edu.year)}
                             </p>
                           </div>
                         </motion.li>
@@ -83,18 +77,15 @@ export default function About() {
                 </div>
 
                 <div>
-                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">Experiência</motion.h3>
+                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">{t('about.experience')}</motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
                     {personalInfo.experience.map(
-                      (
-                        exp: { company: string; role: string; period: string },
-                        index: number
-                      ) => (
+                      (exp: { company: string; role: string; period: string }, index: number) => (
                         <motion.li key={index} variants={staggerItem} className="flex items-start">
                           <Briefcase className="h-5 w-5 text-primary mt-1 mr-2" />
                           <div>
-                            <p className="font-medium">{exp.company}</p>
-                            <p className="text-sm text-muted-foreground">{exp.role}, {exp.period}</p>
+                            <p className="font-medium">{t(exp.role)}</p>
+                            <p className="text-sm text-muted-foreground">{t(exp.company)}, {t(exp.period)}</p>
                           </div>
                         </motion.li>
                       )
@@ -104,15 +95,12 @@ export default function About() {
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <a
-                  href={pdfUrl}
-                  download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button>
-                  </Button>
-                </a>
+                <Button asChild>
+                  <a href={pdfUrl} download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf">
+                    <Download className="h-4 w-4 mr-2" />
+                    Download CV
+                  </a>
+                </Button>
               </motion.div>
             </motion.div>
           </div>
