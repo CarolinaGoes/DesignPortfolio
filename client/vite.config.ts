@@ -63,10 +63,7 @@ build: {
     cors: true,
     host: true, // Permite acesso na rede local
     strictPort: true,
-    headers: {
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': 'attachment'
-    }
+  
   },
   css: {
     modules: {
