@@ -1,0 +1,30 @@
+{
+  "name": "designportfolio",
+  "version": "1.0.0",
+  "description": "Portfólio Pessoal - Carolina Goes",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "overrides": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarolinaGoes/DesignPortfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/CarolinaGoes/DesignPortfolio/issues"
+  },
+  "homepage": "https://github.com/CarolinaGoes/DesignPortfolio#readme"
+}
