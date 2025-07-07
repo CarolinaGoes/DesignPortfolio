@@ -10,7 +10,7 @@ i18n
   .init({
     fallbackLng: 'pt',
     defaultNS: 'common',
-    debug: false,
+    debug: true,
     interpolation: {
       escapeValue: false,
     },
@@ -19,7 +19,7 @@ i18n
       caches: ['localStorage'],
     },
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      loadPath: 'public/locales/{{lng}}/{{ns}}.json',
     },
   });
 
