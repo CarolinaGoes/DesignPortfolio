@@ -1,40 +1,26 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-
-// Importar traduções
-import ptCommon from '../locales/pt/common.json';
-import enCommon from '../locales/en/common.json';
-
-// Recursos com as traduções
-const resources = {
-  pt: {
-    common: ptCommon
-  },
-  en: {
-    common: enCommon
-  }
-};
+import HttpApi from 'i18next-http-backend';
 
 i18n
-  // Detectar idioma do navegador
+  .use(HttpApi)
   .use(LanguageDetector)
-  // Passar i18n para react-i18next
   .use(initReactI18next)
-  // Inicializar i18next
   .init({
-    resources,
     fallbackLng: 'pt',
     defaultNS: 'common',
-    
+    debug: false,
     interpolation: {
-      escapeValue: false 
+      escapeValue: false,
     },
-
     detection: {
       order: ['localStorage', 'navigator'],
-      caches: ['localStorage']
-    }
+      caches: ['localStorage'],
+    },
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+    },
   });
 
 export default i18n;
