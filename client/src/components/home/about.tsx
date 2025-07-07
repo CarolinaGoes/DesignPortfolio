@@ -4,7 +4,7 @@ import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
 import { Button } from '../../components/ui/button';
-import { GraduationCap, Briefcase, Download } from 'lucide-react';
+//import { GraduationCap, Briefcase, Download } from 'lucide-react';
 import profileImage from '../../assets/profileImage.jpg';
 
 const pdfUrl = '/assets/CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
@@ -103,7 +103,7 @@ export default function About() {
                 </Button>
               </motion.div>
             </motion.div>
-          </div>
+        </div>
         </div>
       </div>
     </section>
