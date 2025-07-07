@@ -91,10 +91,6 @@
     @apply bg-primary/80;
   }
 
-  /* Seu código CSS existente acima */
-
-@layer base {
-  /* ... suas variáveis de :root (modo claro padrão) e .dark (modo escuro padrão) ... */
 
   .high-contrast {
     /* Configuração para o MODO CLARO DE ALTO CONTRASTE */
@@ -231,7 +227,7 @@
     padding-top: 7rem;
     padding-bottom: 7rem;
   }
-}
+
 
 @layer components {
   .project-card {
