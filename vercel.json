@@ -10,7 +10,7 @@
     }
   ],
   "installCommand": "npm install",
-  "buildCommand": "npm run vercel-build -w client",
+  "buildCommand": "npx vite build --mode production --config client/vite.config.ts",
   "routes": [
     {
       "src": "/assets/(.*)",
