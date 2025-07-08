@@ -9,6 +9,8 @@
       }
     }
   ],
+  "installCommand": "npm install",
+  "buildCommand": "npm run vercel-build -w client",
   "routes": [
     {
       "src": "/assets/(.*)",
