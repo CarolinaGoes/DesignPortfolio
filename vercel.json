@@ -1,10 +1,9 @@
 {
   "version": 3,
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    },
-    "distDir": "dist"
+  "buildCommand": "npm run build -w client",
+  "outputDirectory": "client/dist",
+  "env": {
+    "NODE_ENV": "production"
   },
   "routes": [
     {
