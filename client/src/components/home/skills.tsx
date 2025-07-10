@@ -7,7 +7,7 @@ import {
   SiReact, SiVuedotjs, SiJavascript, SiSass, 
   SiGit, SiFigma, SiNodedotjs, SiMongodb, SiAngular, SiHtml5, SiCss3
 } from 'react-icons/si';
-import { AccessibilityIcon } from 'lucide-react';
+import { FiUniversalAccess } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 
 export default function Skills() {
@@ -96,7 +96,7 @@ function TechnologyCard({ name, icon, delay }: TechnologyCardProps) {
       case 'figma': return <SiFigma className="text-4xl text-primary mb-3" />;
       case 'node-js': return <SiNodedotjs className="text-4xl text-primary mb-3" />;
       case 'database': return <SiMongodb className="text-4xl text-primary mb-3" />;
-      case 'universal-access': return <AccessibilityIcon className="h-8 w-8 text-primary mb-3" />;
+      case 'universal-access': return <FiUniversalAccess className="h-8 w-8 text-primary mb-3" />;
       default: return <div className="h-8 w-8 bg-primary rounded-full mb-3"></div>;
     }
   };
