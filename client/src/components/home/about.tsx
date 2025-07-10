@@ -4,16 +4,17 @@ import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
 import { Button } from '../../components/ui/button';
-import { GraduationCap, Briefcase, Download } from 'lucide-react';
+import { FiBookOpen, FiBriefcase, FiDownload } from 'react-icons/fi';
 import profileImage from '../../assets/profileImage.jpg';
 
 const pdfUrl = '/assets/CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
 
 export default function About() {
   const { t } = useTranslation();
-  // Se usar TypeScript e o hook suporta tipagem, ok; se não, remova <HTMLDivElement>
-  const [sectionRef, isSectionVisible] = useScrollAnimation();
-  const [imageRef, isImageVisible] = useScrollAnimation();
+
+  // ✅ Correção: especifica que a referência é para um HTMLDivElement
+  const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
+  const [imageRef, isImageVisible] = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section id="about" className="py-16 md:py-24 transition-colors duration-300">
@@ -29,7 +30,7 @@ export default function About() {
               <div className="w-full h-auto rounded-lg overflow-hidden">
                 <img
                   src={profileImage}
-                  alt={t(personalInfo.imageAlt)} // personalInfo.imageAlt deve ser a chave de tradução ex: 'about.imageAlt'
+                  alt={t(personalInfo.imageAlt)}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -67,7 +68,7 @@ export default function About() {
                   <motion.ul variants={staggerContainer} className="space-y-2">
                     {personalInfo.education.map((edu, index) => (
                       <motion.li key={index} variants={staggerItem} className="flex items-start">
-                        <GraduationCap className="h-5 w-5 text-primary mt-1 mr-2" />
+                        <FiBookOpen className="h-5 w-5 text-primary mt-1 mr-2" />
                         <div>
                           <p className="font-medium">{t(edu.degree)}</p>
                           <p className="text-sm text-muted-foreground">
@@ -86,7 +87,7 @@ export default function About() {
                   <motion.ul variants={staggerContainer} className="space-y-2">
                     {personalInfo.experience.map((exp, index) => (
                       <motion.li key={index} variants={staggerItem} className="flex items-start">
-                        <Briefcase className="h-5 w-5 text-primary mt-1 mr-2" />
+                        <FiBriefcase className="h-5 w-5 text-primary mt-1 mr-2" />
                         <div>
                           <p className="font-medium">{t(exp.role)}</p>
                           <p className="text-sm text-muted-foreground">
@@ -102,7 +103,7 @@ export default function About() {
               <motion.div variants={staggerItem}>
                 <Button asChild>
                   <a href={pdfUrl} download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf" target="_blank" rel="noopener noreferrer">
-                    <Download className="h-4 w-4 mr-2" />
+                    <FiDownload className="h-4 w-4 mr-2" />
                     {t('about.downloadButton')}
                   </a>
                 </Button>

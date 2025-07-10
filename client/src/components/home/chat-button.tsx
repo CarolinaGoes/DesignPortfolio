@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send } from 'lucide-react';
+import { FiMessageSquare, FiX, FiSend } from 'react-icons/fi';
 import { popIn } from '@/lib/animations';
 import { personalInfo } from '@/lib/data';
 import { useForm } from 'react-hook-form';
@@ -12,8 +12,7 @@ import { z } from 'zod';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
-import { insertChatMessageSchema } from "../shared/schema";
-
+import { insertChatMessageSchema } from '../shared/schema';
 
 const chatFormSchema = insertChatMessageSchema.extend({
   name: z.string().min(2, "O nome deve ter pelo menos 2 caracteres"),
@@ -68,7 +67,7 @@ export default function ChatButton() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Fechar chat" : "Abrir chat"}
       >
-        {isOpen ? <X className="h-5 w-5" /> : <MessageSquare className="h-5 w-5" />}
+        {isOpen ? <FiX className="h-5 w-5" /> : <FiMessageSquare className="h-5 w-5" />}
       </Button>
       
       <AnimatePresence>
@@ -89,7 +88,7 @@ export default function ChatButton() {
                 onClick={() => setIsOpen(false)}
                 aria-label="Fechar chat"
               >
-                <X className="h-4 w-4" />
+                <FiX className="h-4 w-4" />
               </Button>
             </div>
             
@@ -127,7 +126,7 @@ export default function ChatButton() {
                 disabled={isSubmitting || sendChatMutation.isPending}
               >
                 <span>Enviar</span>
-                <Send className="h-4 w-4" />
+                <FiSend className="h-4 w-4" />
               </Button>
             </form>
           </motion.div>
