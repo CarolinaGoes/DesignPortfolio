@@ -6,13 +6,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { 
-  Mail, 
-  MapPin, 
-  Send, 
-  Github, 
-  Linkedin, 
-  Phone 
-} from 'lucide-react';
+  FiMail, 
+  FiMapPin, 
+  FiSend, 
+  FiGithub, 
+  FiLinkedin, 
+  FiPhone 
+} from 'react-icons/fi';  // <--- Troquei aqui
 import { useToast } from '@/hooks/use-toast';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -190,7 +190,7 @@ function ContactForm({ onSubmit, register, errors, isSubmitting }: ContactFormPr
           disabled={isSubmitting}
         >
           <span>Enviar mensagem</span>
-          <Send className="h-4 w-4" />
+          <FiSend className="h-4 w-4" />
         </Button>
       </motion.div>
     </motion.form>
@@ -213,7 +213,7 @@ function ContactInfo() {
       <motion.div variants={staggerContainer} className="space-y-6">
         <motion.div variants={staggerItem} className="flex items-start">
           <div className="bg-secondary dark:bg-muted p-3 rounded-full mr-4">
-            <Mail className="h-5 w-5 text-primary" />
+            <FiMail className="h-5 w-5 text-primary" />
           </div>
           <div>
             <h4 className="font-medium mb-1">Email</h4>
@@ -225,7 +225,7 @@ function ContactInfo() {
         
         <motion.div variants={staggerItem} className="flex items-start">
           <div className="bg-secondary dark:bg-muted p-3 rounded-full mr-4">
-            <MapPin className="h-5 w-5 text-primary" />
+            <FiMapPin className="h-5 w-5 text-primary" />
           </div>
           <div>
             <h4 className="font-medium mb-1">Localização</h4>
@@ -246,7 +246,7 @@ function ContactInfo() {
             className="bg-secondary dark:bg-muted text-primary p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors duration-300" 
             aria-label="GitHub"
           >
-            <Github className="h-5 w-5" />
+            <FiGithub className="h-5 w-5" />
           </a>
           <a 
             href={personalInfo.socialLinks.linkedin} 
@@ -255,7 +255,7 @@ function ContactInfo() {
             className="bg-secondary dark:bg-muted text-primary p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors duration-300" 
             aria-label="LinkedIn"
           >
-            <Linkedin className="h-5 w-5" />
+            <FiLinkedin className="h-5 w-5" />
           </a>
           <a 
             href={personalInfo.socialLinks.whatsapp} 
@@ -264,7 +264,7 @@ function ContactInfo() {
             className="bg-secondary dark:bg-muted text-primary p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors duration-300" 
             aria-label="WhatsApp"
           >
-            <Phone className="h-5 w-5" />
+            <FiPhone className="h-5 w-5" />
           </a>
           <a 
             href={personalInfo.socialLinks.email} 
@@ -273,7 +273,7 @@ function ContactInfo() {
             className="bg-secondary dark:bg-muted text-primary p-3 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors duration-300" 
             aria-label="Email"
           >
-            <Mail className="h-5 w-5" />
+            <FiMail className="h-5 w-5" />
           </a>
         </div>
       </motion.div>
