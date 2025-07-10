@@ -1,6 +1,6 @@
 import { Link } from 'wouter';
 import { personalInfo } from '@/lib/data';
-import { Code, Github, Linkedin, Phone, Mail } from 'lucide-react';
+import { FiCode, FiGithub, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi';
 
 export default function Footer() {
 
@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between">
           <div className="mb-8 md:mb-0">
             <Link href="#home" className="text-3xl font-bold text-primary flex items-center gap-2">
-              <Code className="h-6 w-6" />
+              <FiCode className="h-6 w-6" />
               <span>{personalInfo.name}</span>
             </Link>
             <p className="mt-2 text-gray-400 max-w-md">
@@ -22,21 +22,19 @@ export default function Footer() {
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Links Rápidos</h4>
               <ul className="space-y-2">
-                <li>
-                  <a href="#home" className="text-gray-400 hover:text-primary transition-colors duration-300">Início</a>
-                </li>
-                <li>
-                  <a href="#projects" className="text-gray-400 hover:text-primary transition-colors duration-300">Projetos</a>
-                </li>
-                <li>
-                  <a href="#skills" className="text-gray-400 hover:text-primary transition-colors duration-300">Habilidades</a>
-                </li>
-                <li>
-                  <a href="#about" className="text-gray-400 hover:text-primary transition-colors duration-300">Sobre</a>
-                </li>
-                <li>
-                  <a href="#contact" className="text-gray-400 hover:text-primary transition-colors duration-300">Contato</a>
-                </li>
+                {[
+                  { href: '#home', label: 'Início' },
+                  { href: '#projects', label: 'Projetos' },
+                  { href: '#skills', label: 'Habilidades' },
+                  { href: '#about', label: 'Sobre' },
+                  { href: '#contact', label: 'Contato' },
+                ].map(({ href, label }) => (
+                  <li key={href}>
+                    <Link href={href} className="text-gray-400 hover:text-primary transition-colors duration-300">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -54,7 +52,7 @@ export default function Footer() {
               className="text-gray-500 hover:text-primary transition-colors duration-300"
               aria-label="GitHub"
             >
-              <Github className="h-5 w-5" />
+              <FiGithub className="h-5 w-5" />
             </a>
             <a 
               href={personalInfo.socialLinks.linkedin} 
@@ -63,7 +61,7 @@ export default function Footer() {
               className="text-gray-500 hover:text-primary transition-colors duration-300"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-5 w-5" />
+              <FiLinkedin className="h-5 w-5" />
             </a>
             <a 
               href={personalInfo.socialLinks.whatsapp} 
@@ -72,7 +70,7 @@ export default function Footer() {
               className="text-gray-500 hover:text-primary transition-colors duration-300"
               aria-label="WhatsApp"
             >
-              <Phone className="h-5 w-5" />
+              <FiPhone className="h-5 w-5" />
             </a>
             <a 
               href={personalInfo.socialLinks.email} 
@@ -81,7 +79,7 @@ export default function Footer() {
               className="text-gray-500 hover:text-primary transition-colors duration-300"
               aria-label="Email"
             >
-              <Mail className="h-5 w-5" />
+              <FiMail className="h-5 w-5" />
             </a>
           </div>
         </div>

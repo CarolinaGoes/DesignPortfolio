@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowUp } from 'lucide-react';
+import { FiArrowUp } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function BackToTop() {
@@ -43,7 +43,7 @@ export default function BackToTop() {
             onClick={scrollToTop}
             aria-label="Voltar ao topo"
           >
-            <ArrowUp className="h-5 w-5" />
+            <FiArrowUp className="h-5 w-5" />
           </Button>
         </motion.div>
       )}

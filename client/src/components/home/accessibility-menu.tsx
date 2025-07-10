@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Accessibility, RefreshCw } from 'lucide-react';
+import { FiEye, FiRefreshCw } from 'react-icons/fi';
 import { slideFromLeft } from '@/lib/animations';
 import { useAccessibility } from '@/lib/hooks/use-accessibility';
 import { Label } from '@/components/ui/label';
@@ -29,7 +29,7 @@ export default function AccessibilityMenu() {
         aria-expanded={isOpen}
         aria-controls="accessibility-menu-panel"
       >
-        <Accessibility className="h-5 w-5" />
+        <FiEye className="h-5 w-5" />
       </Button>
       
       <AnimatePresence>
@@ -88,7 +88,7 @@ export default function AccessibilityMenu() {
                 className="w-full flex items-center gap-2"
                 onClick={resetSettings}
               >
-                <RefreshCw className="h-4 w-4" />
+                <FiRefreshCw className="h-4 w-4" />
                 <span>Resetar configurações</span>
               </Button>
             </div>

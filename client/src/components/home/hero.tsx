@@ -2,7 +2,7 @@ import { personalInfo } from '@/lib/data';
 import { motion } from 'framer-motion';
 import { fadeIn, slideUp } from '@/lib/animations';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Github, Linkedin, Phone, Mail } from 'lucide-react';
+import { FiArrowRight, FiGithub, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi';
 import { useTranslation } from 'react-i18next';
 import { profileImage } from '@/assets';
 
@@ -33,7 +33,7 @@ export default function Hero() {
             <Button asChild>
               <a href="#projects" className="flex items-center gap-2">
                 <span>{t('hero.projectsButton')}</span>
-                <ArrowRight className="h-4 w-4" />
+                <FiArrowRight className="h-4 w-4" />
               </a>
             </Button>
             <Button variant="outline" asChild>
@@ -50,7 +50,7 @@ export default function Hero() {
               className="text-muted-foreground hover:text-primary transition-colors duration-300" 
               aria-label="GitHub"
             >
-              <Github className="h-5 w-5" />
+              <FiGithub className="h-5 w-5" />
             </a>
             <a 
               href={personalInfo.socialLinks.linkedin} 
@@ -59,7 +59,7 @@ export default function Hero() {
               className="text-muted-foreground hover:text-primary transition-colors duration-300" 
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-5 w-5" />
+              <FiLinkedin className="h-5 w-5" />
             </a>
             <a 
               href={personalInfo.socialLinks.whatsapp} 
@@ -68,7 +68,7 @@ export default function Hero() {
               className="text-muted-foreground hover:text-primary transition-colors duration-300" 
               aria-label="WhatsApp"
             >
-              <Phone className="h-5 w-5" />
+              <FiPhone className="h-5 w-5" />
             </a>
             <a 
               href={personalInfo.socialLinks.email} 
@@ -77,7 +77,7 @@ export default function Hero() {
               className="text-muted-foreground hover:text-primary transition-colors duration-300" 
               aria-label="Email"
             >
-              <Mail className="h-5 w-5" />
+              <FiMail className="h-5 w-5" />
             </a>
           </div>
         </motion.div>

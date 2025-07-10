@@ -1,13 +1,28 @@
 import { projects, projectCategories } from '@/lib/data';
 import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { staggerContainer, staggerItem, cardHover, buttonHover, rotate3D, fadeInUp } from '@/lib/animations';
-import { ExternalLink, Github, ArrowRight, Filter, Code, FileCode, Brackets, PaintBucket, Layers, Database, Folder, Activity } from 'lucide-react';
+import { 
+  staggerContainer, 
+  staggerItem, 
+  buttonHover, 
+  fadeInUp 
+} from '@/lib/animations';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+
+// Import dos ícones do react-icons/fi
+import { 
+  FiExternalLink, 
+  FiGithub, 
+  FiArrowRight, 
+  FiFilter, 
+  FiCode, 
+  FiFileText, 
+  FiCpu 
+} from 'react-icons/fi';
 
 export default function Projects() {
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
@@ -19,14 +34,14 @@ export default function Projects() {
   const getCategoryButtonIcon = (categoryId: string) => {
     switch (categoryId) {
       case 'all':
-        return <Filter className="h-4 w-4 mr-2" />;
+        return <FiFilter className="h-4 w-4 mr-2" />;
       case 'html-css':
-        return <Code className="h-4 w-4 mr-2" />;
+        return <FiCode className="h-4 w-4 mr-2" />;
       case 'javascript':
-        return <FileCode className="h-4 w-4 mr-2" />;
+        return <FiFileText className="h-4 w-4 mr-2" />;
       case 'react':
-        default:
-        return <Brackets className="h-4 w-4 mr-2" />;
+      default:
+        return <FiCpu className="h-4 w-4 mr-2" />;
     }
   };
   
@@ -137,7 +152,7 @@ export default function Projects() {
                   animate={{ x: hoveredIndex !== null ? [0, 5, 0] : 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <ExternalLink className="h-4 w-4" />
+                  <FiExternalLink className="h-4 w-4" />
                 </motion.div>
               </a>
             </Button>
@@ -166,12 +181,12 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
   const getCategoryIcon = () => {
     switch (project.category) {
       case 'html-css':
-        return <Code className="h-5 w-5 text-primary" />;
+        return <FiCode className="h-5 w-5 text-primary" />;
       case 'javascript':
-        return <FileCode className="h-5 w-5 text-primary" />;
+        return <FiFileText className="h-5 w-5 text-primary" />;
       case 'react':
-        default:
-        return <Brackets className="h-5 w-5 text-primary" />;
+      default:
+        return <FiCpu className="h-5 w-5 text-primary" />;
     }
   };
 
@@ -254,7 +269,7 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
                 transition: { duration: 0.5, repeat: isHovered ? 1 : 0 }
               }}
             >
-              <ArrowRight className="h-4 w-4" />
+              <FiArrowRight className="h-4 w-4" />
             </motion.div>
           </motion.a>
           <motion.a 
@@ -263,7 +278,7 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
             aria-label="Abrir no GitHub"
             whileHover={{ rotate: 360, transition: { duration: 0.5 } }}
           >
-            <Github className="h-5 w-5" />
+            <FiGithub className="h-5 w-5" />
           </motion.a>
         </div>
       </div>

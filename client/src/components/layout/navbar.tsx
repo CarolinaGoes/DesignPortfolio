@@ -4,7 +4,7 @@ import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { slideFromTop } from '@/lib/animations';
-import { Code, Moon, Sun, Menu, X } from 'lucide-react';
+import { FiCode, FiMoon, FiSun, FiMenu, FiX } from 'react-icons/fi';  // alterado lucide-react para react-icons/fi
 import LanguageSelector from './language-selector';
 import { useTranslation } from 'react-i18next';
 
@@ -33,7 +33,7 @@ export default function Navbar() {
     }`}>
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between" aria-label="Navegação principal">
         <Link href="/" className="text-2xl font-bold text-primary flex items-center gap-2 transition-colors duration-300" aria-label="Voltar ao topo">
-          <Code className="h-6 w-6" />
+          <FiCode className="h-6 w-6" />
           <span>DevPortfolio</span>
         </Link>
         
@@ -55,7 +55,7 @@ export default function Navbar() {
             className="rounded-full text-primary hover:bg-primary/10"
             aria-label={isDarkMode ? t('theme.light') : t('theme.dark')}
           >
-            {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            {isDarkMode ? <FiSun className="h-5 w-5" /> : <FiMoon className="h-5 w-5" />}
           </Button>
           
           <Button 
@@ -67,7 +67,7 @@ export default function Navbar() {
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu"
           >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isMobileMenuOpen ? <FiX className="h-5 w-5" /> : <FiMenu className="h-5 w-5" />}
           </Button>
         </div>
       </nav>
