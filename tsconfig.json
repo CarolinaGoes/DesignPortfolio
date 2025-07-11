@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "ESNext",
-    "moduleResolution": "bundler", // 👈 isso evita os erros de extensão
+    "moduleResolution": "bundler", 
     "target": "ESNext",
     "jsx": "preserve",
     "strict": true,
