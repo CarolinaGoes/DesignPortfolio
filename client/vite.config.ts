@@ -1,38 +1,36 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'node:path'
-import { fileURLToPath } from 'url'
-
-
- 
-
+import { fileURLToPath, URL } from 'node:url' 
 
 export default defineConfig({
-  
-
-  
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
       babel: {
-        plugins: ['@emotion/babel-plugin']
-      }
-    })
+        plugins: ['@emotion/babel-plugin'],
+      },
+    }),
   ],
-// Remova a referência ao postcss.config.js se não estiver usando
-resolve: {
-  alias: [
-    {
-      find: '@',
-      replacement: path.resolve(__dirname, './src')
-    },
-    {
-      find: '@shared',
-      replacement: path.resolve(__dirname, './shared')
-    }
-  ]
-},
-build: {
+
+  
+  publicDir: 'public',
+
+  
+  resolve: {
+    alias: [
+      {
+        find: '@',
+        replacement: fileURLToPath(new URL('./src', import.meta.url)),
+      },
+      {
+        find: '@shared',
+        replacement: fileURLToPath(new URL('./shared', import.meta.url)),
+      },
+    ],
+  },
+
+  build: {
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: process.env.NODE_ENV !== 'production',
@@ -53,22 +51,21 @@ build: {
         },
         assetFileNames: 'assets/[name]-[hash][extname]',
         chunkFileNames: 'chunks/[name]-[hash].js',
-        entryFileNames: 'entries/[name]-[hash].js'
-      }
-    }
+        entryFileNames: 'entries/[name]-[hash].js',
+      },
+    },
   },
   server: {
     port: 5173,
     open: true,
     cors: true,
-    host: true, // Permite acesso na rede local
+    host: true, 
     strictPort: true,
-  
   },
   css: {
     modules: {
-      localsConvention: 'camelCaseOnly'
+      localsConvention: 'camelCaseOnly',
     },
-    postcss: './postcss.config.js' // Se estiver usando PostCSS
-  }
+    
+  },
 })

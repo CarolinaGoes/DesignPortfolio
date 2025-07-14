@@ -1,3 +1,5 @@
+// Copie e cole este código completo no seu arquivo (ex: src/lib/i18n.ts)
+
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -10,17 +12,21 @@ i18n
   .init({
     fallbackLng: 'pt',
     defaultNS: 'common',
-    debug: true,
+    debug: true, 
     interpolation: {
-      escapeValue: false,
+      escapeValue: false, 
     },
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
     },
     backend: {
-      loadPath: 'public/locales/{{lng}}/{{ns}}.json',
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
-  });
+    react: {
+      
+      useSuspense: true,
+    },
+  }); 
 
 export default i18n;
