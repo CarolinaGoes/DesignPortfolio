@@ -7,9 +7,9 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hello, I'm",
-    "description": "Transforming ideas into amazing digital experiences with a focus on accessibility, usability, and modern design.",
-    "contactButton": "Get in touch",
+    "greeting": "Hi, I'm",
+    "description": "Turning ideas into amazing digital experiences with a focus on accessibility, usability, and modern design.",
+    "contactButton": "Contact me",
     "projectsButton": "View projects"
   },
   "about": {
@@ -17,47 +17,73 @@
     "education": "Education",
     "experience": "Experience",
     "paragraphs": [
-      "I'm a frontend developer passionate about creating accessible and inclusive digital experiences. With a solid background in web development and a user-centered approach, I always strive to implement solutions that not only work well, but are usable by everyone.",
-      "My journey in development started with curiosity about how things work on the web, and evolved into a passion for creating interfaces that make a difference in people's lives. I believe technology should be a tool for inclusion, not exclusion.",
-      "When I'm not coding, I enjoy staying up-to-date with the latest UX/UI trends, participating in developer communities, and contributing to open source projects."
+      "Hello, I'm Carolina, a Software Engineering student focused on frontend development, currently specializing in technologies such as HTML, CSS, JavaScript, and React. I’ve been dedicating myself to practical projects, always aiming to write strategic, clean, and innovative code. Before entering the tech field, I worked as a teacher and also handled administrative routines in the educational sector. This experience gave me a solid foundation in organization, communication, problem-solving, and continuous learning—skills I now bring into the programming world. I'm currently transitioning my career into tech and looking for an internship opportunity in frontend development. I want to combine my background in education with the tech world, contributing with creative, efficient, and adaptable solutions.",
+      "📩 I'm open to new opportunities, connections, and learning within the tech ecosystem!"
     ],
     "personalInfo": {
       "name": "Carolina Goes",
       "title": "Frontend Developer",
       "education": [
         {
-          "degree": "Bachelor's in Computer Science",
-          "institution": "University of São Paulo",
-          "year": "2019-2023"
+          "degree": "Software Engineering",
+          "institution": "Anhanguera University",
+          "year": "2025–2028"
         },
         {
-          "degree": "UX/UI Design Certification",
-          "institution": "Google UX Design",
-          "year": "2023"
+          "degree": "Bachelor’s in Pedagogy",
+          "institution": "UNICID",
+          "year": "2015 - 2018"
+        },
+        {
+          "degree": "Contact Center Management",
+          "institution": "UNINOVE",
+          "year": "2008 - 2010"
         }
       ],
       "experience": [
         {
-          "company": "Tech Solutions",
+          "company": "Freelancer",
           "role": "Frontend Developer",
-          "period": "2023-Present"
+          "period": "2024–Present"
         },
         {
-          "company": "StartupXYZ",
-          "role": "Junior Developer",
-          "period": "2022-2023"
+          "company": "São Paulo City Hall",
+          "role": "Teacher",
+          "period": "2023–Present"
+        },
+        {
+          "company": "São Paulo City Hall",
+          "role": "Technical Education Assistant (ATE)",
+          "period": "2021 - 2023"
+        },
+        {
+          "company": "Freelancer",
+          "role": "Party Entertainer",
+          "period": "2011 - 2021"
+        },
+        {
+          "company": "CONTAX",
+          "role": "Collections Agent",
+          "period": "2007 - 2011"
         }
       ]
     }
   },
   "skills": {
     "title": "My Skills",
-    "description": "Always keeping up with the latest technologies and focusing on creating accessible and high-quality experiences.",
-    "technologiesTitle": "Technologies & Tools"
+    "description": "Always up-to-date with the latest technologies and focused on creating high-quality and accessible experiences.",
+    "technologiesTitle": "Technologies & Tools",
+    "tech": {
+      "html": "HTML & CSS",
+      "js": "JavaScript",
+      "react": "React",
+      "git": "Git",
+      "accessibility": "Accessibility"
+    }
   },
   "projects": {
     "title": "Projects",
-    "description": "Here are some of the projects I've worked on recently, combining attractive design with robust functionality.",
+    "description": "Here are some of the projects I've recently worked on, combining attractive design with robust functionality.",
     "viewLive": "View live",
     "viewCode": "View code",
     "categories": {
@@ -65,17 +91,22 @@
       "html-css": "HTML/CSS",
       "javascript": "JavaScript",
       "react": "React",
-      "angular": "Angular",
       "tailwind": "Tailwind",
-      "vue": "Vue.js",
-      "php": "PHP"
+      "vue": "Vue.js"
     },
     "filter": "Filter by category",
-    "viewAll": "View all projects"
+    "viewAll": "View all projects",
+    "items": [
+      {
+        "title": "Modern E-commerce",
+        "description": "A complete e-commerce platform with accessibility features, advanced filters, and an optimized shopping experience.",
+        "imageAlt": "Image of Carolina Goes"
+      }
+    ]
   },
   "contact": {
     "title": "Get in touch",
-    "description": "Have a project in mind or want to chat? Fill out the form below or use one of the alternative channels.",
+    "description": "Have a project in mind or just want to chat? Fill out the form below or use one of the alternative contact methods.",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -100,7 +131,7 @@
     "menu": "Accessibility Menu",
     "fontSize": "Font size",
     "highContrast": "High contrast",
-    "reduceMotion": "Reduce animations",
+    "reduceMotion": "Reduce motion",
     "resetSettings": "Reset settings"
   },
   "theme": {

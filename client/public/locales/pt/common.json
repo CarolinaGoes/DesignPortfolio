@@ -7,49 +7,136 @@
     "contact": "Contato"
   },
   "hero": {
-    "greeting": "Olá, sou",
+    "greeting": "Olá, eu sou",
     "description": "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
-    "contactButton": "Entre em contato",
+    "contactButton": "Entrar em contato",
     "projectsButton": "Ver projetos"
   },
   "about": {
-    "title": "Sobre Mim",
+    "title": "Sobre mim",
     "education": "Formação",
     "experience": "Experiência",
-    "downloadButton": "Download CV"
-  },
-  "personal": {
-    "title": "Desenvolvedora Frontend",
-    "description": "Uma descrição profissional sua aqui.",
-    "imageAlt": "Foto de perfil de Carolina Goes",
-    "about": {
-      "p1": "Sou uma desenvolvedora frontend apaixonada por criar experiências digitais acessíveis e inclusivas. Com formação sólida em desenvolvimento web e uma abordagem centrada no usuário, busco sempre implementar soluções que não apenas funcionem bem, mas que sejam usáveis por todos.",
-      "p2": "Minha jornada no desenvolvimento começou com curiosidade sobre como as coisas funcionam na web, e evoluiu para uma paixão por criar interfaces que fazem a diferença na vida das pessoas. Acredito que a tecnologia deve ser uma ferramenta de inclusão, não de exclusão.",
-      "p3": "Quando não estou codificando, gosto de me manter atualizada com as últimas tendências em UX/UI, participar de comunidades de desenvolvedores e contribuir com projetos open source."
-    },
-    "education": {
-      "item1": {
-        "degree": "Bacharelado em Ciência da Computação",
-        "institution": "Universidade de São Paulo",
-        "year": "2019-2023"
-      },
-      "item2": {
-        "degree": "Certificação em UX/UI Design",
-        "institution": "Google UX Design",
-        "year": "2023"
-      }
-    },
-    "experience": {
-      "item1": {
-        "role": "Frontend Developer",
-        "company": "Tech Solutions",
-        "period": "2023-Presente"
-      },
-      "item2": {
-        "role": "Junior Developer",
-        "company": "StartupXYZ",
-        "period": "2022-2023"
-      }
+    "paragraphs": [
+      "Olá, sou Carolina, estudante de Engenharia de Software com foco em desenvolvimento frontend, atualmente me especializando em tecnologias como HTML, CSS, JavaScript e React. Tenho me dedicado a projetos práticos, sempre buscando escrever código de forma estratégica, limpa e inovadora. Antes de ingressar na área de tecnologia, atuei como professora e também com rotinas administrativas no setor educacional. Essa vivência me proporcionou uma base sólida em organização, comunicação, resolução de problemas e aprendizado contínuo, habilidades que levo comigo para o universo da programação. Atualmente, estou em transição de carreira para a área de tecnologia e busco uma oportunidade de estágio em desenvolvimento frontend. Quero aliar minha experiência com educação ao mundo da tecnologia, contribuindo com soluções criativas, eficientes e adaptáveis.",
+      "📩 Estou aberta a novas oportunidades, conexões e aprendizados no ecossistema tech!"
+    ],
+    "personalInfo": {
+      "name": "Carolina Goes",
+      "title": "esenvolvedora Frontend",
+      "education": [
+        {
+          "degree": "Engenharia de Software",
+          "institution": "Universidade Anhanguera", 
+          "year": "2025–2028"
+        },
+        {
+          "degree": "Licenciatura em Pedagogia",
+          "institution": "UNICID",
+          "year": "2015 - 2018"
+        },
+        {
+          "degree": "Gestão em Contact Center",
+          "institution": "UNINOVE",
+          "year": "2008 - 2010"
+        }
+      ],
+      "experience": [
+        {
+          "company": "FreeLancer",
+          "role": "Desenvolvedora Frontend",
+          "period": "2024-Atual"
+        },
+        {
+          "company": "Prefeitura de São Paulo",
+          "role": "Professora",
+          "period": "2023-Atual"
+        },
+        {
+          "company": "Prefeitura de São Paulo",
+          "role": "Auxiliar Técnico de Educação (ATE)",
+          "period": "2021 - 2023"
+        },
+        {
+          "company": "Freelancer",
+          "role": "Recreadora de festas",
+          "period": "2011 - 2021"
+        },
+        {
+          "company": "CONTAX",
+          "role": "Agente de Cobrança",
+          "period": "2007 - 2011"
+        }
+      ]
     }
+  },
+  "skills": {
+    "title": "Minhas Habilidades",
+    "description": "Sempre atualizada com as tecnologias mais recentes e focada em criar experiências acessíveis e de alta qualidade.",
+    "technologiesTitle": "Tecnologias & Ferramentas",
+    "tech": {
+      "html": "HTML & CSS",
+      "js": "JavaScript",
+      "react": "React",
+      "git": "Git",
+      "accessibility": "Acessibilidade"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Aqui estão alguns dos projetos em que trabalhei recentemente, combinando design atrativo com funcionalidade robusta.",
+    "viewLive": "Ver ao vivo",
+    "viewCode": "Ver código",
+    "categories": {
+      "all": "Todos",
+      "html-css": "HTML/CSS",
+      "javascript": "JavaScript",
+      "react": "React",
+      "tailwind": "Tailwind",
+      "vue": "Vue.js"
+    },
+    "filter": "Filtrar por categoria",
+    "viewAll": "Ver todos os projetos",
+    "items": [
+      {
+        "title": "E-commerce Moderno",
+        "description": "Plataforma completa de e-commerce com recursos de acessibilidade, filtros avançados e experiência de compra otimizada.",
+        "imageAlt": "Imagem de Carolina Goes"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "description": "Tem um projeto em mente ou quer bater um papo? Preencha o formulário abaixo ou use um dos canais alternativos.",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem",
+      "submit": "Enviar mensagem"
+    },
+    "orReachOut": "Ou entre em contato via:",
+    "messageSent": "Mensagem enviada com sucesso!",
+    "messageError": "Erro ao enviar mensagem. Por favor, tente novamente."
+  },
+  "chat": {
+    "title": "Chat",
+    "startChat": "Iniciar chat",
+    "message": "Mensagem",
+    "send": "Enviar"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "backToTop": "Voltar ao topo"
+  },
+  "accessibility": {
+    "menu": "Menu de Acessibilidade",
+    "fontSize": "Tamanho da fonte",
+    "highContrast": "Alto contraste",
+    "reduceMotion": "Reduzir animações",
+    "resetSettings": "Redefinir configurações"
+  },
+  "theme": {
+    "light": "Modo claro",
+    "dark": "Modo escuro"
   }
-}
+  }
+

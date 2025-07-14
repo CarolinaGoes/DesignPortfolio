@@ -11,8 +11,6 @@ const pdfUrl = '/assets/CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
 
 export default function About() {
   const { t } = useTranslation();
-
-  // ✅ Correção: especifica que a referência é para um HTMLDivElement
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
   const [imageRef, isImageVisible] = useScrollAnimation<HTMLDivElement>();
 
@@ -30,7 +28,7 @@ export default function About() {
               <div className="w-full h-auto rounded-lg overflow-hidden">
                 <img
                   src={profileImage}
-                  alt={t(personalInfo.imageAlt)}
+                  alt={t('personal.imageAlt')}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -102,7 +100,12 @@ export default function About() {
 
               <motion.div variants={staggerItem}>
                 <Button asChild>
-                  <a href={pdfUrl} download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={pdfUrl}
+                    download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FiDownload className="h-4 w-4 mr-2" />
                     {t('about.downloadButton')}
                   </a>

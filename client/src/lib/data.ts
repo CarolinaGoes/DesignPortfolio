@@ -1,17 +1,17 @@
 export const projectCategories = [
-  { id: "all", name: "Todos" },
-  { id: "html-css", name: "HTML/CSS" },
-  { id: "javascript", name: "JavaScript" },
-  { id: "react", name: "React" },
+  { id: "all", name: "projects.categories.all" },
+  { id: "html-css", name: "projects.categories.html-css" },
+  { id: "javascript", name: "projects.categories.javascript" },
+  { id: "react", name: "projects.categories.react" },
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "E-commerce Modern",
-    description: "Plataforma de comércio eletrônico completa com recursos de acessibilidade, filtros avançados e experiência de compra otimizada.",
+    title: "projects.items.0.title",
+    description: "projects.items.0.description",
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&auto=format&fit=crop&w=800",
-    imageAlt: "Imagem de Carolina Goes",
+    imageAlt: "projects.items.0.imageAlt",
     tags: ["React", "Tailwind", "Acessibilidade"],
     category: "react",
     demoLink: "#",
@@ -31,7 +31,7 @@ export const skills = {
 
 export const personalInfo = {
   name: "Carolina Goes",
-  title: "personal.title",
+  title: "Front-end Developer",
   description: "personal.description",
   email: "carolinarocha.89@hotmail.com",
   location: "São Paulo, SP - Brasil",
