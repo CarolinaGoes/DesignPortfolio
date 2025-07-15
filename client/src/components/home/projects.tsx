@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { FiExternalLink, FiGithub, FiArrowRight, FiFilter, FiCode, FiFileText, FiCpu } from 'react-icons/fi';
 
-// ✅ 1. DEFININDO TIPOS CLAROS E ROBUSTOS
+
 type StaticProjectData = typeof projectsData[0];
 type TranslatedProject = { id: number; title: string; description: string; imageAlt: string; tags: string[]; };
 type Project = StaticProjectData & TranslatedProject; // Unindo os dois tipos
@@ -111,7 +111,7 @@ export default function Projects() {
 }
 
 interface ProjectCardProps {
-  project: Project; // ✅ Usando nosso tipo corrigido e limpo
+  project: Project; 
   index: number;
   isHovered: boolean;
   onHover: () => void;
@@ -122,7 +122,7 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
   const [cardRef, isCardVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2, rootMargin: "0px 0px -100px 0px" });
   const { t } = useTranslation();
 
-  // ✅ 2. LÓGICA CORRIGIDA PARA BUSCAR O NOME DA CATEGORIA
+  
   const categories = t('projects.categories', { returnObjects: true }) as ProjectCategory[];
   const categoryName = categories.find(c => c.id === project.category)?.name || project.category;
 
