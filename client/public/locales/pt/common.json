@@ -25,6 +25,10 @@
     "title": "Página Não Encontrada",
     "description": "Você se perdeu ou esqueceu de adicionar a página ao roteador?"
   },
+  
+  "dialog": {
+    "close": "Fechar"
+  },
 
 
   "about": {
