@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next'; 
 import { Button } from '@/components/ui/button';
 import { FiArrowUp } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function BackToTop() {
+  const { t } = useTranslation(); 
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -41,7 +43,7 @@ export default function BackToTop() {
             size="icon"
             className="rounded-full shadow-lg"
             onClick={scrollToTop}
-            aria-label="Voltar ao topo"
+            aria-label={t('footer.backToTop')} 
           >
             <FiArrowUp className="h-5 w-5" />
           </Button>

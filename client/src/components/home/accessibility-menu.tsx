@@ -1,14 +1,16 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next'; 
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
+import { Label } from '@/components/ui/label';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiEye, FiRefreshCw } from 'react-icons/fi';
 import { slideFromLeft } from '@/lib/animations';
 import { useAccessibility } from '@/lib/hooks/use-accessibility';
-import { Label } from '@/components/ui/label';
 
 export default function AccessibilityMenu() {
+  const { t } = useTranslation(); 
   const [isOpen, setIsOpen] = useState(false);
   const { 
     options, 
@@ -25,7 +27,7 @@ export default function AccessibilityMenu() {
         size="icon"
         className="rounded-r-lg rounded-l-none"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Opções de acessibilidade"
+        aria-label={t('accessibility.buttonLabel')} 
         aria-expanded={isOpen}
         aria-controls="accessibility-menu-panel"
       >
@@ -42,12 +44,12 @@ export default function AccessibilityMenu() {
             animate="visible"
             exit="exit"
           >
-            <h3 className="text-lg font-semibold mb-4">Acessibilidade</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('accessibility.menuTitle')}</h3>
             
             <div className="space-y-6">
               <div>
                 <Label htmlFor="font-size" className="text-sm font-medium mb-1 block">
-                  Tamanho da fonte: {options.fontSize}%
+                  {t('accessibility.fontSizeLabel', { percent: options.fontSize })}
                 </Label>
                 <Slider 
                   id="font-size" 
@@ -62,7 +64,7 @@ export default function AccessibilityMenu() {
               
               <div className="flex items-center justify-between">
                 <Label htmlFor="high-contrast" className="text-sm font-medium cursor-pointer">
-                  Alto contraste
+                  {t('accessibility.highContrastLabel')}
                 </Label>
                 <Switch 
                   id="high-contrast" 
@@ -73,7 +75,7 @@ export default function AccessibilityMenu() {
               
               <div className="flex items-center justify-between">
                 <Label htmlFor="reduce-motion" className="text-sm font-medium cursor-pointer">
-                  Reduzir animações
+                  {t('accessibility.reduceMotionLabel')}
                 </Label>
                 <Switch 
                   id="reduce-motion" 
@@ -89,7 +91,7 @@ export default function AccessibilityMenu() {
                 onClick={resetSettings}
               >
                 <FiRefreshCw className="h-4 w-4" />
-                <span>Resetar configurações</span>
+                <span>{t('accessibility.resetButton')}</span>
               </Button>
             </div>
           </motion.div>

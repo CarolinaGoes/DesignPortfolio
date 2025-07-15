@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMessageSquare, FiX, FiSend } from 'react-icons/fi';
 import { popIn } from '@/lib/animations';
-import { personalInfo } from '@/lib/data';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -14,16 +14,17 @@ import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
 import { insertChatMessageSchema } from '../shared/schema';
 
-const chatFormSchema = insertChatMessageSchema.extend({
-  name: z.string().min(2, "O nome deve ter pelo menos 2 caracteres"),
-  message: z.string().min(5, "A mensagem deve ter pelo menos 5 caracteres")
-});
-
-type ChatFormData = z.infer<typeof chatFormSchema>;
-
 export default function ChatButton() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const { toast } = useToast();
+
+  const chatFormSchema = insertChatMessageSchema.extend({
+    name: z.string().min(2, t('chat.validation.nameMin')),
+    message: z.string().min(5, t('chat.validation.messageMin'))
+  });
+
+  type ChatFormData = z.infer<typeof chatFormSchema>;
 
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<ChatFormData>({
     resolver: zodResolver(chatFormSchema),
@@ -39,16 +40,16 @@ export default function ChatButton() {
     },
     onSuccess: () => {
       toast({
-        title: "Mensagem enviada!",
-        description: "Obrigado pelo contato, responderei em breve."
+        title: t('chat.toastSuccessTitle'),
+        description: t('chat.toastSuccessDescription')
       });
       reset();
       setTimeout(() => setIsOpen(false), 1500);
     },
     onError: (error) => {
       toast({
-        title: "Erro ao enviar mensagem",
-        description: error instanceof Error ? error.message : "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.",
+        title: t('chat.toastErrorTitle'),
+        description: error instanceof Error ? error.message : t('chat.toastErrorDescription'),
         variant: "destructive"
       });
     }
@@ -65,7 +66,7 @@ export default function ChatButton() {
         size="icon" 
         className="chat-button"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? "Fechar chat" : "Abrir chat"}
+        aria-label={isOpen ? t('chat.closeLabel') : t('chat.openLabel')}
       >
         {isOpen ? <FiX className="h-5 w-5" /> : <FiMessageSquare className="h-5 w-5" />}
       </Button>
@@ -80,13 +81,13 @@ export default function ChatButton() {
             exit="hidden"
           >
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-semibold">Chat Rápido</h3>
+              <h3 className="text-lg font-semibold">{t('chat.title')}</h3>
               <Button 
                 variant="ghost" 
                 size="icon" 
                 className="h-7 w-7" 
                 onClick={() => setIsOpen(false)}
-                aria-label="Fechar chat"
+                aria-label={t('chat.closeLabel')}
               >
                 <FiX className="h-4 w-4" />
               </Button>
@@ -94,10 +95,10 @@ export default function ChatButton() {
             
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="mb-4">
-                <label htmlFor="chat-name" className="block text-muted-foreground text-sm font-medium mb-1">Nome</label>
+                <label htmlFor="chat-name" className="block text-muted-foreground text-sm font-medium mb-1">{t('chat.nameLabel')}</label>
                 <Input 
                   id="chat-name" 
-                  placeholder="Seu nome"
+                  placeholder={t('chat.namePlaceholder')}
                   {...register("name")}
                   aria-invalid={errors.name ? "true" : "false"}
                 />
@@ -107,11 +108,11 @@ export default function ChatButton() {
               </div>
               
               <div className="mb-4">
-                <label htmlFor="chat-message" className="block text-muted-foreground text-sm font-medium mb-1">Mensagem</label>
+                <label htmlFor="chat-message" className="block text-muted-foreground text-sm font-medium mb-1">{t('chat.messageLabel')}</label>
                 <Textarea 
                   id="chat-message" 
                   rows={3} 
-                  placeholder="Como posso ajudar?"
+                  placeholder={t('chat.messagePlaceholder')}
                   {...register("message")}
                   aria-invalid={errors.message ? "true" : "false"}
                 />
@@ -125,7 +126,7 @@ export default function ChatButton() {
                 className="w-full flex items-center justify-center gap-2"
                 disabled={isSubmitting || sendChatMutation.isPending}
               >
-                <span>Enviar</span>
+                <span>{t('chat.submitButton')}</span>
                 <FiSend className="h-4 w-4" />
               </Button>
             </form>
