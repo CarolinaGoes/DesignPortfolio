@@ -61,7 +61,7 @@ build: {
     port: 5173,
     open: true,
     cors: true,
-    host: true, // Permite acesso na rede local
+    host: true, 
     strictPort: true,
   
   },

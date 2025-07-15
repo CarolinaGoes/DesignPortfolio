@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
 import { Button } from '../../components/ui/button';
 import { FiBookOpen, FiBriefcase, FiDownload } from 'react-icons/fi';
-import profileImage from '../../assets/profileImage.jpg';
+import profileImage from '../../assets/profileImage2.jpg';
 
 
 type EducationItem = { degree: string; institution: string; year: string; };
