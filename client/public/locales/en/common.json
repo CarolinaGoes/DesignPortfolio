@@ -33,6 +33,11 @@
     "title": "Page Not Found",
     "description": "Did you get lost or forget to add the page to the router?"
   },
+  
+  "dialog": {
+    "close": "Close"
+  },
+
 
     "education": {
       "title": "Education",
