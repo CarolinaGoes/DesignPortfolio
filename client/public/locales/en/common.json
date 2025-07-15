@@ -15,10 +15,6 @@
     "projectsButton": "View Projects",
     "imageAlt": "Profile picture of Carolina Goes"
   },
-   "carousel": {
-    "previousSlide": "Previous slide",
-    "nextSlide": "Next slide"
-  },
   "about": {
     "title": "About Me",
     "imageAlt": "Profile picture of Carolina Goes",
@@ -28,17 +24,6 @@
       "My journey in development began with a curiosity about how things work on the web, and it evolved into a passion for creating interfaces that make a difference in people's lives. I believe that technology should be a tool for inclusion, not exclusion.",
       "When I'm not coding, I enjoy staying up-to-date with the latest trends in UX/UI, participating in developer communities, and contributing to open-source projects."
     ],
-    
-  "notFound": {
-    "title": "Page Not Found",
-    "description": "Did you get lost or forget to add the page to the router?"
-  },
-  
-  "dialog": {
-    "close": "Close"
-  },
-
-
     "education": {
       "title": "Education",
       "items": [
@@ -187,5 +172,23 @@
   "breadcrumb": {
     "label": "Breadcrumb",
     "more": "More"
+  },
+  "carousel": {
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide"
+  },
+  "dialog": {
+    "close": "Close"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "goToPreviousPage": "Go to previous page",
+    "previous": "Previous",
+    "goToNextPage": "Go to next page",
+    "next": "Next",
+    "morePages": "More pages"
+  },
+  "sidebar": {
+    "toggle": "Toggle sidebar"
   }
 }
