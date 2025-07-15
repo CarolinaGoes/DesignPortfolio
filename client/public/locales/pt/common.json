@@ -29,7 +29,17 @@
   "dialog": {
     "close": "Fechar"
   },
-
+  
+  "pagination": {
+    "label": "Paginação",
+    "goToPreviousPage": "Ir para a página anterior",
+    "previous": "Anterior",
+    "goToNextPage": "Ir para a próxima página",
+    "next": "Próximo",
+    "morePages": "Mais páginas"
+  },
+"sidebar": {
+    "toggle": "Alternar barra lateral"},
 
   "about": {
     "title": "Sobre Mim",
