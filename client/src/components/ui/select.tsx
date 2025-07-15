@@ -1,13 +1,13 @@
+"use client"
+
 import * as React from "react"
 import * as SelectPrimitive from "@radix-ui/react-select"
-import { Check, ChevronDown, ChevronUp } from "lucide-react"
+import { FiCheck, FiChevronDown, FiChevronUp } from "react-icons/fi" // ✅ Ícones trocados
 
 import { cn } from "@/lib/utils"
 
 const Select = SelectPrimitive.Root
-
 const SelectGroup = SelectPrimitive.Group
-
 const SelectValue = SelectPrimitive.Value
 
 const SelectTrigger = React.forwardRef<
@@ -24,7 +24,7 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
+      <FiChevronDown className="h-4 w-4 opacity-50" /> {/* ✅ Ícone trocado */}
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))
@@ -36,13 +36,10 @@ const SelectScrollUpButton = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollUpButton
     ref={ref}
-    className={cn(
-      "flex cursor-default items-center justify-center py-1",
-      className
-    )}
+    className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}
   >
-    <ChevronUp className="h-4 w-4" />
+    <FiChevronUp className="h-4 w-4" /> {/* ✅ Ícone trocado */}
   </SelectPrimitive.ScrollUpButton>
 ))
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
@@ -53,17 +50,13 @@ const SelectScrollDownButton = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.ScrollDownButton
     ref={ref}
-    className={cn(
-      "flex cursor-default items-center justify-center py-1",
-      className
-    )}
+    className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}
   >
-    <ChevronDown className="h-4 w-4" />
+    <FiChevronDown className="h-4 w-4" /> {/* ✅ Ícone trocado */}
   </SelectPrimitive.ScrollDownButton>
 ))
-SelectScrollDownButton.displayName =
-  SelectPrimitive.ScrollDownButton.displayName
+SelectScrollDownButton.displayName = SelectPrimitive.ScrollDownButton.displayName
 
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
@@ -123,7 +116,7 @@ const SelectItem = React.forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
+        <FiCheck className="h-4 w-4" /> {/* ✅ Ícone trocado */}
       </SelectPrimitive.ItemIndicator>
     </span>
 
