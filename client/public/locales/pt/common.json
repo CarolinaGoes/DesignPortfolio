@@ -15,6 +15,18 @@
     "projectsButton": "Ver projetos",
     "imageAlt": "Foto de perfil de Carolina Goes"
   },
+  
+  "carousel": {
+    "previousSlide": "Slide anterior",
+    "nextSlide": "Próximo slide"
+  },
+  
+  "notFound": {
+    "title": "Página Não Encontrada",
+    "description": "Você se perdeu ou esqueceu de adicionar a página ao roteador?"
+  },
+
+
   "about": {
     "title": "Sobre Mim",
     "imageAlt": "Foto de perfil de Carolina Goes",
@@ -156,6 +168,9 @@
     }
   },
   "footer": {
+    "tagline": "Desenvolvendo interfaces intuitivas, acessíveis e visualmente atraentes com as tecnologias mais modernas.",
+    "quickLinksTitle": "Links Rápidos",
+    "copyright": "© {{year}} {{name}}. Todos os direitos reservados.",
     "rights": "Todos os direitos reservados",
     "backToTop": "Voltar ao topo"
   },
@@ -166,5 +181,9 @@
     "highContrastLabel": "Alto contraste",
     "reduceMotionLabel": "Reduzir animações",
     "resetButton": "Resetar configurações"
+  },
+  "breadcrumb": {
+    "label": "Navegação estrutural",
+    "more": "Mais"
   }
 }

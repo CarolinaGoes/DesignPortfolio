@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-// import { personalInfo } from '../../lib/data'; // ❌ REMOVA ESTA LINHA
 import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
@@ -7,7 +6,7 @@ import { Button } from '../../components/ui/button';
 import { FiBookOpen, FiBriefcase, FiDownload } from 'react-icons/fi';
 import profileImage from '../../assets/profileImage.jpg';
 
-// Tipos para os dados que virão do JSON (boa prática)
+
 type EducationItem = { degree: string; institution: string; year: string; };
 type ExperienceItem = { role: string; company: string; period: string; };
 
@@ -16,8 +15,7 @@ const pdfUrl = '/assets/CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
 export default function About() {
   const { t } = useTranslation();
 
-  // ✅ PUXANDO DADOS DIRETAMENTE DA TRADUÇÃO
-  // O `{ returnObjects: true }` é a mágica que permite pegar arrays e objetos do JSON.
+  
   const paragraphs = t('about.paragraphs', { returnObjects: true }) as string[];
   const educationItems = t('about.education.items', { returnObjects: true }) as EducationItem[];
   const experienceItems = t('about.experience.items', { returnObjects: true }) as ExperienceItem[];
@@ -59,7 +57,7 @@ export default function About() {
               </motion.h2>
               <motion.div variants={staggerItem} className="h-1 w-20 bg-primary rounded-full mb-6" />
 
-              {/* ✅ Mapeando sobre o array que veio da tradução */}
+              
               {paragraphs.map((paragraph, index) => (
                 <motion.p
                   key={index}
@@ -114,7 +112,7 @@ export default function About() {
                 <Button asChild>
                   <a href={pdfUrl} download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf" target="_blank" rel="noopener noreferrer">
                     <FiDownload className="h-4 w-4 mr-2" />
-                    {t('about.downloadButton')} {/* ✅ Chave de tradução estática */}
+                    {t('about.downloadButton')} 
                   </a>
                 </Button>
               </motion.div>

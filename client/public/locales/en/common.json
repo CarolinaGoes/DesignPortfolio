@@ -11,9 +11,13 @@
     "name": "Carolina Goes",
     "title": "Frontend Developer",
     "description": "Transforming ideas into incredible digital experiences with a focus on accessibility, usability, and modern design.",
-    "contactButton": "Get in touch",
-    "projectsButton": "View projects",
+    "contactButton": "Get in Touch",
+    "projectsButton": "View Projects",
     "imageAlt": "Profile picture of Carolina Goes"
+  },
+   "carousel": {
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide"
   },
   "about": {
     "title": "About Me",
@@ -24,6 +28,12 @@
       "My journey in development began with a curiosity about how things work on the web, and it evolved into a passion for creating interfaces that make a difference in people's lives. I believe that technology should be a tool for inclusion, not exclusion.",
       "When I'm not coding, I enjoy staying up-to-date with the latest trends in UX/UI, participating in developer communities, and contributing to open-source projects."
     ],
+    
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Did you get lost or forget to add the page to the router?"
+  },
+
     "education": {
       "title": "Education",
       "items": [
@@ -156,7 +166,9 @@
     }
   },
   "footer": {
-    "rights": "All rights reserved",
+    "tagline": "Developing intuitive, accessible, and visually appealing interfaces with the most modern technologies.",
+    "quickLinksTitle": "Quick Links",
+    "copyright": "© {{year}} {{name}}. All rights reserved.",
     "backToTop": "Back to top"
   },
   "accessibility": {
@@ -166,5 +178,9 @@
     "highContrastLabel": "High contrast",
     "reduceMotionLabel": "Reduce animations",
     "resetButton": "Reset settings"
+  },
+  "breadcrumb": {
+    "label": "Breadcrumb",
+    "more": "More"
   }
 }

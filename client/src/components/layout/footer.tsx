@@ -1,87 +1,73 @@
 import { Link } from 'wouter';
-import { personalInfo } from '@/lib/data';
+import { useTranslation } from 'react-i18next';
+import { siteData } from '@/lib/data';
 import { FiCode, FiGithub, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi';
 
+const footerLinks = [
+  { href: '#home', translationKey: 'navbar.home' },
+  { href: '#about', translationKey: 'navbar.about' },
+  { href: '#skills', translationKey: 'navbar.skills' },
+  { href: '#projects', translationKey: 'navbar.projects' },
+  { href: '#contact', translationKey: 'navbar.contact' },
+];
+
 export default function Footer() {
+  const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-900 text-white py-12 transition-colors duration-300">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between">
-          <div className="mb-8 md:mb-0">
-            <Link href="#home" className="text-3xl font-bold text-primary flex items-center gap-2">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
+          
+          <div className="lg:col-span-1">
+            <Link href="#home" className="text-3xl font-bold text-primary flex items-center gap-2 justify-center md:justify-start">
               <FiCode className="h-6 w-6" />
-              <span>{personalInfo.name}</span>
+              <span>{t('hero.name')}</span>
             </Link>
-            <p className="mt-2 text-gray-400 max-w-md">
-              Desenvolvendo interfaces intuitivas, acessíveis e visualmente atraentes com as tecnologias mais modernas.
+            <p className="mt-2 text-gray-400 max-w-md mx-auto md:mx-0">
+              {t('footer.tagline')}
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-8">
+          <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
-              <h4 className="text-lg font-semibold text-white mb-4">Links Rápidos</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">{t('footer.quickLinksTitle')}</h4>
               <ul className="space-y-2">
-                {[
-                  { href: '#home', label: 'Início' },
-                  { href: '#projects', label: 'Projetos' },
-                  { href: '#skills', label: 'Habilidades' },
-                  { href: '#about', label: 'Sobre' },
-                  { href: '#contact', label: 'Contato' },
-                ].map(({ href, label }) => (
+                {footerLinks.map(({ href, translationKey }) => (
                   <li key={href}>
                     <Link href={href} className="text-gray-400 hover:text-primary transition-colors duration-300">
-                      {label}
+                      {t(translationKey)}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
+            
+            <div>
+               <h4 className="text-lg font-semibold text-white mb-4">{t('contact.info.socialTitle')}</h4>
+               <div className="flex space-x-4 justify-center md:justify-start">
+                <a href={siteData.socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary" aria-label={t('contact.socials.github')}>
+                  <FiGithub className="h-6 w-6" />
+                </a>
+                <a href={siteData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary" aria-label={t('contact.socials.linkedin')}>
+                  <FiLinkedin className="h-6 w-6" />
+                </a>
+                <a href={siteData.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary" aria-label={t('contact.socials.whatsapp')}>
+                  <FiPhone className="h-6 w-6" />
+                </a>
+                <a href={`mailto:${siteData.email}`} className="text-gray-400 hover:text-primary" aria-label={t('contact.socials.email')}>
+                  <FiMail className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between">
+        <div className="border-t border-gray-800 mt-10 pt-6 text-center">
           <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} {personalInfo.name}. Todos os direitos reservados.
+            {t('footer.copyright', { year: currentYear, name: t('hero.name') })}
           </p>
-          <div className="mt-4 md:mt-0 flex space-x-4">
-            <a 
-              href={personalInfo.socialLinks.github} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-primary transition-colors duration-300"
-              aria-label="GitHub"
-            >
-              <FiGithub className="h-5 w-5" />
-            </a>
-            <a 
-              href={personalInfo.socialLinks.linkedin} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-primary transition-colors duration-300"
-              aria-label="LinkedIn"
-            >
-              <FiLinkedin className="h-5 w-5" />
-            </a>
-            <a 
-              href={personalInfo.socialLinks.whatsapp} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-primary transition-colors duration-300"
-              aria-label="WhatsApp"
-            >
-              <FiPhone className="h-5 w-5" />
-            </a>
-            <a 
-              href={personalInfo.socialLinks.email} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-primary transition-colors duration-300"
-              aria-label="Email"
-            >
-              <FiMail className="h-5 w-5" />
-            </a>
-          </div>
         </div>
       </div>
     </footer>
