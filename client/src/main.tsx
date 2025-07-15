@@ -1,38 +1,17 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
-import App from './App';
-import './index.css';
 
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
+// Este console.log TEM que aparecer
+console.log("--- O NOVO main.tsx ESTÁ SENDO EXECUTADO! ---");
 
-i18n
-  .use(HttpApi)
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    fallbackLng: 'pt',
-    defaultNS: 'common',
-    debug: true,
-    interpolation: {
-      escapeValue: false,
-    },
-    detection: {
-      order: ['localStorage', 'navigator'],
-      caches: ['localStorage'],
-    },
-    backend: {
-      loadPath: 'public/locales/{{lng}}/{{ns}}.json',
-    },
-  });
+function HelloWorldApp() {
+  return (
+    <div style={{ backgroundColor: 'white', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <h1 style={{ color: 'red', fontSize: '48px', textAlign: 'center' }}>
+        A PÁGINA ATUALIZOU!
+      </h1>
+    </div>
+  );
+}
 
-export default i18n;
-createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Suspense fallback={<div>Carregando...</div>}>
-      <App />
-    </Suspense>
-  </React.StrictMode>
-);
+createRoot(document.getElementById('root')!).render(<HelloWorldApp />);

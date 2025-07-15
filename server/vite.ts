@@ -18,7 +18,6 @@ export function log(message: string, source = "express") {
 }
 
 export async function setupVite(app: Express, server: Server) {
-  // ✅ 1. 'allowedHosts' removido para corrigir o erro de tipo.
   const serverOptions = {
     middlewareMode: true,
     hmr: { server },
@@ -60,7 +59,6 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  // ✅ 3. Caminho corrigido para apontar para a pasta 'dist' do cliente.
   const distPath = path.resolve(process.cwd(), "client", "dist");
 
   if (!fs.existsSync(distPath)) {
