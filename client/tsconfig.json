@@ -1,8 +1,22 @@
+// Arquivo: /client/tsconfig.json (VERSÃO CORRIGIDA)
 {
-  "extends": "../tsconfig.json",
+  "extends": "../tsconfig.json", // ou "../tsconfig.base.json" se você seguiu a estrutura anterior
   "compilerOptions": {
-    "noEmit": false, // Permite que o Vite emita arquivos
-    "jsx": "react-jsx" // Específico para React
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true, // ✅ Corrigido: Vite não precisa que o TS emita arquivos
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@shared/*": ["shared/*"]
+    }
   },
-  "include": ["src/**/*", "vite.config.ts"]
+  "include": ["src", "shared"],
+  "exclude": ["node_modules"]
 }

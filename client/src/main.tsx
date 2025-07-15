@@ -2,11 +2,33 @@ import React, { Suspense } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 import './index.css';
-import './lib/i18n'; // Garante que o i18next seja inicializado
 
-// Seus providers de Tema e Acessibilidade provavelmente devem ficar dentro do App.tsx
-// ou serem gerenciados de outra forma, mas por agora, vamos removê-los para isolar o problema.
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
 
+i18n
+  .use(HttpApi)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'pt',
+    defaultNS: 'common',
+    debug: true,
+    interpolation: {
+      escapeValue: false,
+    },
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+    },
+    backend: {
+      loadPath: 'public/locales/{{lng}}/{{ns}}.json',
+    },
+  });
+
+export default i18n;
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Suspense fallback={<div>Carregando...</div>}>
