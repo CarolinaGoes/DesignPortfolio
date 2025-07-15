@@ -8,23 +8,25 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "description": "Transforming ideas into amazing digital experiences with a focus on accessibility, usability, and modern design.",
+    "name": "Carolina Goes",
+    "title": "Frontend Developer",
+    "description": "Transforming ideas into incredible digital experiences with a focus on accessibility, usability, and modern design.",
     "contactButton": "Get in touch",
-    "projectsButton": "View projects"
+    "projectsButton": "View projects",
+    "imageAlt": "Profile picture of Carolina Goes"
   },
   "about": {
-    "title": "About me",
-    "education": "Education",
-    "experience": "Experience",
+    "title": "About Me",
+    "imageAlt": "Profile picture of Carolina Goes",
+    "downloadButton": "Download CV",
     "paragraphs": [
-      "I'm a frontend developer passionate about creating accessible and inclusive digital experiences. With a solid background in web development and a user-centered approach, I always strive to implement solutions that not only work well, but are usable by everyone.",
-      "My journey in development started with curiosity about how things work on the web, and evolved into a passion for creating interfaces that make a difference in people's lives. I believe technology should be a tool for inclusion, not exclusion.",
-      "When I'm not coding, I enjoy staying up-to-date with the latest UX/UI trends, participating in developer communities, and contributing to open source projects."
+      "I am a frontend developer passionate about creating accessible and inclusive digital experiences. With a solid background in web development and a user-centered approach, I always seek to implement solutions that not only work well but are usable by everyone.",
+      "My journey in development began with a curiosity about how things work on the web, and it evolved into a passion for creating interfaces that make a difference in people's lives. I believe that technology should be a tool for inclusion, not exclusion.",
+      "When I'm not coding, I enjoy staying up-to-date with the latest trends in UX/UI, participating in developer communities, and contributing to open-source projects."
     ],
-    "personalInfo": {
-      "name": "Carolina Goes",
-      "title": "Frontend Developer",
-      "education": [
+    "education": {
+      "title": "Education",
+      "items": [
         {
           "degree": "Bachelor's in Computer Science",
           "institution": "University of São Paulo",
@@ -35,16 +37,19 @@
           "institution": "Google UX Design",
           "year": "2023"
         }
-      ],
-      "experience": [
+      ]
+    },
+    "experience": {
+      "title": "Experience",
+      "items": [
         {
-          "company": "Tech Solutions",
           "role": "Frontend Developer",
+          "company": "Tech Solutions",
           "period": "2023-Present"
         },
         {
-          "company": "StartupXYZ",
           "role": "Junior Developer",
+          "company": "StartupXYZ",
           "period": "2022-2023"
         }
       ]
@@ -52,59 +57,114 @@
   },
   "skills": {
     "title": "My Skills",
-    "description": "Always keeping up with the latest technologies and focusing on creating accessible and high-quality experiences.",
-    "technologiesTitle": "Technologies & Tools"
+    "description": "Always keeping up with the latest technologies and focusing on creating accessible, high-quality experiences.",
+    "technologiesTitle": "Technologies & Tools",
+    "tech": {
+      "html": "HTML5 & CSS3",
+      "js": "JavaScript (ES6+)",
+      "react": "React & Next.js",
+      "git": "Git & GitHub",
+      "accessibility": "Web Accessibility (WCAG)"
+    }
   },
   "projects": {
     "title": "Projects",
     "description": "Here are some of the projects I've worked on recently, combining attractive design with robust functionality.",
-    "viewLive": "View live",
-    "viewCode": "View code",
-    "categories": {
-      "all": "All",
-      "html-css": "HTML/CSS",
-      "javascript": "JavaScript",
-      "react": "React",
-      "angular": "Angular",
-      "tailwind": "Tailwind",
-      "vue": "Vue.js",
-      "php": "PHP"
-    },
     "filter": "Filter by category",
-    "viewAll": "View all projects"
+    "viewAll": "View all projects",
+    "viewLive": "View live",
+    "viewOnGithub": "View code on GitHub",
+    "noProjectsFound": "No projects found in this category.",
+    "categories": [
+      { "id": "all", "name": "All" },
+      { "id": "html-css", "name": "HTML/CSS" },
+      { "id": "javascript", "name": "JavaScript" },
+      { "id": "react", "name": "React" }
+    ],
+    "items": [
+      {
+        "id": 1,
+        "title": "Modern E-commerce",
+        "description": "A complete e-commerce platform with accessibility features, advanced filters, and an optimized shopping experience.",
+        "imageAlt": "E-commerce project demonstration",
+        "tags": ["React", "Tailwind", "Accessibility"]
+      }
+    ]
   },
   "contact": {
-    "title": "Get in touch",
-    "description": "Have a project in mind or want to chat? Fill out the form below or use one of the alternative channels.",
+    "title": "Get in Touch",
+    "description": "Have an interesting project or opportunity? I'm always open to new connections and collaborations.",
     "form": {
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "submit": "Send message"
+      "nameLabel": "Name",
+      "namePlaceholder": "Your full name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "subjectLabel": "Subject",
+      "subjectOptions": [
+        { "value": "", "label": "Select a subject" },
+        { "value": "project", "label": "Project proposal" },
+        { "value": "job", "label": "Job opportunity" },
+        { "value": "collaboration", "label": "Collaboration" },
+        { "value": "other", "label": "Other" }
+      ],
+      "messageLabel": "Message",
+      "messagePlaceholder": "Describe in detail how I can help",
+      "submitButton": "Send message"
     },
-    "orReachOut": "Or reach out via:",
-    "messageSent": "Message sent successfully!",
-    "messageError": "Error sending message. Please try again."
+    "info": {
+      "title": "Contact Information",
+      "emailLabel": "Email",
+      "locationLabel": "Location",
+      "locationValue": "São Paulo, SP - Brazil",
+      "socialTitle": "Connect with me"
+    },
+    "socials": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    },
+    "validation": {
+      "email": "Please enter a valid email",
+      "nameMin": "Name must be at least 3 characters",
+      "subjectRequired": "Please select a subject",
+      "messageMin": "Message must be at least 10 characters"
+    },
+    "toast": {
+      "successTitle": "Message sent!",
+      "successDescription": "Thank you for getting in touch, I will respond soon.",
+      "errorTitle": "Error sending message",
+      "errorDescription": "An error occurred while sending your message. Please try again."
+    }
   },
   "chat": {
-    "title": "Chat",
-    "startChat": "Start chat",
-    "message": "Message",
-    "send": "Send"
+    "openLabel": "Open chat",
+    "closeLabel": "Close chat",
+    "title": "Quick Chat",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can I help?",
+    "submitButton": "Send",
+    "toastSuccessTitle": "Message sent!",
+    "toastSuccessDescription": "Thank you for getting in touch, I will respond soon.",
+    "toastErrorTitle": "Error sending message",
+    "toastErrorDescription": "An error occurred while sending your message. Please try again.",
+    "validation": {
+      "nameMin": "Name must be at least 2 characters",
+      "messageMin": "Message must be at least 5 characters"
+    }
   },
   "footer": {
     "rights": "All rights reserved",
     "backToTop": "Back to top"
   },
   "accessibility": {
-    "menu": "Accessibility Menu",
-    "fontSize": "Font size",
-    "highContrast": "High contrast",
-    "reduceMotion": "Reduce animations",
-    "resetSettings": "Reset settings"
-  },
-  "theme": {
-    "light": "Light mode",
-    "dark": "Dark mode"
+    "buttonLabel": "Accessibility options",
+    "menuTitle": "Accessibility",
+    "fontSizeLabel": "Font size: {{percent}}%",
+    "highContrastLabel": "High contrast",
+    "reduceMotionLabel": "Reduce animations",
+    "resetButton": "Reset settings"
   }
 }

@@ -8,48 +8,163 @@
   },
   "hero": {
     "greeting": "Olá, sou",
+    "name": "Carolina Goes",
+    "title": "Desenvolvedora Frontend",
     "description": "Transformando ideias em experiências digitais incríveis com foco em acessibilidade, usabilidade e design moderno.",
     "contactButton": "Entre em contato",
-    "projectsButton": "Ver projetos"
+    "projectsButton": "Ver projetos",
+    "imageAlt": "Foto de perfil de Carolina Goes"
   },
   "about": {
     "title": "Sobre Mim",
-    "education": "Formação",
-    "experience": "Experiência",
-    "downloadButton": "Download CV"
-  },
-  "personal": {
-    "title": "Desenvolvedora Frontend",
-    "description": "Uma descrição profissional sua aqui.",
     "imageAlt": "Foto de perfil de Carolina Goes",
-    "about": {
-      "p1": "Sou uma desenvolvedora frontend apaixonada por criar experiências digitais acessíveis e inclusivas. Com formação sólida em desenvolvimento web e uma abordagem centrada no usuário, busco sempre implementar soluções que não apenas funcionem bem, mas que sejam usáveis por todos.",
-      "p2": "Minha jornada no desenvolvimento começou com curiosidade sobre como as coisas funcionam na web, e evoluiu para uma paixão por criar interfaces que fazem a diferença na vida das pessoas. Acredito que a tecnologia deve ser uma ferramenta de inclusão, não de exclusão.",
-      "p3": "Quando não estou codificando, gosto de me manter atualizada com as últimas tendências em UX/UI, participar de comunidades de desenvolvedores e contribuir com projetos open source."
-    },
+    "downloadButton": "Download CV",
+    "paragraphs": [
+      "Sou uma desenvolvedora frontend apaixonada por criar experiências digitais acessíveis e inclusivas. Com formação sólida em desenvolvimento web e uma abordagem centrada no usuário, busco sempre implementar soluções que não apenas funcionem bem, mas que sejam usáveis por todos.",
+      "Minha jornada no desenvolvimento começou com curiosidade sobre como as coisas funcionam na web, e evoluiu para uma paixão por criar interfaces que fazem a diferença na vida das pessoas. Acredito que a tecnologia deve ser uma ferramenta de inclusão, não de exclusão.",
+      "Quando não estou codificando, gosto de me manter atualizada com as últimas tendências em UX/UI, participar de comunidades de desenvolvedores e contribuir com projetos open source."
+    ],
     "education": {
-      "item1": {
-        "degree": "Bacharelado em Ciência da Computação",
-        "institution": "Universidade de São Paulo",
-        "year": "2019-2023"
-      },
-      "item2": {
-        "degree": "Certificação em UX/UI Design",
-        "institution": "Google UX Design",
-        "year": "2023"
-      }
+      "title": "Formação",
+      "items": [
+        {
+          "degree": "Bacharelado em Ciência da Computação",
+          "institution": "Universidade de São Paulo",
+          "year": "2019-2023"
+        },
+        {
+          "degree": "Certificação em UX/UI Design",
+          "institution": "Google UX Design",
+          "year": "2023"
+        }
+      ]
     },
     "experience": {
-      "item1": {
-        "role": "Frontend Developer",
-        "company": "Tech Solutions",
-        "period": "2023-Presente"
-      },
-      "item2": {
-        "role": "Junior Developer",
-        "company": "StartupXYZ",
-        "period": "2022-2023"
-      }
+      "title": "Experiência",
+      "items": [
+        {
+          "role": "Desenvolvedora Frontend",
+          "company": "Tech Solutions",
+          "period": "2023-Presente"
+        },
+        {
+          "role": "Desenvolvedora Júnior",
+          "company": "StartupXYZ",
+          "period": "2022-2023"
+        }
+      ]
     }
+  },
+  "skills": {
+    "title": "Minhas Habilidades",
+    "description": "Sempre me atualizando com as tecnologias mais recentes e focando em criar experiências acessíveis e de alta qualidade.",
+    "technologiesTitle": "Tecnologias e Ferramentas",
+    "tech": {
+      "html": "HTML5 & CSS3",
+      "js": "JavaScript (ES6+)",
+      "react": "React & Next.js",
+      "git": "Git & GitHub",
+      "accessibility": "Acessibilidade Web (WCAG)"
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Aqui estão alguns dos projetos em que trabalhei recentemente, combinando design atrativo com funcionalidade robusta.",
+    "filter": "Filtrar por categoria",
+    "viewAll": "Ver todos os projetos",
+    "viewLive": "Ver ao vivo",
+    "viewOnGithub": "Ver código no GitHub",
+    "noProjectsFound": "Nenhum projeto encontrado nesta categoria.",
+    "categories": [
+      { "id": "all", "name": "Todos" },
+      { "id": "html-css", "name": "HTML/CSS" },
+      { "id": "javascript", "name": "JavaScript" },
+      { "id": "react", "name": "React" }
+    ],
+    "items": [
+      {
+        "id": 1,
+        "title": "E-commerce Moderno",
+        "description": "Plataforma de comércio eletrônico completa com recursos de acessibilidade, filtros avançados e experiência de compra otimizada.",
+        "imageAlt": "Demonstração do projeto de e-commerce",
+        "tags": ["React", "Tailwind", "Acessibilidade"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Tem um projeto interessante ou oportunidade? Estou sempre aberta a novas conexões e colaborações.",
+    "form": {
+      "nameLabel": "Nome",
+      "namePlaceholder": "Seu nome completo",
+      "emailLabel": "Email",
+      "emailPlaceholder": "seu.email@exemplo.com",
+      "subjectLabel": "Assunto",
+      "subjectOptions": [
+        { "value": "", "label": "Selecione um assunto" },
+        { "value": "project", "label": "Proposta de projeto" },
+        { "value": "job", "label": "Oportunidade de trabalho" },
+        { "value": "collaboration", "label": "Colaboração" },
+        { "value": "other", "label": "Outro" }
+      ],
+      "messageLabel": "Mensagem",
+      "messagePlaceholder": "Descreva em detalhes como posso ajudar",
+      "submitButton": "Enviar mensagem"
+    },
+    "info": {
+      "title": "Informações de Contato",
+      "emailLabel": "Email",
+      "locationLabel": "Localização",
+      "locationValue": "São Paulo, SP - Brasil",
+      "socialTitle": "Conecte-se comigo"
+    },
+    "socials": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    },
+    "validation": {
+      "email": "Por favor, insira um email válido",
+      "nameMin": "O nome deve ter pelo menos 3 caracteres",
+      "subjectRequired": "Por favor, selecione um assunto",
+      "messageMin": "A mensagem deve ter pelo menos 10 caracteres"
+    },
+    "toast": {
+      "successTitle": "Mensagem enviada!",
+      "successDescription": "Obrigado pelo contato, responderei em breve.",
+      "errorTitle": "Erro ao enviar mensagem",
+      "errorDescription": "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente."
+    }
+  },
+  "chat": {
+    "openLabel": "Abrir chat",
+    "closeLabel": "Fechar chat",
+    "title": "Chat Rápido",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Como posso ajudar?",
+    "submitButton": "Enviar",
+    "toastSuccessTitle": "Mensagem enviada!",
+    "toastSuccessDescription": "Obrigado pelo contato, responderei em breve.",
+    "toastErrorTitle": "Erro ao enviar mensagem",
+    "toastErrorDescription": "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.",
+    "validation": {
+      "nameMin": "O nome deve ter pelo menos 2 caracteres",
+      "messageMin": "A mensagem deve ter pelo menos 5 caracteres"
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "backToTop": "Voltar ao topo"
+  },
+  "accessibility": {
+    "buttonLabel": "Opções de acessibilidade",
+    "menuTitle": "Acessibilidade",
+    "fontSizeLabel": "Tamanho da fonte: {{percent}}%",
+    "highContrastLabel": "Alto contraste",
+    "reduceMotionLabel": "Reduzir animações",
+    "resetButton": "Resetar configurações"
   }
 }

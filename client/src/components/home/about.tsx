@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { personalInfo } from '../../lib/data';
+// import { personalInfo } from '../../lib/data'; // ❌ REMOVA ESTA LINHA
 import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
@@ -7,12 +7,21 @@ import { Button } from '../../components/ui/button';
 import { FiBookOpen, FiBriefcase, FiDownload } from 'react-icons/fi';
 import profileImage from '../../assets/profileImage.jpg';
 
+// Tipos para os dados que virão do JSON (boa prática)
+type EducationItem = { degree: string; institution: string; year: string; };
+type ExperienceItem = { role: string; company: string; period: string; };
+
 const pdfUrl = '/assets/CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
 
 export default function About() {
   const { t } = useTranslation();
 
-  // ✅ Correção: especifica que a referência é para um HTMLDivElement
+  // ✅ PUXANDO DADOS DIRETAMENTE DA TRADUÇÃO
+  // O `{ returnObjects: true }` é a mágica que permite pegar arrays e objetos do JSON.
+  const paragraphs = t('about.paragraphs', { returnObjects: true }) as string[];
+  const educationItems = t('about.education.items', { returnObjects: true }) as EducationItem[];
+  const experienceItems = t('about.experience.items', { returnObjects: true }) as ExperienceItem[];
+
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
   const [imageRef, isImageVisible] = useScrollAnimation<HTMLDivElement>();
 
@@ -30,7 +39,7 @@ export default function About() {
               <div className="w-full h-auto rounded-lg overflow-hidden">
                 <img
                   src={profileImage}
-                  alt={t(personalInfo.imageAlt)}
+                  alt={t('about.imageAlt')} // ✅ Chave de tradução estática
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -50,29 +59,30 @@ export default function About() {
               </motion.h2>
               <motion.div variants={staggerItem} className="h-1 w-20 bg-primary rounded-full mb-6" />
 
-              {personalInfo.about.map((paragraphKey) => (
+              {/* ✅ Mapeando sobre o array que veio da tradução */}
+              {paragraphs.map((paragraph, index) => (
                 <motion.p
-                  key={paragraphKey}
+                  key={index}
                   variants={staggerItem}
                   className="text-muted-foreground mb-4"
                 >
-                  {t(paragraphKey)}
+                  {paragraph}
                 </motion.p>
               ))}
 
               <motion.div variants={staggerContainer} className="grid grid-cols-2 gap-6 mb-8">
                 <div>
                   <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">
-                    {t('about.education')}
+                    {t('about.education.title')}
                   </motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
-                    {personalInfo.education.map((edu, index) => (
+                    {educationItems.map((edu, index) => (
                       <motion.li key={index} variants={staggerItem} className="flex items-start">
                         <FiBookOpen className="h-5 w-5 text-primary mt-1 mr-2" />
                         <div>
-                          <p className="font-medium">{t(edu.degree)}</p>
+                          <p className="font-medium">{edu.degree}</p>
                           <p className="text-sm text-muted-foreground">
-                            {t(edu.institution)}, {t(edu.year)}
+                            {edu.institution}, {edu.year}
                           </p>
                         </div>
                       </motion.li>
@@ -82,16 +92,16 @@ export default function About() {
 
                 <div>
                   <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">
-                    {t('about.experience')}
+                    {t('about.experience.title')}
                   </motion.h3>
                   <motion.ul variants={staggerContainer} className="space-y-2">
-                    {personalInfo.experience.map((exp, index) => (
+                    {experienceItems.map((exp, index) => (
                       <motion.li key={index} variants={staggerItem} className="flex items-start">
                         <FiBriefcase className="h-5 w-5 text-primary mt-1 mr-2" />
                         <div>
-                          <p className="font-medium">{t(exp.role)}</p>
+                          <p className="font-medium">{exp.role}</p>
                           <p className="text-sm text-muted-foreground">
-                            {t(exp.company)}, {t(exp.period)}
+                            {exp.company}, {exp.period}
                           </p>
                         </div>
                       </motion.li>
@@ -104,7 +114,7 @@ export default function About() {
                 <Button asChild>
                   <a href={pdfUrl} download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf" target="_blank" rel="noopener noreferrer">
                     <FiDownload className="h-4 w-4 mr-2" />
-                    {t('about.downloadButton')}
+                    {t('about.downloadButton')} {/* ✅ Chave de tradução estática */}
                   </a>
                 </Button>
               </motion.div>
