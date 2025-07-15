@@ -5,8 +5,7 @@ import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 import { SiReact, SiVuedotjs, SiJavascript, SiSass, SiGit, SiFigma, SiNodedotjs, SiMongodb, SiAngular, SiHtml5, SiCss3 } from 'react-icons/si';
-import { FiUniversalAccess } from 'react-icons/fi';
-
+import { FaUniversalAccess } from 'react-icons/fa';
 export default function Skills() {
   const { t } = useTranslation();
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
@@ -70,8 +69,7 @@ function TechnologyCard({ nameKey, icon, delay }: TechnologyCardProps) {
       case 'react': return <SiReact {...iconProps} />;
       case 'js-square': return <SiJavascript {...iconProps} />;
       case 'git-alt': return <SiGit {...iconProps} />;
-      case 'universal-access': return <FiUniversalAccess {...iconProps} />;
-      default: return <div className="h-10 w-10 bg-primary rounded-full mb-3"></div>;
+case 'universal-access': return <FaUniversalAccess {...iconProps} />;       default: return <div className="h-10 w-10 bg-primary rounded-full mb-3"></div>;
     }
   };
   

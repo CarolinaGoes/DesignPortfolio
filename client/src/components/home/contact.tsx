@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -6,12 +5,12 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
 
-import { siteData } from '@/lib/data'; // Usando o novo data.ts enxuto
+import { siteData } from '@/lib/data';
 import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
-import { insertMessageSchema } from '../shared/schema';
+import { insertMessageSchema } from '@shared/schema'; // ✅ CAMINHO CORRIGIDO
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -86,7 +85,7 @@ export default function Contact() {
 
 // Tipagem das Props
 interface ContactFormProps {
-  t: (key: string, options?: any) => string;
+  t: (key: string, options?: any) => any; // Usar 'any' para simplicidade com o hook
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   register: any;
   errors: any;
@@ -95,6 +94,7 @@ interface ContactFormProps {
 
 function ContactForm({ t, onSubmit, register, errors, isSubmitting }: ContactFormProps) {
   const [formRef, isFormVisible] = useScrollAnimation<HTMLFormElement>();
+  // ✅ OPÇÃO `{ returnObjects: true }` ADICIONADA
   const subjectOptions = t('contact.form.subjectOptions', { returnObjects: true }) as { value: string, label: string }[];
 
   return (

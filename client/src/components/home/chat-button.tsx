@@ -12,8 +12,7 @@ import { z } from 'zod';
 import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
-import { insertChatMessageSchema } from '../shared/schema';
-
+import { insertChatMessageSchema } from '@shared/schema';
 export default function ChatButton() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);

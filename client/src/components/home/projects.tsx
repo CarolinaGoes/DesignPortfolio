@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { projectsData } from '@/lib/data';
 import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
@@ -9,8 +9,10 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { FiExternalLink, FiGithub, FiArrowRight, FiFilter, FiCode, FiFileText, FiCpu } from 'react-icons/fi';
 
-// Tipos para os dados traduzidos (boa prática)
+// ✅ 1. DEFININDO TIPOS CLAROS E ROBUSTOS
+type StaticProjectData = typeof projectsData[0];
 type TranslatedProject = { id: number; title: string; description: string; imageAlt: string; tags: string[]; };
+type Project = StaticProjectData & TranslatedProject; // Unindo os dois tipos
 type ProjectCategory = { id: string; name: string; };
 
 export default function Projects() {
@@ -22,13 +24,13 @@ export default function Projects() {
   const categories = t('projects.categories', { returnObjects: true }) as ProjectCategory[];
   const translatedProjects = t('projects.items', { returnObjects: true }) as TranslatedProject[];
 
-  const projects = useMemo(() => {
+  const projects = useMemo<Project[]>(() => {
     return projectsData.map(staticProject => {
-      const translatedPart = translatedProjects.find(p => p.id === staticProject.id);
+      const translatedPart = translatedProjects.find(p => p.id === staticProject.id) || {};
       return {
         ...staticProject,
-        ...(translatedPart || {}),
-      };
+        ...translatedPart,
+      } as Project;
     });
   }, [translatedProjects]);
 
@@ -42,7 +44,7 @@ export default function Projects() {
     }
   }, [selectedCategory, projects]);
 
-  const getCategoryButtonIcon = (categoryId: string) => {
+  const getCategoryButtonIcon = (categoryId: string): ReactNode => {
     switch (categoryId) {
       case 'all': return <FiFilter className="h-4 w-4 mr-2" />;
       case 'html-css': return <FiCode className="h-4 w-4 mr-2" />;
@@ -96,7 +98,7 @@ export default function Projects() {
         <div className="flex justify-center mt-12">
           <motion.div initial="rest" whileHover="hover" whileTap="tap" variants={buttonHover}>
             <Button variant="outline" asChild>
-              <a href="https://github.com/CarolinaGoes" target='_blank' rel="noopener noreferrer" className="flex items-center gap-2">
+              <a href="https://github.com/CarolinaGoes?tab=repositories" target='_blank' rel="noopener noreferrer" className="flex items-center gap-2">
                 <span>{t('projects.viewAll')}</span>
                 <FiExternalLink className="h-4 w-4" />
               </a>
@@ -108,9 +110,8 @@ export default function Projects() {
   );
 }
 
-// Tipagem das Props
 interface ProjectCardProps {
-  project: ReturnType<typeof useMemo<any[], any>>[0];
+  project: Project; // ✅ Usando nosso tipo corrigido e limpo
   index: number;
   isHovered: boolean;
   onHover: () => void;
@@ -121,7 +122,11 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
   const [cardRef, isCardVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2, rootMargin: "0px 0px -100px 0px" });
   const { t } = useTranslation();
 
-  const getCategoryIcon = (category: string) => {
+  // ✅ 2. LÓGICA CORRIGIDA PARA BUSCAR O NOME DA CATEGORIA
+  const categories = t('projects.categories', { returnObjects: true }) as ProjectCategory[];
+  const categoryName = categories.find(c => c.id === project.category)?.name || project.category;
+
+  const getCategoryIcon = (category: string): ReactNode => {
     switch (category) {
       case 'html-css': return <FiCode className="h-5 w-5 text-primary" />;
       case 'javascript': return <FiFileText className="h-5 w-5 text-primary" />;
@@ -135,7 +140,7 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
         <motion.img src={project.image} alt={project.imageAlt} className="w-full h-full object-cover" animate={{ scale: isHovered ? 1.05 : 1, transition: { duration: 0.4 } }} />
         <motion.div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4" initial={{ opacity: 0 }} animate={{ opacity: isHovered ? 1 : 0 }} transition={{ duration: 0.3 }}>
           <motion.div className="flex flex-wrap gap-1" variants={staggerContainer} initial="hidden" animate={isHovered ? "visible" : "hidden"}>
-            {project.tags.map((tag: string, tagIndex: number) => (
+            {project.tags?.map((tag: string, tagIndex: number) => (
               <motion.div key={tagIndex} variants={staggerItem}>
                 <Badge variant="secondary" className="bg-primary/90 text-primary-foreground hover:bg-primary/80">{tag}</Badge>
               </motion.div>
@@ -145,7 +150,7 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
         <motion.div className="absolute top-3 right-3 bg-background/80 backdrop-blur-sm p-1.5 rounded-full" initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: index * 0.1 + 0.3 }} whileHover={{ scale: 1.1, backgroundColor: 'hsl(var(--primary) / 0.2)' }}>
           <Badge variant="outline" className="px-2 py-0.5 flex items-center gap-1 border-primary/20">
             {getCategoryIcon(project.category)}
-            <span className="text-xs font-medium">{t(`projects.categories.${project.category}`, project.category)}</span>
+            <span className="text-xs font-medium">{categoryName}</span>
           </Badge>
         </motion.div>
       </div>
