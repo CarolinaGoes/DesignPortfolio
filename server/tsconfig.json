@@ -1,9 +1,13 @@
+// Arquivo: /server/tsconfig.json (VERSÃO AJUSTADA)
 {
-  "extends": "../tsconfig.json",
+  "extends": "../tsconfig.json", // ou "../tsconfig.base.json"
   "compilerOptions": {
     "outDir": "../dist/server",
+    "lib": ["ES2022"],
+    "module": "NodeNext",
     "moduleResolution": "NodeNext"
   },
+  // ✅ Ajustado: Garante que tanto a pasta 'src' quanto a 'db' sejam incluídas
   "include": ["src", "db"],
   "exclude": ["../dist/server"]
 }
