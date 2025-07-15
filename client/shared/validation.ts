@@ -1,4 +1,4 @@
-// shared/validation.ts
+
 import { z } from "zod";
 
 export const insertMessageSchema = z.object({

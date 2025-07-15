@@ -93,8 +93,6 @@
 
 
   .high-contrast {
-    /* Configuração para o MODO CLARO DE ALTO CONTRASTE */
-    /* Este será o "oposto" do modo escuro padrão, usando fundos brancos e texto preto */
     
     --background: 0 0% 100% !important;        /* Fundo principal: Branco Puro */
     --foreground: 0 0% 0% !important;          /* Texto principal: Preto Puro */
