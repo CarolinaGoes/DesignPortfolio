@@ -69,6 +69,6 @@ build: {
     modules: {
       localsConvention: 'camelCaseOnly'
     },
-    postcss: './postcss.config.js' // Se estiver usando PostCSS
+    postcss: './postcss.config.js'
   }
 })

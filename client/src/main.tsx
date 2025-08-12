@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-console.log("--- O NOVO main.tsx (APÓS LIMPEZA) ESTÁ SENDO EXECUTADO! ---");
+
 
 function HelloWorldApp() {
   return (
