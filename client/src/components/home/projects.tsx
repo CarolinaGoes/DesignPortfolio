@@ -12,7 +12,7 @@ import { FiExternalLink, FiGithub, FiArrowRight, FiFilter, FiCode, FiFileText, F
 
 type StaticProjectData = typeof projectsData[0];
 type TranslatedProject = { id: number; title: string; description: string; imageAlt: string; tags: string[]; };
-type Project = StaticProjectData & TranslatedProject; // Unindo os dois tipos
+type Project = StaticProjectData & TranslatedProject; 
 type ProjectCategory = { id: string; name: string; };
 
 export default function Projects() {
