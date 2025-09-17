@@ -11,14 +11,27 @@ export default defineConfig({
       }
     })
   ],
-  
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@shared': path.resolve(__dirname, './shared')
-    }
+    },
+    // Mantém symlinks para monorepo funcionar
+    preserveSymlinks: true
   },
-  
+
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      '@emotion/react',
+      '@emotion/styled',
+      '@radix-ui/react-toast' // ✅ força Vite a pré-bundle Radix
+    ],
+    exclude: ['@vite/client', '@vite/env']
+  },
+
   build: {
     outDir: 'dist',
     emptyOutDir: true,
@@ -44,41 +57,19 @@ export default defineConfig({
       }
     }
   },
-  
+
   server: {
     port: 5173,
     host: true,
-    strictPort: false, // Mudado para false para permitir outras portas
+    strictPort: false,
     open: true,
     cors: true,
-    // Configurações de HMR (Hot Module Replacement)
-    hmr: {
-      overlay: true,
-      port: 24678 // Porta específica para HMR
-    },
-    // Watch options para melhor detecção de mudanças
-    watch: {
-      usePolling: true,
-      interval: 100,
-      ignored: ['**/node_modules/**', '**/.git/**']
-    }
+    hmr: { overlay: true, port: 24678 },
+    watch: { usePolling: true, interval: 100, ignored: ['**/node_modules/**', '**/.git/**'] }
   },
-  
+
   css: {
-    modules: {
-      localsConvention: 'camelCaseOnly'
-    },
-    postcss: './postcss.config.js' // Se renomear para .js
-  },
-  
-  // Configurações de otimização para desenvolvimento
-  optimizeDeps: {
-    include: [
-      'react',
-      'react-dom',
-      '@emotion/react',
-      '@emotion/styled'
-    ],
-    exclude: ['@vite/client', '@vite/env']
+    modules: { localsConvention: 'camelCaseOnly' },
+    postcss: './postcss.config.js'
   }
 })
