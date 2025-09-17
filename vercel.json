@@ -22,5 +22,24 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
+  ]{
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "server/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/server/$1" },
+    { "src": "/assets/(.*)", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
+    { "src": "/(.*)", "dest": "/client/dist/index.html" }
   ]
+}
+
 }
