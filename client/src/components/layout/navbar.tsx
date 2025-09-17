@@ -34,7 +34,7 @@ export default function Navbar() {
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between" aria-label="Navegação principal">
         <Link href="/" className="text-2xl font-bold text-primary flex items-center gap-2 transition-colors duration-300" aria-label="Voltar ao topo">
           <FiCode className="h-6 w-6" />
-          <span>DevPortfolio</span>
+          <span>Carolina Goes</span>
         </Link>
         
         <div className="hidden md:flex items-center space-x-8">

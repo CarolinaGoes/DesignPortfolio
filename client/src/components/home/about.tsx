@@ -1,24 +1,28 @@
-import { useTranslation } from 'react-i18next';
-import { useScrollAnimation } from '../../lib/hooks/use-scroll-animation';
-import { motion } from 'framer-motion';
-import { staggerContainer, staggerItem, slideRight } from '../../lib/animations';
-import { Button } from '../../components/ui/button';
-import { FiBookOpen, FiBriefcase, FiDownload } from 'react-icons/fi';
-import profileImage from '../../assets/profileImage2.jpg';
+import { useTranslation } from "react-i18next";
+import { useScrollAnimation } from "../../lib/hooks/use-scroll-animation";
+import { motion } from "framer-motion";
+import { staggerContainer, staggerItem, slideRight } from "../../lib/animations";
+import { Button } from "../../components/ui/button";
+import { FiBookOpen, FiBriefcase} from "react-icons/fi";
+import profileImage from "../../assets/profileImage.jpg";
+import {Download} from 'lucide-react';
 
+type EducationItem = { degree: string; institution: string; year: string };
+type ExperienceItem = { role: string; company: string; period: string };
 
-type EducationItem = { degree: string; institution: string; year: string; };
-type ExperienceItem = { role: string; company: string; period: string; };
-
-const pdfUrl = '/assets/CV-Carolina-Rocha-Sampaio-de-Goes.pdf';
+const pdfUrl = "/assets/CV-Carolina-Rocha-Sampaio-de-Goes.pdf";
 
 export default function About() {
   const { t } = useTranslation();
 
-  
-  const paragraphs = t('about.paragraphs', { returnObjects: true }) as string[];
-  const educationItems = t('about.education.items', { returnObjects: true }) as EducationItem[];
-  const experienceItems = t('about.experience.items', { returnObjects: true }) as ExperienceItem[];
+  const rawParagraphs = t("about.paragraphs", { returnObjects: true });
+  const paragraphs = Array.isArray(rawParagraphs) ? rawParagraphs : rawParagraphs ? [rawParagraphs] : [];
+
+  const rawEducationItems = t("about.education.items", { returnObjects: true });
+  const educationItems = Array.isArray(rawEducationItems) ? rawEducationItems : rawEducationItems ? [rawEducationItems] : [];
+
+  const rawExperienceItems = t("about.experience.items", { returnObjects: true });
+  const experienceItems = Array.isArray(rawExperienceItems) ? rawExperienceItems : rawExperienceItems ? [rawExperienceItems] : [];
 
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
   const [imageRef, isImageVisible] = useScrollAnimation<HTMLDivElement>();
@@ -37,7 +41,7 @@ export default function About() {
               <div className="w-full h-auto rounded-lg overflow-hidden">
                 <img
                   src={profileImage}
-                  alt={t('about.imageAlt')} // ✅ Chave de tradução estática
+                  alt={t("about.imageAlt")}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -52,30 +56,50 @@ export default function About() {
               animate={isSectionVisible ? "visible" : "hidden"}
               variants={staggerContainer}
             >
-              <motion.h2 variants={staggerItem} className="text-3xl md:text-4xl font-bold mb-4">
-                {t('about.title')}
+              <motion.h2
+                variants={staggerItem}
+                className="text-3xl md:text-4xl font-bold mb-4"
+              >
+                {t("about.title")}
               </motion.h2>
-              <motion.div variants={staggerItem} className="h-1 w-20 bg-primary rounded-full mb-6" />
+              <motion.div
+                variants={staggerItem}
+                className="h-1 w-20 bg-primary rounded-full mb-6"
+              />
 
-              
-              {paragraphs.map((paragraph, index) => (
-                <motion.p
-                  key={index}
-                  variants={staggerItem}
-                  className="text-muted-foreground mb-4"
-                >
-                  {paragraph}
-                </motion.p>
-              ))}
+              {Array.isArray(paragraphs) && paragraphs.length > 0 ? (
+                paragraphs.map((paragraph, index) => (
+                  <motion.p
+                    key={index}
+                    variants={staggerItem}
+                    className="text-muted-foreground mb-4"
+                  >
+                    {paragraph}
+                  </motion.p>
+                ))
+              ) : null}
 
-              <motion.div variants={staggerContainer} className="grid grid-cols-2 gap-6 mb-8">
+              <motion.div
+                variants={staggerContainer}
+                className="grid grid-cols-2 gap-6 mb-8"
+              >
                 <div>
-                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">
-                    {t('about.education.title')}
+                  <motion.h3
+                    variants={staggerItem}
+                    className="font-semibold text-lg mb-3"
+                  >
+                    {t("about.education.title")}
                   </motion.h3>
-                  <motion.ul variants={staggerContainer} className="space-y-2">
+                  <motion.ul
+                    variants={staggerContainer}
+                    className="space-y-2"
+                  >
                     {educationItems.map((edu, index) => (
-                      <motion.li key={index} variants={staggerItem} className="flex items-start">
+                      <motion.li
+                        key={index}
+                        variants={staggerItem}
+                        className="flex items-start"
+                      >
                         <FiBookOpen className="h-5 w-5 text-primary mt-1 mr-2" />
                         <div>
                           <p className="font-medium">{edu.degree}</p>
@@ -89,12 +113,22 @@ export default function About() {
                 </div>
 
                 <div>
-                  <motion.h3 variants={staggerItem} className="font-semibold text-lg mb-3">
-                    {t('about.experience.title')}
+                  <motion.h3
+                    variants={staggerItem}
+                    className="font-semibold text-lg mb-3"
+                  >
+                    {t("about.experience.title")}
                   </motion.h3>
-                  <motion.ul variants={staggerContainer} className="space-y-2">
+                  <motion.ul
+                    variants={staggerContainer}
+                    className="space-y-2"
+                  >
                     {experienceItems.map((exp, index) => (
-                      <motion.li key={index} variants={staggerItem} className="flex items-start">
+                      <motion.li
+                        key={index}
+                        variants={staggerItem}
+                        className="flex items-start"
+                      >
                         <FiBriefcase className="h-5 w-5 text-primary mt-1 mr-2" />
                         <div>
                           <p className="font-medium">{exp.role}</p>
@@ -109,11 +143,9 @@ export default function About() {
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <Button asChild>
-                  <a href={pdfUrl} download="CV-Carolina-Rocha-Sampaio-de-Goes.pdf" target="_blank" rel="noopener noreferrer">
-                    <FiDownload className="h-4 w-4 mr-2" />
-                    {t('about.downloadButton')} 
-                  </a>
+                <Button variant="outline" className="flex items-center gap-2">
+                  <Download className="h-4 w-4" />
+                  <span>Download CV</span>
                 </Button>
               </motion.div>
             </motion.div>

@@ -66,11 +66,13 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 
+  /* Accessibility Focus Styles */
   *:focus-visible {
     outline: 3px solid hsl(var(--primary));
     outline-offset: 2px;
   }
 
+  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
   }
@@ -91,93 +93,74 @@
     @apply bg-primary/80;
   }
 
+ /* High Contrast Light Mode */
+.high-contrast {
+  --background: 0 0% 100%;          /* branco puro */
+  --foreground: 240 5% 10%;         /* quase preto */
+  --card: 0 0% 100%;
+  --card-foreground: 240 5% 10%;
 
-  .high-contrast {
-    
-    --background: 0 0% 100% !important;        /* Fundo principal: Branco Puro */
-    --foreground: 0 0% 0% !important;          /* Texto principal: Preto Puro */
-    
-    --card: 0 0% 0% !important;                /* Fundo do card: Preto Puro */
-    --card-foreground: 0 0% 100% !important;   /* Texto do card: Branco Puro (contraste no card preto) */
-    
-    --popover: 0 0% 0% !important;             /* Fundo do popover: Preto Puro */
-    --popover-foreground: 0 0% 100% !important;/* Texto do popover: Branco Puro */
-    
-    --primary: 265 100% 60% !important;        /* Cor primária: Roxo vibrante (claro o suficiente para destacar no preto) */
-    --primary-foreground: 0 0% 0% !important; /* Texto na cor primária: Preto Puro */
-    
-    --secondary: 0 0% 90% !important;          /* Cor secundária: Cinza bem claro (para elementos secundários no fundo branco) */
-    --secondary-foreground: 0 0% 0% !important; /* Texto na cor secundária: Preto Puro */
-    
-    --muted: 0 0% 80% !important;              /* Cor "silenciosa": Cinza claro */
-    --muted-foreground: 0 0% 0% !important;    /* Texto "silencioso": Preto Puro */
-    
-    --accent: 0 0% 90% !important;             /* Cor de destaque: Cinza bem claro */
-    --accent-foreground: 0 0% 0% !important;   /* Texto de destaque: Preto Puro */
-    
-    --destructive: 0 100% 40% !important;      /* Destrutiva: Vermelho vibrante */
-    --destructive-foreground: 0 0% 100% !important; /* Texto destrutivo: Branco Puro */
-    
-    --border: 0 0% 0% !important;              /* Bordas: Preto Puro para visibilidade máxima */
-    --input: 0 0% 100% !important;             /* Fundo do input: Branco Puro */
-    --ring: 265 100% 60% !important;           /* Cor do foco: Roxo vibrante */
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 5% 10%;
 
-    /* Variáveis de gráfico para alto contraste */
-    --chart-1: 265 100% 60% !important; /* Roxo vibrante */
-    --chart-2: 200 100% 50% !important; /* Ciano vibrante */
-    --chart-3: 60 100% 50% !important;  /* Amarelo vibrante */
-    --chart-4: 0 100% 40% !important;   /* Vermelho vibrante */
-    --chart-5: 120 100% 40% !important; /* Verde vibrante */
-  }
+  --primary: 265 90% 40%;           /* roxo mais forte */
+  --primary-foreground: 0 0% 100%;  /* texto branco no botão */
 
-  .dark.high-contrast {
-    /* Configuração para MODO ESCURO DE ALTO CONTRASTE */
-    /* Este é o que você já tinha, focado em fundo preto e texto branco */
+  --secondary: 240 4% 92%;          /* cinza claro */
+  --secondary-foreground: 240 5% 15%;
 
-    --background: 0 0% 0% !important;        /* Fundo principal: Preto Puro */
-    --foreground: 0 0% 100% !important;      /* Texto principal: Branco Puro */
-    
-    --card: 0 0% 100% !important;             /* Fundo do card: Branco Puro */
-    --card-foreground: 0 0% 0% !important;    /* Texto do card: Preto Puro (contraste no card branco) */
-    
-    --popover: 0 0% 100% !important;
-    --popover-foreground: 0 0% 0% !important;
+  --muted: 240 4% 88%;              /* fundo suave */
+  --muted-foreground: 240 6% 25%;
 
-    --primary: 265 100% 75% !important;       /* Roxo vibrante (mais claro para se destacar) */
-    --primary-foreground: 0 0% 0% !important; /* Texto na cor primária: Preto Puro */
-    
-    --secondary: 0 0% 15% !important;         /* Cinza muito escuro */
-    --secondary-foreground: 0 0% 100% !important; /* Texto na cor secundária: Branco Puro */
-    
-    --muted: 0 0% 20% !important;
-    --muted-foreground: 0 0% 100% !important;
-    
-    --accent: 0 0% 15% !important;
-    --accent-foreground: 0 0% 100% !important;
-    
-    --destructive: 0 100% 60% !important;     /* Vermelho vibrante */
-    --destructive-foreground: 0 0% 0% !important; /* Texto destrutivo: Preto Puro */
-    
-    --border: 0 0% 100% !important;           /* Bordas: Branco Puro */
-    --input: 0 0% 0% !important;
-    --ring: 265 100% 75% !important;
+  --accent: 265 90% 90%;            /* lilás clarinho */
+  --accent-foreground: 240 5% 15%;
 
-    /* Variáveis de gráfico para alto contraste escuro */
-    --chart-1: 265 100% 75% !important; /* Roxo vibrante */
-    --chart-2: 200 100% 70% !important; /* Ciano vibrante */
-    --chart-3: 60 100% 70% !important;  /* Amarelo vibrante */
-    --chart-4: 0 100% 60% !important;   /* Vermelho vibrante */
-    --chart-5: 120 100% 60% !important; /* Verde vibrante */
-  }
+  --destructive: 0 90% 45%;         /* vermelho forte */
+  --destructive-foreground: 0 0% 100%;
 
-  
+  --border: 240 5% 15%;             /* borda escura */
+  --input: 240 5% 15%;
+  --ring: 265 90% 40%;              /* roxo contrastado */
 }
 
+.dark.high-contrast {
+  --background: 0 0% 0%;             /* preto absoluto */
+  --foreground: 0 0% 100%;           /* branco absoluto */
+
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 0 0% 0%;
+  --popover-foreground: 0 0% 100%;
+
+  --primary: 320 100% 35%;           /* pink escuro neon (#b0005f vibe) */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 0 0% 15%;             /* cinza quase preto */
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 0 0% 25%;
+  --muted-foreground: 0 0% 100%;
+
+  --accent: 330 90% 40%;             /* magenta escuro neon (#a00070) */
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 100% 45%;         /* vermelho intenso */
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 100%;               /* borda branca sólida */
+  --input: 0 0% 100%;
+  --ring: 320 100% 40%;              /* pink escuro para foco */
+}
+
+
+  /* Reduced Motion */
   .reduce-motion * {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
   
+  /* Acessibilidade - Ajustes para tamanho de fonte aumentado */
   html[data-font-size="1.25"] {
     font-size: 125%;
     line-height: 1.5;
@@ -198,6 +181,7 @@
     line-height: 2;
   }
   
+  /* Ajustes responsivos para texto maior */
   @media (max-width: 1024px) {
     html[data-font-size="1.5"] .grid,
     html[data-font-size="1.75"] .grid,
@@ -212,6 +196,7 @@
     }
   }
   
+  /* Aumentar espaçamento vertical quando o tamanho da fonte é aumentado */
   html[data-font-size="1.5"] .py-16,
   html[data-font-size="1.75"] .py-16,
   html[data-font-size="2"] .py-16 {
@@ -225,7 +210,7 @@
     padding-top: 7rem;
     padding-bottom: 7rem;
   }
-
+}
 
 @layer components {
   .project-card {

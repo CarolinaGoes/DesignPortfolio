@@ -1,3 +1,5 @@
+// client/src/pages/home.tsx
+
 import { Fragment } from 'react';
 import Navbar from '@/components/layout/navbar';
 import Footer from '@/components/layout/footer';

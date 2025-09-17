@@ -1,26 +1,28 @@
-// Arquivo: client/src/lib/i18n.ts
-
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import HttpApi from 'i18next-http-backend';
 
 i18n
-  .use(HttpApi)
+  .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'pt',
-    defaultNS: 'common',
-    debug: process.env.NODE_ENV === 'development', // Ativa o debug apenas em desenvolvimento
+    fallbackLng: 'en',
+    lng: 'pt', // idioma padrão
+    debug: import.meta.env.DEV,
+
     interpolation: {
       escapeValue: false,
     },
+
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      loadPath: '/locales/{{lng}}/common.json', // 🔥 agora carrega o common.json
     },
-    react: {
-      useSuspense: true,
+
+    detection: {
+      order: ['localStorage', 'navigator', 'htmlTag'],
+      caches: ['localStorage'],
     },
   });
 

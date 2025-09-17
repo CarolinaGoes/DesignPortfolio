@@ -10,19 +10,19 @@ import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
-import { insertMessageSchema } from '@shared/schema'; // ✅ CAMINHO CORRIGIDO
-
+import { insertMessageSchema } from '@shared/schema';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { FiMail, FiMapPin, FiSend, FiGithub, FiLinkedin, FiPhone } from 'react-icons/fi';
+import ErrorBoundary from '../ErrorBoundary';
 
 export default function Contact() {
   const { t } = useTranslation();
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
   const { toast } = useToast();
 
-  const formSchema = insertMessageSchema.extend({
+ const formSchema = insertMessageSchema.extend({
     email: z.string().email(t('contact.validation.email')),
     name: z.string().min(3, t('contact.validation.nameMin')),
     subject: z.string().min(2, t('contact.validation.subjectRequired')),
@@ -31,7 +31,7 @@ export default function Contact() {
 
   type FormData = z.infer<typeof formSchema>;
 
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<FormData>({
+  const { register, handleSubmit, reset,formState: { errors, isSubmitting } } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: { name: '', email: '', subject: '', message: '' }
   });
@@ -69,13 +69,17 @@ export default function Contact() {
           </motion.div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <ContactForm
-            t={t}
-            onSubmit={handleSubmit(onSubmit)}
-            register={register}
-            errors={errors}
-            isSubmitting={isSubmitting || sendMessageMutation.isPending}
-          />
+          <div>
+            <ErrorBoundary>
+              <ContactForm
+                t={t}
+                onSubmit={handleSubmit(onSubmit)}
+                register={register}
+                errors={errors}
+                isSubmitting={isSubmitting || sendMessageMutation.isPending}
+              />
+            </ErrorBoundary>
+          </div>
           <ContactInfo t={t} />
         </div>
       </div>
@@ -83,9 +87,8 @@ export default function Contact() {
   );
 }
 
-// Tipagem das Props
 interface ContactFormProps {
-  t: (key: string, options?: any) => any; // Usar 'any' para simplicidade com o hook
+  t: (key: string, options?: any) => any; 
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   register: any;
   errors: any;
@@ -94,8 +97,8 @@ interface ContactFormProps {
 
 function ContactForm({ t, onSubmit, register, errors, isSubmitting }: ContactFormProps) {
   const [formRef, isFormVisible] = useScrollAnimation<HTMLFormElement>();
-  // ✅ OPÇÃO `{ returnObjects: true }` ADICIONADA
-  const subjectOptions = t('contact.form.subjectOptions', { returnObjects: true }) as { value: string, label: string }[];
+  const rawSubjectOptions = t('contact.subjectOptions', { returnObjects: true });
+  const subjectOptions = Array.isArray(rawSubjectOptions) ? rawSubjectOptions : rawSubjectOptions ? [rawSubjectOptions] : [];
 
   return (
     <motion.form
@@ -122,9 +125,11 @@ function ContactForm({ t, onSubmit, register, errors, isSubmitting }: ContactFor
       <motion.div variants={staggerItem} className="mb-6">
         <label htmlFor="subject" className="block font-medium mb-2">{t('contact.form.subjectLabel')}</label>
         <select id="subject" className="w-full px-4 py-3 rounded-lg border border-input bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" {...register("subject")} aria-invalid={!!errors.subject} aria-required="true" defaultValue="">
-          {subjectOptions.map(option => (
-            <option key={option.value} value={option.value} disabled={option.value === ""}>{option.label}</option>
-          ))}
+          {Array.isArray(subjectOptions) && subjectOptions.length > 0 ? (
+            subjectOptions.map(option => (
+              <option key={option.value} value={option.value} disabled={option.value === ""}>{option.label}</option>
+            ))
+          ) : null}
         </select>
         {errors.subject && <p className="mt-1 text-sm text-destructive">{errors.subject.message as string}</p>}
       </motion.div>
@@ -136,7 +141,7 @@ function ContactForm({ t, onSubmit, register, errors, isSubmitting }: ContactFor
       </motion.div>
 
       <motion.div variants={staggerItem}>
-        <Button type="submit" className="w-full flex items-center justify-center gap-2" disabled={isSubmitting}>
+        <Button >
           <span>{t('contact.form.submitButton')}</span>
           <FiSend className="h-4 w-4" />
         </Button>

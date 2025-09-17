@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { fadeIn, slideUp } from '@/lib/animations';
 import { siteData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
-import { profileImage } from '@/assets';
+import profileImage from "../../assets/profileImage.jpg";
 import { FiArrowRight, FiGithub, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi';
 
 export default function Hero() {
@@ -30,7 +30,7 @@ export default function Hero() {
             {t('hero.description')}
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button asChild>
+           <Button asChild>
               <a href="#projects" className="flex items-center gap-2">
                 <span>{t('hero.projectsButton')}</span>
                 <FiArrowRight className="h-4 w-4" />

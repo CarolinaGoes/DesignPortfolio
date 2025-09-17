@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import React, { createContext, useState, ReactNode, useEffect } from 'react';
 
 interface AccessibilityOptions {
   fontSize: number;
@@ -35,43 +35,40 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Apply font size using data attribute
-      const htmlElement = document.documentElement;
-      
-      // Remove any existing data-font-size attributes
+      const htmlElement = document.documentElement; // <html>
+
+      // Reset font-size flag
       htmlElement.removeAttribute('data-font-size');
-      
-      // Calculate font size multiplier
+
+      // Ajusta font-size proporcional
       if (options.fontSize > 100) {
         const fontSizeMultiplier = options.fontSize / 100;
-        if (fontSizeMultiplier >= 1.25) {
-          if (fontSizeMultiplier >= 2) {
-            htmlElement.setAttribute('data-font-size', '2');
-          } else if (fontSizeMultiplier >= 1.75) {
-            htmlElement.setAttribute('data-font-size', '1.75');
-          } else if (fontSizeMultiplier >= 1.5) {
-            htmlElement.setAttribute('data-font-size', '1.5');
-          } else {
-            htmlElement.setAttribute('data-font-size', '1.25');
-          }
+        if (fontSizeMultiplier >= 2) {
+          htmlElement.setAttribute('data-font-size', '2');
+        } else if (fontSizeMultiplier >= 1.75) {
+          htmlElement.setAttribute('data-font-size', '1.75');
+        } else if (fontSizeMultiplier >= 1.5) {
+          htmlElement.setAttribute('data-font-size', '1.5');
+        } else if (fontSizeMultiplier >= 1.25) {
+          htmlElement.setAttribute('data-font-size', '1.25');
         }
       }
-      
-      // Apply high contrast
+
+      // High contrast
       if (options.highContrast) {
-        document.body.classList.add('high-contrast');
+        htmlElement.classList.add('high-contrast');
       } else {
-        document.body.classList.remove('high-contrast');
+        htmlElement.classList.remove('high-contrast');
       }
-      
-      // Apply reduced motion
+
+      // Reduce motion
       if (options.reduceMotion) {
-        document.body.classList.add('reduce-motion');
+        htmlElement.classList.add('reduce-motion');
       } else {
-        document.body.classList.remove('reduce-motion');
+        htmlElement.classList.remove('reduce-motion');
       }
-      
-      // Save settings to localStorage
+
+      // Save settings
       localStorage.setItem('accessibilityOptions', JSON.stringify(options));
     }
   }, [options]);
@@ -95,11 +92,11 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
   return (
     <AccessibilityContext.Provider 
       value={{
-        options, 
-        setFontSize, 
-        toggleHighContrast, 
-        toggleReduceMotion, 
-        resetSettings 
+        options,
+        setFontSize,
+        toggleHighContrast,
+        toggleReduceMotion,
+        resetSettings
       }}
     >
       {children}
@@ -108,11 +105,9 @@ export function AccessibilityProvider({ children }: { children: ReactNode }) {
 }
 
 export function useAccessibility() {
-  const context = useContext(AccessibilityContext);
-  
-  if (context === undefined) {
+  const context = React.useContext(AccessibilityContext);
+  if (!context) {
     throw new Error('useAccessibility must be used within an AccessibilityProvider');
   }
-  
   return context;
 }

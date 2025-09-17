@@ -1,9 +1,7 @@
-"use client"
-
 import * as React from "react"
 import * as ToastPrimitives from "@radix-ui/react-toast"
 import { cva, type VariantProps } from "class-variance-authority"
-import { FiX } from "react-icons/fi" // ✅ Ícone trocado
+import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -83,7 +81,7 @@ const ToastClose = React.forwardRef<
     toast-close=""
     {...props}
   >
-    <FiX className="h-4 w-4" /> {/* ✅ Ícone utilizado */}
+    <X className="h-4 w-4" />
   </ToastPrimitives.Close>
 ))
 ToastClose.displayName = ToastPrimitives.Close.displayName
@@ -113,6 +111,7 @@ const ToastDescription = React.forwardRef<
 ToastDescription.displayName = ToastPrimitives.Description.displayName
 
 type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>
+
 type ToastActionElement = React.ReactElement<typeof ToastAction>
 
 export {

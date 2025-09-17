@@ -7,6 +7,9 @@ const config: Config = {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      aspectRatio: {
+      phone: '9 / 12'},
+
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
