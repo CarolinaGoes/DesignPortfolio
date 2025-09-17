@@ -12,14 +12,12 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
-
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme === 'dark' || savedTheme === 'light') {
-        return savedTheme;
+        return savedTheme as Theme; 
       }
       
-     
       if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         return 'dark';
       }
@@ -29,11 +27,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   });
 
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', theme === 'dark');
     
     if (typeof window !== 'undefined') {
       localStorage.setItem('theme', theme);
@@ -44,14 +38,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
 
+  const contextValue: ThemeContextType = {
+    theme,
+    toggleTheme,
+    isDarkMode: theme === 'dark'
+  };
+
   return (
-    <ThemeContext.Provider 
-      value={{
-        theme,
-        toggleTheme,
-        isDarkMode: theme === 'dark'
-      }}
-    >
+    <ThemeContext.Provider value={contextValue}>
       {children}
     </ThemeContext.Provider>
   );

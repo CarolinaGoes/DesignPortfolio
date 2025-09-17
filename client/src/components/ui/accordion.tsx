@@ -1,6 +1,6 @@
 import * as React from "react"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { FiChevronDown } from "react-icons/fi" // ✅ 1. Alterado de 'lucide-react' para 'react-icons/fi'
+import { ChevronDown } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
@@ -32,7 +32,7 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <FiChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" /> {/* ✅ 2. Componente do ícone atualizado */}
+      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))
@@ -50,6 +50,7 @@ const AccordionContent = React.forwardRef<
     <div className={cn("pb-4 pt-0", className)}>{children}</div>
   </AccordionPrimitive.Content>
 ))
+
 AccordionContent.displayName = AccordionPrimitive.Content.displayName
 
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }

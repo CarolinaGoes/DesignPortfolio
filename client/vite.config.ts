@@ -1,16 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'node:path'
-import { fileURLToPath } from 'url'
-
-
- 
-
 
 export default defineConfig({
-  
-
-  
   plugins: [
     react({
       jsxImportSource: '@emotion/react',
@@ -19,20 +11,15 @@ export default defineConfig({
       }
     })
   ],
-// Remova a referência ao postcss.config.js se não estiver usando
-resolve: {
-  alias: [
-    {
-      find: '@',
-      replacement: path.resolve(__dirname, './src')
-    },
-    {
-      find: '@shared',
-      replacement: path.resolve(__dirname, './shared')
+  
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@shared': path.resolve(__dirname, './shared')
     }
-  ]
-},
-build: {
+  },
+  
+  build: {
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: process.env.NODE_ENV !== 'production',
@@ -57,18 +44,41 @@ build: {
       }
     }
   },
+  
   server: {
     port: 5173,
+    host: true,
+    strictPort: false, // Mudado para false para permitir outras portas
     open: true,
     cors: true,
-    host: true, 
-    strictPort: true,
-  
+    // Configurações de HMR (Hot Module Replacement)
+    hmr: {
+      overlay: true,
+      port: 24678 // Porta específica para HMR
+    },
+    // Watch options para melhor detecção de mudanças
+    watch: {
+      usePolling: true,
+      interval: 100,
+      ignored: ['**/node_modules/**', '**/.git/**']
+    }
   },
+  
   css: {
     modules: {
       localsConvention: 'camelCaseOnly'
     },
-    postcss: './postcss.config.js'
+    postcss: './postcss.config.js' // Se renomear para .js
+  },
+  
+  // Configurações de otimização para desenvolvimento
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      '@emotion/react',
+      '@emotion/styled'
+    ],
+    exclude: ['@vite/client', '@vite/env']
   }
 })

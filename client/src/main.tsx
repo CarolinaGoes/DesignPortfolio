@@ -1,16 +1,19 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import App from './App';
+import './index.css';
+import './lib/i18n';
 
+const container = document.getElementById('root');
 
-
-function HelloWorldApp() {
-  return (
-    <div style={{ backgroundColor: 'white', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <h1 style={{ color: 'green', fontSize: '48px', textAlign: 'center' }}>
-        O AMBIENTE FOI CORRIGIDO!
-      </h1>
-    </div>
-  );
+if (!container) {
+  throw new Error('Root element not found');
 }
 
-createRoot(document.getElementById('root')!).render(<HelloWorldApp />);
+const root = createRoot(container);
+
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

@@ -13,14 +13,20 @@ import { useMutation } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
 import { insertChatMessageSchema } from '@shared/schema';
+
 export default function ChatButton() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const { toast } = useToast();
 
+  const insertChatMessageSchema = z.object({
+  name: z.string().min(2, { message: t('chat.validation.nameMin') }),
+  message: z.string().min(5, { message: t('chat.validation.messageMin') }),
+});
+
   const chatFormSchema = insertChatMessageSchema.extend({
-    name: z.string().min(2, t('chat.validation.nameMin')),
-    message: z.string().min(5, t('chat.validation.messageMin'))
+    name: z.string().min(2, { message: t('chat.validation.nameMin') }),
+    message: z.string().min(5, { message: t('chat.validation.messageMin') }),
   });
 
   type ChatFormData = z.infer<typeof chatFormSchema>;
@@ -82,7 +88,7 @@ export default function ChatButton() {
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-semibold">{t('chat.title')}</h3>
               <Button 
-                variant="ghost" 
+                variant="default" 
                 size="icon" 
                 className="h-7 w-7" 
                 onClick={() => setIsOpen(false)}

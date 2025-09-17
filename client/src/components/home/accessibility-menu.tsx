@@ -8,30 +8,36 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiEye, FiRefreshCw } from 'react-icons/fi';
 import { slideFromLeft } from '@/lib/animations';
 import { useAccessibility } from '@/lib/hooks/use-accessibility';
+import ErrorBoundary from '../ErrorBoundary';
+import { Accessibility } from 'lucide-react';
 
-export default function AccessibilityMenu() {
+function AccessibilityMenuContent() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+
   const {
     options,
     setFontSize,
     toggleHighContrast,
     toggleReduceMotion,
     resetSettings
-  } = useAccessibility();
+  } = useAccessibility() ?? {}; 
+  const fontSize = options?.fontSize ?? 100;
+  const highContrast = options?.highContrast ?? false;
+  const reduceMotion = options?.reduceMotion ?? false;
 
   return (
     <div className="fixed top-24 left-0 z-50 transform transition-transform duration-300">
-      <Button
+       <Button 
         variant="default"
         size="icon"
         className="rounded-r-lg rounded-l-none"
         onClick={() => setIsOpen(!isOpen)}
-        aria-label={t('accessibility.buttonLabel')}
+        aria-label="Opções de acessibilidade"
         aria-expanded={isOpen}
         aria-controls="accessibility-menu-panel"
       >
-        <FiEye className="h-5 w-5" />
+       <Accessibility className="h-5 w-5" />
       </Button>
 
       <AnimatePresence>
@@ -49,15 +55,15 @@ export default function AccessibilityMenu() {
             <div className="space-y-6">
               <div>
                 <Label htmlFor="font-size" className="text-sm font-medium mb-1 block">
-                  {t('accessibility.fontSizeLabel', { percent: options.fontSize })}
+                  {t('accessibility.fontSizeLabel', { percent: fontSize })}
                 </Label>
                 <Slider
                   id="font-size"
                   min={80}
                   max={200}
                   step={10}
-                  value={[options.fontSize]}
-                  onValueChange={(value: number[]) => setFontSize(value[0])}
+                  value={[fontSize]}
+                  onValueChange={(value: number[]) => setFontSize?.(value[0])}
                   className="py-4"
                 />
               </div>
@@ -68,8 +74,8 @@ export default function AccessibilityMenu() {
                 </Label>
                 <Switch
                   id="high-contrast"
-                  checked={options.highContrast}
-                  onCheckedChange={toggleHighContrast}
+                  checked={highContrast}
+                  onCheckedChange={toggleHighContrast || (() => { })}
                 />
               </div>
 
@@ -79,16 +85,16 @@ export default function AccessibilityMenu() {
                 </Label>
                 <Switch
                   id="reduce-motion"
-                  checked={options.reduceMotion}
-                  onCheckedChange={toggleReduceMotion}
+                  checked={reduceMotion}
+                  onCheckedChange={toggleReduceMotion || (() => { })}
                 />
               </div>
 
               <Button
-                variant="outline"
-                size="sm"
+                variant={"outline"}
+                size="icon"
                 className="w-full flex items-center gap-2"
-                onClick={resetSettings}
+                onClick={resetSettings || (() => { })}
               >
                 <FiRefreshCw className="h-4 w-4" />
                 <span>{t('accessibility.resetButton')}</span>
@@ -98,5 +104,13 @@ export default function AccessibilityMenu() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+export default function AccessibilityMenu() {
+  return (
+    <ErrorBoundary>
+      <AccessibilityMenuContent />
+    </ErrorBoundary>
   );
 }

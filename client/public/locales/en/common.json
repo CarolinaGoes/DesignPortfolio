@@ -7,35 +7,61 @@
     "contact": "Contact"
   },
   "hero": {
-    "greeting": "Hello, I'm",
+    "greeting": "Hi, I'm",
     "name": "Carolina Goes",
     "title": "Frontend Developer",
-    "description": "Transforming ideas into incredible digital experiences with a focus on accessibility, usability, and modern design.",
-    "contactButton": "Get in Touch",
-    "projectsButton": "View Projects",
+    "description": "Transforming ideas into amazing digital experiences with a focus on accessibility, usability, and modern design.",
+    "contactButton": "Get in touch",
+    "projectsButton": "View projects",
     "imageAlt": "Profile picture of Carolina Goes"
+  },
+  "carousel": {
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "Did you get lost or forget to add the page to the router?"
+  },
+  "dialog": {
+    "close": "Close"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "goToPreviousPage": "Go to previous page",
+    "previous": "Previous",
+    "goToNextPage": "Go to next page",
+    "next": "Next",
+    "morePages": "More pages"
+  },
+  "sidebar": {
+    "toggle": "Toggle sidebar"
   },
   "about": {
     "title": "About Me",
     "imageAlt": "Profile picture of Carolina Goes",
     "downloadButton": "Download CV",
     "paragraphs": [
-      "I am a frontend developer passionate about creating accessible and inclusive digital experiences. With a solid background in web development and a user-centered approach, I always seek to implement solutions that not only work well but are usable by everyone.",
-      "My journey in development began with a curiosity about how things work on the web, and it evolved into a passion for creating interfaces that make a difference in people's lives. I believe that technology should be a tool for inclusion, not exclusion.",
-      "When I'm not coding, I enjoy staying up-to-date with the latest trends in UX/UI, participating in developer communities, and contributing to open-source projects."
+      "Hi, I'm Carolina, a Software Engineering student focused on frontend development, currently specializing in technologies such as HTML, CSS, JavaScript, and React. I have been dedicated to practical projects, always seeking to write code strategically, cleanly, and innovatively. Before entering the tech field, I worked as a teacher and also in administrative routines in the educational sector. This experience provided me with a solid foundation in organization, communication, problem-solving, and continuous learning — skills I bring to the programming world. I am currently transitioning my career into technology and looking for an internship opportunity in frontend development. I want to combine my experience in education with the tech world, contributing with creative, efficient, and adaptable solutions.",
+      "📩 I’m open to new opportunities, connections, and learning in the tech ecosystem!"
     ],
     "education": {
       "title": "Education",
       "items": [
         {
-          "degree": "Bachelor's in Computer Science",
-          "institution": "University of São Paulo",
-          "year": "2019-2023"
+          "degree": "Software Engineering",
+          "institution": "Universidade Anhanguera",
+          "year": "2025-2028 (in progress)"
         },
         {
-          "degree": "UX/UI Design Certification",
-          "institution": "Google UX Design",
-          "year": "2023"
+          "degree": "Bachelor in Pedagogy",
+          "institution": "UNICID",
+          "year": "2015 - 2018"
+        },
+        {
+          "degree": "Contact Center Management",
+          "institution": "UNINOVE",
+          "year": "2008 - 2010"
         }
       ]
     },
@@ -43,22 +69,37 @@
       "title": "Experience",
       "items": [
         {
-          "role": "Frontend Developer",
-          "company": "Tech Solutions",
-          "period": "2023-Present"
+          "role": "Freelancer",
+          "company": "Frontend Developer",
+          "period": "2024-Present"
         },
         {
-          "role": "Junior Developer",
-          "company": "StartupXYZ",
-          "period": "2022-2023"
+          "role": "São Paulo City Hall",
+          "company": "Teacher",
+          "period": "2023-2025"
+        },
+        {
+          "role": "São Paulo City Hall",
+          "company": "Educational Technical Assistant",
+          "period": "2021-2023"
+        },
+        {
+          "role": "Freelancer",
+          "company": "Party Entertainer",
+          "period": "2011-2021"
+        },
+        {
+          "role": "CONTAX S.A",
+          "company": "Collection Agent",
+          "period": "2007-2011"
         }
       ]
     }
   },
   "skills": {
     "title": "My Skills",
-    "description": "Always keeping up with the latest technologies and focusing on creating accessible, high-quality experiences.",
-    "technologiesTitle": "Technologies & Tools",
+    "description": "Always keeping up with the latest technologies and focusing on building accessible, high-quality experiences.",
+    "technologiesTitle": "Technologies and Tools",
     "tech": {
       "html": "HTML5 & CSS3",
       "js": "JavaScript (ES6+)",
@@ -69,31 +110,134 @@
   },
   "projects": {
     "title": "Projects",
-    "description": "Here are some of the projects I've worked on recently, combining attractive design with robust functionality.",
+    "description": "Here are some of the projects I have recently worked on, combining attractive design with robust functionality.",
     "filter": "Filter by category",
     "viewAll": "View all projects",
     "viewLive": "View live",
-    "viewOnGithub": "View code on GitHub",
+    "viewOnGithub": "View on GitHub",
     "noProjectsFound": "No projects found in this category.",
     "categories": [
-      { "id": "all", "name": "All" },
-      { "id": "html-css", "name": "HTML/CSS" },
-      { "id": "javascript", "name": "JavaScript" },
-      { "id": "react", "name": "React" }
+      {
+        "id": "all",
+        "name": "All"
+      },
+      {
+        "id": "html-css",
+        "name": "HTML/CSS"
+      },
+      {
+        "id": "javascript",
+        "name": "JavaScript"
+      },
+      {
+        "id": "react",
+        "name": "React"
+      },
+      {
+        "id": "typescript",
+        "name": "TypeScript"
+      }
     ],
     "items": [
       {
         "id": 1,
-        "title": "Modern E-commerce",
-        "description": "A complete e-commerce platform with accessibility features, advanced filters, and an optimized shopping experience.",
-        "imageAlt": "E-commerce project demonstration",
-        "tags": ["React", "Tailwind", "Accessibility"]
-      }
+        "title": "Simple Animation - Tea Cup",
+        "description": "Simple page, a teacup with animated steam.",
+        "imageAlt": "Demo of the Teacup animation project",
+        "tags": ["html-css"]
+      },
+      {
+        "id": 2,
+        "title": "Study Website",
+        "description": "Educational website project with responsive layout.",
+        "imageAlt": "Demo of the Study Website project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 3,
+        "title": "Simple Landing Page - Online Menu",
+        "description": "Menu page for fictional products.",
+        "imageAlt": "Demo of the Online Menu Landing Page project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 4,
+        "title": "Game - Maze",
+        "description": "Game with interactive map generation and movement.",
+        "imageAlt": "Demo of the Maze Game project",
+        "tags": ["javascript"]
+      },
+      {
+        "id": 5,
+        "title": "School Search Website",
+        "description": "Website for searching schools with location and type filters.",
+        "imageAlt": "Demo of the School Search Website project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 6,
+        "title": "Shovel Game",
+        "description": "Move the sticks to remove the dirt from the shovel.",
+        "imageAlt": "Demo of the Simple E-commerce project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 7,
+        "title": "Personal Portfolio",
+        "description": "My first personal portfolio developed with HTML, CSS, and JavaScript.",
+        "imageAlt": "Demo of the Personal Portfolio project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 8,
+        "title": "Game - Tower of Hanoi",
+        "description": "Tower of Hanoi game with animations and piece movement.",
+        "imageAlt": "Demo of the Tower of Hanoi project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 9,
+        "title": "Game - Sliding Puzzle",
+        "description": "Sliding puzzle with customized images.",
+        "imageAlt": "Demo of the Sliding Puzzle project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 10,
+        "title": "E-commerce Interface",
+        "description": "Responsive landing page for an e-commerce.",
+        "imageAlt": "Demo of the E-commerce Interface project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 11,
+        "title": "Online Tarot Website",
+        "description": "Online tarot reading website with modern and interactive design.",
+        "imageAlt": "Demo of the Online Tarot Website project",
+        "tags": ["react", "typescript"]
+      },
+      {
+        "id": 12,
+        "title": "Graphotechnical Expertise Website",
+        "description": "Institutional website for a handwriting expertise service.",
+        "imageAlt": "Demo of the Graphotechnical Expertise Website project",
+        "tags": ["react", "typescript"]
+      },
+      {
+  "id": 13,
+  "title": "Tic-Tac-Toe",
+  "description": "Interactive Tic-Tac-Toe game with scoreboard and game reset.",
+  "imageAlt": "Demo of the Tic-Tac-Toe project",
+  "tags": [
+    "html-css",
+    "javascript"
+  ]
+}
     ]
   },
   "contact": {
     "title": "Get in Touch",
-    "description": "Have an interesting project or opportunity? I'm always open to new connections and collaborations.",
+    "description": "Do you have an interesting project or opportunity? I’m always open to new connections and collaborations.",
     "form": {
       "nameLabel": "Name",
       "namePlaceholder": "Your full name",
@@ -102,8 +246,8 @@
       "subjectLabel": "Subject",
       "subjectOptions": [
         { "value": "", "label": "Select a subject" },
-        { "value": "project", "label": "Project proposal" },
-        { "value": "job", "label": "Job opportunity" },
+        { "value": "project", "label": "Project Proposal" },
+        { "value": "job", "label": "Job Opportunity" },
         { "value": "collaboration", "label": "Collaboration" },
         { "value": "other", "label": "Other" }
       ],
@@ -126,13 +270,13 @@
     },
     "validation": {
       "email": "Please enter a valid email",
-      "nameMin": "Name must be at least 3 characters",
+      "nameMin": "Name must be at least 3 characters long",
       "subjectRequired": "Please select a subject",
-      "messageMin": "Message must be at least 10 characters"
+      "messageMin": "Message must be at least 10 characters long"
     },
     "toast": {
       "successTitle": "Message sent!",
-      "successDescription": "Thank you for getting in touch, I will respond soon.",
+      "successDescription": "Thanks for reaching out, I’ll reply soon.",
       "errorTitle": "Error sending message",
       "errorDescription": "An error occurred while sending your message. Please try again."
     }
@@ -147,18 +291,19 @@
     "messagePlaceholder": "How can I help?",
     "submitButton": "Send",
     "toastSuccessTitle": "Message sent!",
-    "toastSuccessDescription": "Thank you for getting in touch, I will respond soon.",
+    "toastSuccessDescription": "Thanks for reaching out, I’ll reply soon.",
     "toastErrorTitle": "Error sending message",
     "toastErrorDescription": "An error occurred while sending your message. Please try again.",
     "validation": {
-      "nameMin": "Name must be at least 2 characters",
-      "messageMin": "Message must be at least 5 characters"
+      "nameMin": "Name must be at least 2 characters long",
+      "messageMin": "Message must be at least 5 characters long"
     }
   },
   "footer": {
-    "tagline": "Developing intuitive, accessible, and visually appealing interfaces with the most modern technologies.",
+    "tagline": "Building intuitive, accessible, and visually appealing interfaces with the most modern technologies.",
     "quickLinksTitle": "Quick Links",
     "copyright": "© {{year}} {{name}}. All rights reserved.",
+    "rights": "All rights reserved",
     "backToTop": "Back to top"
   },
   "accessibility": {
@@ -170,25 +315,7 @@
     "resetButton": "Reset settings"
   },
   "breadcrumb": {
-    "label": "Breadcrumb",
+    "label": "Breadcrumb navigation",
     "more": "More"
-  },
-  "carousel": {
-    "previousSlide": "Previous slide",
-    "nextSlide": "Next slide"
-  },
-  "dialog": {
-    "close": "Close"
-  },
-  "pagination": {
-    "label": "Pagination",
-    "goToPreviousPage": "Go to previous page",
-    "previous": "Previous",
-    "goToNextPage": "Go to next page",
-    "next": "Next",
-    "morePages": "More pages"
-  },
-  "sidebar": {
-    "toggle": "Toggle sidebar"
   }
 }
