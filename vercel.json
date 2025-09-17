@@ -4,30 +4,6 @@
     {
       "src": "client/package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "installCommand": "npm install",
-  "buildCommand": "npx vite build --mode production --config vite.config.ts",
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]{
-  "version": 2,
-  "builds": [
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
       "config": { "distDir": "dist" }
     },
     {
@@ -35,11 +11,11 @@
       "use": "@vercel/node"
     }
   ],
+  "installCommand": "npm install",
+  "buildCommand": "npm run build:prod",
   "routes": [
     { "src": "/api/(.*)", "dest": "/server/$1" },
     { "src": "/assets/(.*)", "headers": { "cache-control": "public, max-age=31536000, immutable" } },
     { "src": "/(.*)", "dest": "/client/dist/index.html" }
   ]
-}
-
 }
