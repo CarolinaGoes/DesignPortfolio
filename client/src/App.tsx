@@ -2,7 +2,7 @@
 
 import { Switch, Route } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "@/components/ui/toast";
 import { AccessibilityProvider } from '@/lib/hooks/use-accessibility';
 import { ThemeProvider } from '@/lib/hooks/use-theme';
 
