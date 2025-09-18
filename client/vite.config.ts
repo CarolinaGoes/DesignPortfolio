@@ -1,3 +1,4 @@
+// client/vite.config.ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'node:path'
@@ -15,36 +16,21 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@shared': path.resolve(__dirname, '../server/shared')
+     
     },
     preserveSymlinks: true
   },
 
-  optimizeDeps: {
-    include: [
-      'react',
-      'react-dom',
-      '@emotion/react',
-      '@emotion/styled',
-      '@radix-ui/react-toast'
-    ],
-    exclude: ['@vite/client', '@vite/env']
-  },
-
   build: {
-    outDir: 'dist',
-    emptyOutDir: true,
-    sourcemap: process.env.NODE_ENV !== 'production',
-    minify: 'terser',
-    chunkSizeWarningLimit: 1600,
     rollupOptions: {
-      // ✅ external deve estar AQUI, não dentro de output
       external: [
         'drizzle-orm/pg-core',
         'drizzle-orm',
         '@radix-ui/react-slider',
+        'zod',
         /^drizzle-orm/,
-        /^@radix-ui/
+        /^@radix-ui/,
+        /^zod/
       ],
       output: {
         manualChunks(id) {
@@ -57,26 +43,8 @@ export default defineConfig({
             }
             return 'vendor'
           }
-        },
-        assetFileNames: 'assets/[name]-[hash][extname]',
-        chunkFileNames: 'chunks/[name]-[hash].js',
-        entryFileNames: 'entries/[name]-[hash].js'
+        }
       }
     }
-  },
-
-  server: {
-    port: 5173,
-    host: true,
-    strictPort: false,
-    open: true,
-    cors: true,
-    hmr: { overlay: true, port: 24678 },
-    watch: { usePolling: true, interval: 100, ignored: ['**/node_modules/**', '**/.git/**'] }
-  },
-
-  css: {
-    modules: { localsConvention: 'camelCaseOnly' },
-    postcss: './postcss.config.js'
   }
 })
