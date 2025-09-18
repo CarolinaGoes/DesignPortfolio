@@ -31,10 +31,8 @@ export default defineConfig({
         /shared\/schema/,
         'drizzle-orm/pg-core',
         'drizzle-orm',
-        '@radix-ui/react-slider',
         'zod',
         /^drizzle-orm/,
-        /^@radix-ui/,
         /^zod/
       ],
       output: {
