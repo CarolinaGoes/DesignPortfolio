@@ -6,9 +6,8 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "vercel-build": "vite build --mode production"
+    "build": "vite build --mode production --config vite.config.ts",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
