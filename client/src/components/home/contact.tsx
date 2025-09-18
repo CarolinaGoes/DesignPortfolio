@@ -10,7 +10,7 @@ import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { staggerContainer, staggerItem } from '@/lib/animations';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
-import { insertMessageSchema } from '@shared/schema';
+import { insertMessageSchema } from '../../../../server/shared/schema';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';

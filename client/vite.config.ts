@@ -15,9 +15,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@shared': path.resolve(__dirname, './shared')
+      '@shared': path.resolve(__dirname, '../server/shared')
     },
-    // Mantém symlinks para monorepo funcionar
     preserveSymlinks: true
   },
 
@@ -27,7 +26,7 @@ export default defineConfig({
       'react-dom',
       '@emotion/react',
       '@emotion/styled',
-      '@radix-ui/react-toast' // ✅ força Vite a pré-bundle Radix
+      '@radix-ui/react-toast'
     ],
     exclude: ['@vite/client', '@vite/env']
   },
@@ -39,6 +38,14 @@ export default defineConfig({
     minify: 'terser',
     chunkSizeWarningLimit: 1600,
     rollupOptions: {
+      // ✅ external deve estar AQUI, não dentro de output
+      external: [
+        'drizzle-orm/pg-core',
+        'drizzle-orm',
+        '@radix-ui/react-slider',
+        /^drizzle-orm/,
+        /^@radix-ui/
+      ],
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
