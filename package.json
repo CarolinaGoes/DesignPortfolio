@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/CarolinaGoes/DesignPortfolio#readme",
   "devDependencies": {
+    "@types/express": "^5.0.3",
     "@types/node": "^24.0.3",
     "@types/pg": "^8.15.4",
     "@types/react": "^18.2.55",
@@ -39,6 +40,7 @@
     "vite": "^7.1.5"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@neondatabase/serverless": "^1.0.1",
     "@prisma/client": "^6.12.0",
     "@radix-ui/react-accordion": "^1.2.11",
@@ -79,6 +81,7 @@
     "sonner": "^2.0.7",
     "vaul": "^1.1.2",
     "ws": "^8.18.3",
+    "zod": "^4.1.9",
     "zod-validation-error": "^3.5.3"
   }
 }
