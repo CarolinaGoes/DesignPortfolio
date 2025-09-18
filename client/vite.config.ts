@@ -16,7 +16,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-     
     },
     preserveSymlinks: true
   },
@@ -24,6 +23,12 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: [
+        // ✅ Adicione estas regras específicas para bloquear arquivos do server
+        /\.\.\/server/,
+        /server\//,
+        /^server$/,
+        /\/server\//,
+        /shared\/schema/,
         'drizzle-orm/pg-core',
         'drizzle-orm',
         '@radix-ui/react-slider',
