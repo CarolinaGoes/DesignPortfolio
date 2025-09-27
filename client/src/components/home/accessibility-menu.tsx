@@ -5,7 +5,7 @@ import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiEye, FiRefreshCw } from 'react-icons/fi';
+import {FiRefreshCw } from 'react-icons/fi';
 import { slideFromLeft } from '@/lib/animations';
 import { useAccessibility } from '@/lib/hooks/use-accessibility';
 import ErrorBoundary from '../ErrorBoundary';

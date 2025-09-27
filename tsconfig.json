@@ -1,8 +1,0 @@
-// Arquivo: /tsconfig.json (ATUALIZADO)
-{
-  "files": [],
-  "references": [
-    { "path": "./client" },
-    { "path": "./server" }
-  ]
-}

@@ -133,178 +133,127 @@
         "id": "react",
         "name": "React"
       },
-       {
+      {
         "id": "typescript",
-        "name": "Typescript"
+        "name": "TypeScript"
       }
     ],
     "items": [
       {
         "id": 1,
-        "title": "Animação simples - Xicara de chá",
+        "title": "Animação simples - Xícara de chá",
         "description": "Página simples, uma xícara de chá com vapor animado.",
-        "Alt": "Demonstração do projeto Xicara de chá",
-        "tags": [
-          "html-css"
-        ]
-      }
-      ,
+        "imageAlt": "Demonstração do projeto Xícara de chá",
+        "tags": ["html-css"]
+      },
       {
         "id": 2,
         "title": "Site de Estudos",
         "description": "Projeto de site educacional com layout responsivo.",
         "imageAlt": "Demonstração do projeto Site de Estudos",
-        "tags": [
-          "html-css",
-          "javascript"
-        ]
+        "tags": ["html-css", "javascript"]
       },
       {
         "id": 3,
         "title": "Landing Page simples - Cardápio online",
         "description": "Página de cardápio para produtos fictícios.",
         "imageAlt": "Demonstração do projeto Landing Page Cardápio online",
-        "tags": [
-          "html-css",
-          "javascript"
-        ]
+        "tags": ["html-css", "javascript"]
       },
       {
         "id": 4,
         "title": "Jogo - Labirinto",
         "description": "Jogo com geração de mapas interativos e movimentação.",
         "imageAlt": "Demonstração do projeto Jogo Labirinto",
-        "tags": [
-          "javascript"
-        ]
+        "tags": ["javascript"]
       },
       {
         "id": 5,
         "title": "Site de busca de escolas",
-        "description": " Site para busca de escolas com filtros por localização e tipo.",
+        "description": "Site para busca de escolas com filtros por localização e tipo.",
         "imageAlt": "Demonstração do projeto Site de busca de escolas",
-        "tags": [
-          "html-css",
-          "javascript"
-        ]
+        "tags": ["html-css", "javascript"]
       },
       {
         "id": 6,
         "title": "Jogo da Pá",
-        "description": "Mova os palitinhos para retirar a sujeira da pá. ",
-        "imageAlt": "Demonstração do projeto E-commerce Simples",
-        "tags": [
-          "html-css",
-          "javascript"
-        ]
+        "description": "Mova os palitinhos para retirar a sujeira da pá.",
+        "imageAlt": "Demonstração do projeto Jogo da Pá",
+        "tags": ["html-css", "javascript"]
       },
       {
         "id": 7,
         "title": "Portfólio Pessoal",
-        "description": "Meu primeiro portfólio pessoal desenvolvido em html, css e javascript.",
+        "description": "Meu primeiro portfólio pessoal desenvolvido em HTML, CSS e JavaScript.",
         "imageAlt": "Demonstração do projeto Portfólio Pessoal",
-        "tags": [
-          "html-css",
-          "javascript"
-        ]
+        "tags": ["html-css", "javascript"]
       },
       {
         "id": 8,
         "title": "Jogo - Torre de Hanoi",
         "description": "Jogo da Torre de Hanoi com animações e movimentação de peças.",
         "imageAlt": "Demonstração do projeto Torre de Hanoi",
-        "tags": [
-          "html-css",
-          "javascript"
-        ]
+        "tags": ["html-css", "javascript"]
       },
       {
         "id": 9,
         "title": "Jogo - Quebra-cabeça Deslizante",
-        "description": "Quebra cabeça deslizante com imagens personalizadas.",
+        "description": "Quebra-cabeça deslizante com imagens personalizadas.",
         "imageAlt": "Demonstração do projeto Quebra-cabeça Deslizante",
-        "tags": [
-          "html-css",
-          "javascript"
-        ]
+        "tags": ["html-css", "javascript"]
       },
       {
         "id": 10,
         "title": "Interface de um E-commerce",
         "description": "Landing page responsiva de um e-commerce.",
         "imageAlt": "Demonstração do projeto Interface de um E-commerce",
-        "tags": [
-          "html-css",
-          "javascript"
-        ]
+        "tags": ["html-css", "javascript"]
       },
       {
         "id": 11,
         "title": "Site de Tarot Online",
         "description": "Site de leitura de tarot online com design moderno e interativo.",
         "imageAlt": "Demonstração do projeto Site de Tarot Online",
-        "tags": [
-          "react",
-          "typeScript"
-        ]
+        "tags": ["react", "typescript"]
       },
       {
         "id": 12,
         "title": "Site Perícia Grafotécnica",
         "description": "Site institucional para um serviço de perícia grafotécnica.",
         "imageAlt": "Demonstração do projeto Site Perícia Grafotécnica",
-        "tags": [
-          "react",
-          "typeScript"
-        ]
+        "tags": ["react", "typescript"]
       },
       {
         "id": 13,
         "title": "Jogo da Velha",
         "description": "Jogo da velha interativo com placar e reinício de jogo.",
         "imageAlt": "Demonstração do projeto Jogo da Velha",
-        "tags": [
-          "html-css",
-          "javascript"
-        ]
+        "tags": ["html-css", "javascript"]
       }
-
     ]
   },
   "contact": {
     "title": "Entre em Contato",
     "description": "Tem um projeto ou oportunidade interessante? Estou sempre aberta a novas conexões e colaborações.",
     "form": {
-      "nameLabel": "Nome",
-      "namePlaceholder": "Seu nome completo",
-      "emailLabel": "E-mail",
-      "emailPlaceholder": "seu.email@exemplo.com",
-      "subjectLabel": "Assunto",
-      "subjectOptions": [
-        {
-          "value": "",
-          "label": "Selecione um assunto"
-        },
-        {
-          "value": "project",
-          "label": "Proposta de projeto"
-        },
-        {
-          "value": "job",
-          "label": "Oportunidade de trabalho"
-        },
-        {
-          "value": "collaboration",
-          "label": "Colaboração"
-        },
-        {
-          "value": "other",
-          "label": "Outro"
-        }
-      ],
-      "messageLabel": "Mensagem",
-      "messagePlaceholder": "Descreva em detalhes como posso ajudar",
-      "submitButton": "Enviar mensagem"
+      "name": {
+        "label": "Nome",
+        "placeholder": "Seu nome completo"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "seu.email@exemplo.com"
+      },
+      "subject": {
+        "label": "Assunto",
+        "placeholder": "Assunto da mensagem"
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Sua mensagem... (mínimo 10 caracteres)"
+      },
+      "send": "Enviar Mensagem",
+      "sending": "Enviando..."
     },
     "info": {
       "title": "Informações de Contato",
@@ -322,14 +271,16 @@
     "validation": {
       "email": "Por favor, insira um e-mail válido",
       "nameMin": "O nome deve ter pelo menos 3 caracteres",
-      "subjectRequired": "Por favor, selecione um assunto",
+      "subjectRequired": "O assunto é obrigatório",
       "messageMin": "A mensagem deve ter pelo menos 10 caracteres"
     },
-    "toast": {
-      "successTitle": "Mensagem enviada!",
-      "successDescription": "Obrigado pelo contato, em breve responderei.",
-      "errorTitle": "Erro ao enviar mensagem",
-      "errorDescription": "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente."
+    "success": {
+      "title": "Sucesso!",
+      "message": "Mensagem enviada com sucesso!"
+    },
+    "error": {
+      "title": "Erro",
+      "message": "Erro ao enviar mensagem. Por favor, tente novamente."
     }
   },
   "chat": {
@@ -368,5 +319,13 @@
   "breadcrumb": {
     "label": "Navegação breadcrumb",
     "more": "Mais"
-  }
+  },
+  "success": {
+  "title": "Sucesso!",
+  "message": "Mensagem enviada com sucesso!"
+},
+"error": {
+  "title": "Erro",
+  "message": "Erro ao enviar mensagem. Por favor, tente novamente."
+}
 }

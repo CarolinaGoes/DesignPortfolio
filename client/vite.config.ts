@@ -1,7 +1,7 @@
 // client/vite.config.ts
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'node:path'
+import path from 'path'
 
 export default defineConfig({
   plugins: [
@@ -16,25 +16,13 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-    },
-    preserveSymlinks: true
+    }
   },
 
   build: {
+    minify: true, // ✅ Mude para true para produção
+    
     rollupOptions: {
-      external: [
-        // ✅ Adicione estas regras específicas para bloquear arquivos do server
-        /\.\.\/server/,
-        /server\//,
-        /^server$/,
-        /\/server\//,
-        /shared\/schema/,
-        'drizzle-orm/pg-core',
-        'drizzle-orm',
-        'zod',
-        /^drizzle-orm/,
-        /^zod/
-      ],
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
