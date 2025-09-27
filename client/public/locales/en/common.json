@@ -43,7 +43,7 @@
     "downloadButton": "Download CV",
     "paragraphs": [
       "Hi, I'm Carolina, a Software Engineering student focused on frontend development, currently specializing in technologies such as HTML, CSS, JavaScript, and React. I have been dedicated to practical projects, always seeking to write code strategically, cleanly, and innovatively. Before entering the tech field, I worked as a teacher and also in administrative routines in the educational sector. This experience provided me with a solid foundation in organization, communication, problem-solving, and continuous learning — skills I bring to the programming world. I am currently transitioning my career into technology and looking for an internship opportunity in frontend development. I want to combine my experience in education with the tech world, contributing with creative, efficient, and adaptable solutions.",
-      "📩 I’m open to new opportunities, connections, and learning in the tech ecosystem!"
+      "📩 I'm open to new opportunities, connections, and learning in the tech ecosystem!"
     ],
     "education": {
       "title": "Education",
@@ -224,36 +224,36 @@
         "tags": ["react", "typescript"]
       },
       {
-  "id": 13,
-  "title": "Tic-Tac-Toe",
-  "description": "Interactive Tic-Tac-Toe game with scoreboard and game reset.",
-  "imageAlt": "Demo of the Tic-Tac-Toe project",
-  "tags": [
-    "html-css",
-    "javascript"
-  ]
-}
+        "id": 13,
+        "title": "Tic-Tac-Toe",
+        "description": "Interactive Tic-Tac-Toe game with scoreboard and game reset.",
+        "imageAlt": "Demo of the Tic-Tac-Toe project",
+        "tags": ["html-css", "javascript"]
+      }
     ]
   },
   "contact": {
     "title": "Get in Touch",
-    "description": "Do you have an interesting project or opportunity? I’m always open to new connections and collaborations.",
+    "description": "Do you have an interesting project or opportunity? I'm always open to new connections and collaborations.",
     "form": {
-      "nameLabel": "Name",
-      "namePlaceholder": "Your full name",
-      "emailLabel": "Email",
-      "emailPlaceholder": "your.email@example.com",
-      "subjectLabel": "Subject",
-      "subjectOptions": [
-        { "value": "", "label": "Select a subject" },
-        { "value": "project", "label": "Project Proposal" },
-        { "value": "job", "label": "Job Opportunity" },
-        { "value": "collaboration", "label": "Collaboration" },
-        { "value": "other", "label": "Other" }
-      ],
-      "messageLabel": "Message",
-      "messagePlaceholder": "Describe in detail how I can help",
-      "submitButton": "Send message"
+      "name": {
+        "label": "Name",
+        "placeholder": "Your full name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your.email@example.com"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "Message subject"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Your message... (minimum 10 characters)"
+      },
+      "send": "Send Message",
+      "sending": "Sending..."
     },
     "info": {
       "title": "Contact Information",
@@ -271,14 +271,16 @@
     "validation": {
       "email": "Please enter a valid email",
       "nameMin": "Name must be at least 3 characters long",
-      "subjectRequired": "Please select a subject",
+      "subjectRequired": "Subject is required",
       "messageMin": "Message must be at least 10 characters long"
     },
-    "toast": {
-      "successTitle": "Message sent!",
-      "successDescription": "Thanks for reaching out, I’ll reply soon.",
-      "errorTitle": "Error sending message",
-      "errorDescription": "An error occurred while sending your message. Please try again."
+    "success": {
+      "title": "Success!",
+      "message": "Message sent successfully!"
+    },
+    "error": {
+      "title": "Error",
+      "message": "Error sending message. Please try again."
     }
   },
   "chat": {
@@ -291,7 +293,7 @@
     "messagePlaceholder": "How can I help?",
     "submitButton": "Send",
     "toastSuccessTitle": "Message sent!",
-    "toastSuccessDescription": "Thanks for reaching out, I’ll reply soon.",
+    "toastSuccessDescription": "Thanks for reaching out, I'll reply soon.",
     "toastErrorTitle": "Error sending message",
     "toastErrorDescription": "An error occurred while sending your message. Please try again.",
     "validation": {
@@ -317,5 +319,13 @@
   "breadcrumb": {
     "label": "Breadcrumb navigation",
     "more": "More"
-  }
+  },
+  "success": {
+  "title": "Success!",
+  "message": "Message sent successfully!"
+},
+"error": {
+  "title": "Error", 
+  "message": "Error sending message. Please try again."
+}
 }

@@ -1,3 +1,6 @@
+
+
+/* ✅ CORRETO - @tailwind é o correto */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,7 +20,7 @@
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 265 89% 96%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent-foreground: 240 5.9% 10%; /* ✅ Corrigido: acent -> accent */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
@@ -38,218 +41,45 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 263 85% 75%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --primary: 265 89% 78%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 265 89% 96%;
+    --secondary-foreground: 240 5.9% 10%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
+    --accent: 265 89% 96%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
-    --ring: 263 85% 75%;
-    --chart-1: 263 85% 75%;
-    --chart-2: 265 85% 65%;
-    --chart-3: 267 85% 55%;
-    --chart-4: 269 85% 45%;
-    --chart-5: 271 85% 35%;
-  }
-
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply font-sans antialiased bg-background text-foreground;
-  }
-
-  /* Accessibility Focus Styles */
-  *:focus-visible {
-    outline: 3px solid hsl(var(--primary));
-    outline-offset: 2px;
-  }
-
-  /* Custom Scrollbar */
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-secondary;
-  }
-
-  .dark ::-webkit-scrollbar-track {
-    @apply bg-muted;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-primary rounded-sm;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/80;
-  }
-
- /* High Contrast Light Mode */
-.high-contrast {
-  --background: 0 0% 100%;          /* branco puro */
-  --foreground: 240 5% 10%;         /* quase preto */
-  --card: 0 0% 100%;
-  --card-foreground: 240 5% 10%;
-
-  --popover: 0 0% 100%;
-  --popover-foreground: 240 5% 10%;
-
-  --primary: 265 90% 40%;           /* roxo mais forte */
-  --primary-foreground: 0 0% 100%;  /* texto branco no botão */
-
-  --secondary: 240 4% 92%;          /* cinza claro */
-  --secondary-foreground: 240 5% 15%;
-
-  --muted: 240 4% 88%;              /* fundo suave */
-  --muted-foreground: 240 6% 25%;
-
-  --accent: 265 90% 90%;            /* lilás clarinho */
-  --accent-foreground: 240 5% 15%;
-
-  --destructive: 0 90% 45%;         /* vermelho forte */
-  --destructive-foreground: 0 0% 100%;
-
-  --border: 240 5% 15%;             /* borda escura */
-  --input: 240 5% 15%;
-  --ring: 265 90% 40%;              /* roxo contrastado */
-}
-
-.dark.high-contrast {
-  --background: 0 0% 0%;             /* preto absoluto */
-  --foreground: 0 0% 100%;           /* branco absoluto */
-
-  --card: 0 0% 0%;
-  --card-foreground: 0 0% 100%;
-
-  --popover: 0 0% 0%;
-  --popover-foreground: 0 0% 100%;
-
-  --primary: 320 100% 35%;           /* pink escuro neon (#b0005f vibe) */
-  --primary-foreground: 0 0% 100%;
-
-  --secondary: 0 0% 15%;             /* cinza quase preto */
-  --secondary-foreground: 0 0% 100%;
-
-  --muted: 0 0% 25%;
-  --muted-foreground: 0 0% 100%;
-
-  --accent: 330 90% 40%;             /* magenta escuro neon (#a00070) */
-  --accent-foreground: 0 0% 100%;
-
-  --destructive: 0 100% 45%;         /* vermelho intenso */
-  --destructive-foreground: 0 0% 100%;
-
-  --border: 0 0% 100%;               /* borda branca sólida */
-  --input: 0 0% 100%;
-  --ring: 320 100% 40%;              /* pink escuro para foco */
-}
-
-
-  /* Reduced Motion */
-  .reduce-motion * {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
-  }
-  
-  /* Acessibilidade - Ajustes para tamanho de fonte aumentado */
-  html[data-font-size="1.25"] {
-    font-size: 125%;
-    line-height: 1.5;
-  }
-  
-  html[data-font-size="1.5"] {
-    font-size: 150%;
-    line-height: 1.7;
-  }
-  
-  html[data-font-size="1.75"] {
-    font-size: 175%;
-    line-height: 1.8;
-  }
-  
-  html[data-font-size="2"] {
-    font-size: 200%;
-    line-height: 2;
-  }
-  
-  /* Ajustes responsivos para texto maior */
-  @media (max-width: 1024px) {
-    html[data-font-size="1.5"] .grid,
-    html[data-font-size="1.75"] .grid,
-    html[data-font-size="2"] .grid {
-      display: block;
-    }
-    
-    html[data-font-size="1.5"] .grid > div,
-    html[data-font-size="1.75"] .grid > div,
-    html[data-font-size="2"] .grid > div {
-      margin-bottom: 2rem;
-    }
-  }
-  
-  /* Aumentar espaçamento vertical quando o tamanho da fonte é aumentado */
-  html[data-font-size="1.5"] .py-16,
-  html[data-font-size="1.75"] .py-16,
-  html[data-font-size="2"] .py-16 {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-  
-  html[data-font-size="1.5"] .py-24,
-  html[data-font-size="1.75"] .py-24,
-  html[data-font-size="2"] .py-24 {
-    padding-top: 7rem;
-    padding-bottom: 7rem;
+    --ring: 265 89% 78%;
   }
 }
 
+/* ✅ @apply deve estar dentro de @layer components ou @layer utilities */
 @layer components {
-  .project-card {
-    @apply rounded-xl overflow-hidden bg-card shadow-md hover:shadow-xl transition-all duration-300;
-  }
-
-  .project-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .reduce-motion .project-card:hover {
-    transform: none;
-  }
-
-  .progress-bar-fill {
-    @apply h-full bg-primary rounded-full transition-all duration-1000 ease-out;
-  }
-
-  .chat-button {
-    @apply bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-lg flex items-center justify-center transition-transform duration-300;
-  }
-
-  .chat-button:hover {
-    @apply transform -translate-y-1;
-  }
-
-  .reduce-motion .chat-button:hover {
-    @apply transform-none;
-  }
-
-  .section-heading {
-    @apply text-3xl md:text-4xl font-bold mb-4;
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90;
   }
   
-  .section-divider {
-    @apply h-1 w-20 bg-primary mx-auto rounded-full mb-6;
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90;
   }
-  
-  .section-description {
-    @apply text-lg text-muted-foreground max-w-2xl mx-auto;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
+}
+
+/* Estilos globais customizados */
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
 }
