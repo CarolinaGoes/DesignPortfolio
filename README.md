@@ -2,7 +2,7 @@ Portfólio Pessoal - Carolina Goes
 
 Este é o repositório do meu portfólio pessoal, uma aplicação web moderna desenvolvida para apresentar minhas habilidades, projetos e trajetória profissional como Desenvolvedora Frontend.
 
-✨ Acesse a versão ao vivo aqui! ✨
+✨ [Acesse a versão ao vivo aqui! ](https://carolinagoes.vercel.app/)✨
 
 📷 Demonstração
 
@@ -30,26 +30,8 @@ As seguintes ferramentas e tecnologias foram usadas na construção deste projet
  * Tailwind CSS: Framework CSS utility-first para estilização ágil e moderna.
  * i18next & react-i18next: Para a implementação da internacionalização (i18n).
  * Vercel: Plataforma de deploy para integração e entrega contínua (CI/CD).
-🏁 Rodando o Projeto Localmente
-Siga os passos abaixo para executar o projeto em seu ambiente de desenvolvimento.
 
-Pré-requisitos
-Você vai precisar ter o Node.js (versão 18 ou superior) e o Git instalados em sua máquina.
 
-Passos
- * Clone o repositório:
-   git clone https://github.com/CarolinaGoes/[NOME-DO-SEU-REPOSITORIO].git
-
- * Navegue até o diretório do projeto:
-   cd [NOME-DO-SEU-REPOSITORIO]
-
- * Instale as dependências:
-   npm install
-
- * Execute o servidor de desenvolvimento:
-   npm run dev
-
- * Abra seu navegador e acesse http://localhost:5173 (a porta pode variar) para ver o projeto em execução.
 📂 Estrutura de Pastas
 O projeto é organizado de forma a separar responsabilidades, facilitando a manutenção e escalabilidade.
 /
@@ -61,6 +43,7 @@ O projeto é organizado de forma a separar responsabilidades, facilitando a manu
 │   ├── styles/       # Estilos globais
 │   └── App.tsx       # Componente principal
 └── README.md
+
 
 👩‍💻 Autora
 Carolina Goes
