@@ -50,5 +50,7 @@ Carolina Goes
  * LinkedIn: https://www.linkedin.com/in/carolina-goes/
  * GitHub: @CarolinaGoes
  * Email: carolinarocha.89@hotmail.com
+
+   
 📝 Licença
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE.md para mais detalhes.
