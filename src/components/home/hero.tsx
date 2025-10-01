@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { fadeIn, slideUp } from '@/lib/animations';
 import { siteData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
-import profileImage from "../../assets/profileImage.jpg";
+import profileImage from "../../../public/assets/profileImage.jpg";
 import { FiArrowRight, FiGithub, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi';
 
 export default function Hero() {
