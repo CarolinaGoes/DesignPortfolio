@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "../../lib/hooks/use-scroll-animation";
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem, slideRight } from "../../lib/animations";
-import { Button } from "../../components/ui/button";
+import { Button } from "../ui/button";
 import { FiBookOpen, FiBriefcase} from "react-icons/fi";
 import profileImage from "../../assets/profileImage.jpg";
 import {Download} from 'lucide-react';
