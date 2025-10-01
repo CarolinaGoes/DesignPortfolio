@@ -145,7 +145,6 @@ export const siteData = {
   socialLinks: {
     github: "https://github.com/CarolinaGoes",
     linkedin: "https://www.linkedin.com/in/carolina-goes/",
-    whatsapp: "https://wa.me/5511972230817",
     codepen: "https://codepen.io/Carolina-Goes",
   },
 };

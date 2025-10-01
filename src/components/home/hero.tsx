@@ -1,13 +1,38 @@
+// components/home/hero.tsx - COM FALLBACK
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { fadeIn, slideUp } from '@/lib/animations';
 import { siteData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
+import { EmailButton } from '@/components/ui/EmailButton';
 import profileImage from "../../../public/assets/profileImage.jpg";
-import { FiArrowRight, FiGithub, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi';
+import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+
+// Fallback component caso o EmailButton não funcione
+function EmailFallback({ email, label }: { email: string; label: string }) {
+  return (
+    <a 
+      href={`mailto:${email}`}
+      onClick={(e) => {
+        e.preventDefault();
+        // Forçar a abertura no mesmo contexto
+        const win = window.open(`mailto:${email}`, '_self');
+        if (!win) {
+          // Se não abrir, tentar método alternativo
+          window.location.href = `mailto:${email}`;
+        }
+      }}
+      className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg bg-background/50 hover:bg-background/80 border border-border/50 hover:border-primary/30 flex items-center justify-center" 
+      aria-label={label}
+    >
+      <FiMail className="h-5 w-5" />
+    </a>
+  );
+}
 
 export default function Hero() {
   const { t } = useTranslation();
+  const email = siteData.email || "carolinagoes@example.com";
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center py-16 md:py-24 bg-secondary dark:bg-accent/10 transition-colors duration-300 overflow-hidden relative">
@@ -43,18 +68,33 @@ export default function Hero() {
             </Button>
           </div>
           <div className="flex mt-8 gap-4">
-            <a href={siteData.socialLinks.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={t('contact.socials.github')}>
+            <a 
+              href={siteData.socialLinks.github} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg bg-background/50 hover:bg-background/80 border border-border/50 hover:border-primary/30 flex items-center justify-center" 
+              aria-label={t('contact.socials.github')}
+            >
               <FiGithub className="h-5 w-5" />
             </a>
-            <a href={siteData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={t('contact.socials.linkedin')}>
+            <a 
+              href={siteData.socialLinks.linkedin} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg bg-background/50 hover:bg-background/80 border border-border/50 hover:border-primary/30 flex items-center justify-center" 
+              aria-label={t('contact.socials.linkedin')}
+            >
               <FiLinkedin className="h-5 w-5" />
             </a>
-            <a href={siteData.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label={t('contact.socials.whatsapp')}>
-              <FiPhone className="h-5 w-5" />
-            </a>
-            <a href={`mailto:${siteData.email}`} className="text-muted-foreground hover:text-primary transition-colors" aria-label={t('contact.socials.email')}>
-              <FiMail className="h-5 w-5" />
-            </a>
+            
+            {/* Tente primeiro com EmailButton, depois fallback */}
+            <EmailButton 
+              email={email}
+              label={t('contact.socials.email')}
+            />
+            
+            {/* Se ainda não funcionar, descomente esta linha: */}
+            {/* <EmailFallback email={email} label={t('contact.socials.email')} /> */}
           </div>
         </motion.div>
         
