@@ -4,7 +4,7 @@ import { skillsData } from '@/lib/data';
 import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { motion } from 'framer-motion';
 import { staggerContainer, staggerItem } from '@/lib/animations';
-import { SiReact, SiVuedotjs, SiJavascript, SiSass, SiGit, SiFigma, SiNodedotjs, SiMongodb, SiAngular, SiHtml5, SiCss3 } from 'react-icons/si';
+import { SiReact, SiJavascript, SiGit, SiHtml5, SiCss3 } from 'react-icons/si';
 import { FaUniversalAccess } from 'react-icons/fa';
 export default function Skills() {
   const { t } = useTranslation();
