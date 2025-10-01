@@ -13,7 +13,13 @@
     "description": "Transforming ideas into amazing digital experiences with a focus on accessibility, usability, and modern design.",
     "contactButton": "Get in touch",
     "projectsButton": "View projects",
-    "imageAlt": "Profile picture of Carolina Goes"
+    "imageAlt": "Profile picture of Carolina Goes",
+    "socialDescriptions": {
+      "github": "See my projects and contributions on GitHub",
+      "linkedin": "Connect with me professionally on LinkedIn",
+      "whatsapp": "Contact me via WhatsApp",
+      "email": "Send me an email"
+    }
   },
   "carousel": {
     "previousSlide": "Previous slide",
@@ -106,6 +112,16 @@
       "react": "React & Next.js",
       "git": "Git & GitHub",
       "accessibility": "Web Accessibility (WCAG)"
+    },
+    "descriptions": {
+      "htmlCss": "Web fundamentals: HTML for semantic structuring and CSS for advanced styling. Experience in creating responsive layouts, flexbox, grid layout, and CSS animations.",
+      "javascript": "Programming language for interactive web development. Mastery of ES6+, DOM manipulation, asynchronous APIs, promises, async/await, and functional programming.",
+      "typescript": "JavaScript with static typing for safer and more scalable development. Experience with interfaces, generic types, union types, and TypeScript project configuration.",
+      "react": "Modern library for building user interfaces. Hooks (useState, useEffect, useContext), Context API, functional components, and state management.",
+      "tailwind": "Utility-first CSS framework for fast and consistent development. Responsive design, customizable components, dark mode, and performance optimization.",
+      "sqlite": "Embedded relational database for lightweight applications. Experience in schema design, SQL queries, migrations, and backend integration.",
+      "git": "Distributed version control system. Collaborative workflow (Git Flow), branches, merges, rebase, and GitHub integration for continuous deployment.",
+      "accessibility": "Web accessibility development following WCAG guidelines. ARIA labels, keyboard navigation, color contrast, screen readers, and inclusive design."
     }
   },
   "projects": {
@@ -321,11 +337,11 @@
     "more": "More"
   },
   "success": {
-  "title": "Success!",
-  "message": "Message sent successfully!"
-},
-"error": {
-  "title": "Error", 
-  "message": "Error sending message. Please try again."
-}
+    "title": "Success!",
+    "message": "Message sent successfully!"
+  },
+  "error": {
+    "title": "Error", 
+    "message": "Error sending message. Please try again."
+  }
 }
