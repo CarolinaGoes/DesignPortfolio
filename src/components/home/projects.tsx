@@ -3,11 +3,12 @@ import { useTranslation } from 'react-i18next';
 import { projectsData } from '@/lib/data';
 import { useScrollAnimation } from '@/lib/hooks/use-scroll-animation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { staggerContainer, staggerItem, buttonHover, fadeInUp } from '@/lib/animations';
+import { staggerContainer, staggerItem, fadeInUp } from '@/lib/animations';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { FiExternalLink, FiGithub, FiArrowRight, FiFilter, FiCode, FiFileText, FiCpu } from 'react-icons/fi';
+import { FiGithub, FiArrowRight, FiFilter, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { SiReact, SiTypescript, SiJavascript, SiCss3 } from 'react-icons/si';
 
 type StaticProjectData = typeof projectsData[0];
 type TranslatedProject = { id: number; title: string; description: string; imageAlt: string; tags: string[]; };
@@ -19,6 +20,8 @@ export default function Projects() {
   const [sectionRef, isSectionVisible] = useScrollAnimation<HTMLDivElement>();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const projectsPerPage = 6;
 
   const categories = useMemo(() => {
     const cats = t('projects.categories', { returnObjects: true });
@@ -41,26 +44,63 @@ export default function Projects() {
   }, [translatedProjects]);
 
   const filteredProjects = useMemo(() => {
-  let projList = selectedCategory === "all"
-    ? projects
-    : projects.filter(project =>
-        Array.isArray(project.category)
-          ? project.category.includes(selectedCategory)
-          : project.category === selectedCategory
-      );
+    let projList = selectedCategory === "all"
+      ? projects
+      : projects.filter(project =>
+          Array.isArray(project.category)
+            ? project.category.includes(selectedCategory)
+            : project.category === selectedCategory
+        );
 
-  return projList.sort((a, b) => b.id - a.id);
-}, [selectedCategory, projects]);
+    return projList.sort((a, b) => b.id - a.id);
+  }, [selectedCategory, projects]);
 
+  const paginatedProjects = useMemo(() => {
+    const startIndex = (currentPage - 1) * projectsPerPage;
+    const endIndex = startIndex + projectsPerPage;
+    return filteredProjects.slice(startIndex, endIndex);
+  }, [filteredProjects, currentPage]);
 
+  const totalPages = useMemo(() => {
+    return Math.ceil(filteredProjects.length / projectsPerPage);
+  }, [filteredProjects]);
 
   const getCategoryButtonIcon = (categoryId: string): ReactNode => {
     switch (categoryId) {
       case 'all': return <FiFilter className="h-4 w-4 mr-2" />;
-      case 'html-css': return <FiCode className="h-4 w-4 mr-2" />;
-      case 'javascript': return <FiFileText className="h-4 w-4 mr-2" />;
-      case 'react': case 'typescript': default: return <FiCpu className="h-4 w-4 mr-2" />;
+      case 'html-css': return <SiCss3 className="h-4 w-4 mr-2" />;
+      case 'javascript': return <SiJavascript className="h-4 w-4 mr-2" />;
+      case 'react': return <SiReact className="h-4 w-4 mr-2" />;
+      case 'typescript': return <SiTypescript className="h-4 w-4 mr-2" />;
+      default: return <SiCss3 className="h-4 w-4 mr-2" />;
     }
+  };
+
+  const formatTag = (tag: string): string => {
+    if (!tag) return '';
+    return tag.charAt(0).toUpperCase() + tag.slice(1).toLowerCase();
+  };
+
+  const formatCategoryName = (categoryId: string): string => {
+    switch (categoryId) {
+      case 'all': return 'Todos';
+      case 'html-css': return 'HTML & CSS';
+      case 'javascript': return 'JavaScript';
+      case 'react': return 'React';
+      case 'typescript': return 'TypeScript';
+      default: return categoryId.charAt(0).toUpperCase() + categoryId.slice(1).toLowerCase();
+    }
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    setHoveredIndex(null);
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+    setHoveredIndex(null);
   };
 
   return (
@@ -81,24 +121,32 @@ export default function Projects() {
               <Button
                 variant={selectedCategory === category.id ? "default" : "outline"}
                 size="sm"
-                onClick={() => setSelectedCategory(category.id)}
+                onClick={() => handleCategoryChange(category.id)}
                 className={cn(
                   "px-4 py-2 rounded-full transition-all duration-300",
                   selectedCategory === category.id ? "bg-primary text-primary-foreground" : ""
                 )}
               >
                 {getCategoryButtonIcon(category.id)}
-                {t(`${category.id}`)}
+                {formatCategoryName(category.id)}
               </Button>
             </motion.div>
           ))}
         </motion.div>
 
         <AnimatePresence mode="wait">
-          <motion.div key={selectedCategory} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.length > 0 ? (
-              filteredProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} isHovered={hoveredIndex === index} onHover={() => setHoveredIndex(index)} onLeave={() => setHoveredIndex(null)} />
+          <motion.div key={`${selectedCategory}-${currentPage}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {paginatedProjects.length > 0 ? (
+              paginatedProjects.map((project, index) => (
+                <ProjectCard 
+                  key={project.id} 
+                  project={project} 
+                  index={index} 
+                  isHovered={hoveredIndex === index} 
+                  onHover={() => setHoveredIndex(index)} 
+                  onLeave={() => setHoveredIndex(null)}
+                  formatTag={formatTag}
+                />
               ))
             ) : (
               <motion.div className="col-span-full text-center py-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
@@ -108,17 +156,50 @@ export default function Projects() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="flex justify-center mt-12">
-          <motion.div initial="rest" whileHover="hover" whileTap="tap" variants={buttonHover}>
-            <Button variant="outline" asChild>
-              <a href="#" className="flex items-center gap-2">
-                <span>{t('projects.viewAll')}</span>
-                <motion.div animate={{ x: hoveredIndex !== null ? [0, 5, 0] : 0 }} transition={{ duration: 0.5 }}>
-                  <FiExternalLink className="h-4 w-4" />
-                </motion.div>
-              </a>
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-2 mt-12">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="flex items-center gap-1"
+            >
+              <FiChevronLeft className="h-4 w-4" />
+              <span>Anterior</span>
             </Button>
-          </motion.div>
+
+            <div className="flex gap-1 mx-4">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <Button
+                  key={page}
+                  variant={currentPage === page ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => handlePageChange(page)}
+                  className="w-10 h-10 p-0"
+                >
+                  {page}
+                </Button>
+              ))}
+            </div>
+
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="flex items-center gap-1"
+            >
+              <span>Próxima</span>
+              <FiChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
+        )}
+
+        <div className="text-center mt-6">
+          <p className="text-muted-foreground text-sm">
+            Mostrando {paginatedProjects.length} de {filteredProjects.length} projetos
+          </p>
         </div>
       </div>
     </section>
@@ -131,9 +212,10 @@ interface ProjectCardProps {
   isHovered: boolean;
   onHover: () => void;
   onLeave: () => void;
+  formatTag: (tag: string) => string;
 }
 
-function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCardProps) {
+function ProjectCard({ project, index, isHovered, onHover, onLeave, formatTag }: ProjectCardProps) {
   const [cardRef, isCardVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2, rootMargin: "0px 0px -100px 0px" });
 
   return (
@@ -165,7 +247,9 @@ function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCar
           <motion.div className="flex flex-wrap gap-1" variants={staggerContainer} initial="hidden" animate={isHovered ? "visible" : "hidden"}>
             {project.tags?.map((tag, tagIndex) => (
               <motion.div key={tagIndex} variants={staggerItem}>
-                <Badge variant="secondary" className="bg-primary/90 text-primary-foreground hover:bg-primary/80">{tag}</Badge>
+                <Badge variant="secondary" className="bg-primary/90 text-primary-foreground hover:bg-primary/80">
+                  {formatTag(tag)}
+                </Badge>
               </motion.div>
             ))}
           </motion.div>
