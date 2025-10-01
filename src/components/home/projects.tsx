@@ -49,7 +49,6 @@ export default function Projects() {
           : project.category === selectedCategory
       );
 
-  // Ordenar decrescente pelo id
   return projList.sort((a, b) => b.id - a.id);
 }, [selectedCategory, projects]);
 
@@ -67,7 +66,6 @@ export default function Projects() {
   return (
     <section id="projects" className="py-16 md:py-24 transition-colors duration-300">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div ref={sectionRef} className="text-center mb-16">
           <motion.div initial="hidden" animate={isSectionVisible ? "visible" : "hidden"} variants={staggerContainer}>
             <motion.h2 variants={staggerItem} className="section-heading">{t('projects.title')}</motion.h2>
@@ -76,7 +74,6 @@ export default function Projects() {
           </motion.div>
         </div>
 
-        {/* Filter Buttons */}
         <motion.div variants={staggerContainer} initial="hidden" animate={isSectionVisible ? "visible" : "hidden"} className="flex flex-wrap justify-center gap-2 mb-10">
           <motion.p variants={staggerItem} className="w-full text-center mb-3 text-muted-foreground">{t('projects.filter')}</motion.p>
           {categories.map((category) => (
@@ -97,7 +94,6 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        {/* Project Cards */}
         <AnimatePresence mode="wait">
           <motion.div key={selectedCategory} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.length > 0 ? (
@@ -112,7 +108,6 @@ export default function Projects() {
           </motion.div>
         </AnimatePresence>
 
-        {/* View All Button */}
         <div className="flex justify-center mt-12">
           <motion.div initial="rest" whileHover="hover" whileTap="tap" variants={buttonHover}>
             <Button variant="outline" asChild>
@@ -141,70 +136,42 @@ interface ProjectCardProps {
 function ProjectCard({ project, index, isHovered, onHover, onLeave }: ProjectCardProps) {
   const [cardRef, isCardVisible] = useScrollAnimation<HTMLDivElement>({ threshold: 0.2, rootMargin: "0px 0px -100px 0px" });
 
-  const getCategoryIcon = (category: string): ReactNode => {
-    switch (category) {
-      case 'html-css': return <FiCode className="h-5 w-5 text-primary" />;
-      case 'javascript': return <FiFileText className="h-5 w-5 text-primary" />;
-      case 'react': case 'typescript': default: return <FiCpu className="h-5 w-5 text-primary" />;
-    }
-  };
-
   return (
     <motion.div ref={cardRef} className="project-card overflow-hidden rounded-xl bg-card" initial="hidden" animate={isCardVisible ? "visible" : "hidden"} variants={fadeInUp} transition={{ delay: index * 0.1 }} onMouseEnter={onHover} onMouseLeave={onLeave}>
-      {/* Media */}
-<div className="relative aspect-phone overflow-hidden rounded-xl">
-  {project.iframe ? (
-    <iframe
-      src={project.iframe}
-      className="w-full h-full"
-      title={project.title}
-      frameBorder="0"
-      allowFullScreen
-    />
-  ) : (
-    <motion.img
-      src={project.image}
-      alt={project.imageAlt}
-      className="w-full h-full object-cover"
-      animate={{ scale: isHovered ? 1.05 : 1 }}
-      transition={{ duration: 0.4 }}
-    />
-  )}
+      <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+        {project.iframe ? (
+          <iframe
+            src={project.iframe}
+            className="w-full h-full"
+            title={project.title}
+            frameBorder="0"
+            allowFullScreen
+          />
+        ) : (
+          <motion.img
+            src={project.image}
+            alt={project.imageAlt}
+            className="w-full h-full object-cover"
+            animate={{ scale: isHovered ? 1.05 : 1 }}
+            transition={{ duration: 0.4 }}
+          />
+        )}
 
-
-
-  {/* Overlay Tags */}
-  <motion.div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: isHovered ? 1 : 0 }}
-    transition={{ duration: 0.3 }}
-  >
-    <motion.div className="flex flex-wrap gap-1" variants={staggerContainer} initial="hidden" animate={isHovered ? "visible" : "hidden"}>
-      {project.tags?.map((tag, tagIndex) => (
-        <motion.div key={tagIndex} variants={staggerItem}>
-          <Badge variant="secondary" className="bg-primary/90 text-primary-foreground hover:bg-primary/80">{tag}</Badge>
+        <motion.div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.div className="flex flex-wrap gap-1" variants={staggerContainer} initial="hidden" animate={isHovered ? "visible" : "hidden"}>
+            {project.tags?.map((tag, tagIndex) => (
+              <motion.div key={tagIndex} variants={staggerItem}>
+                <Badge variant="secondary" className="bg-primary/90 text-primary-foreground hover:bg-primary/80">{tag}</Badge>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      ))}
-    </motion.div>
-  </motion.div>
+      </div>
 
-  {/* Category Badges */}
-  <motion.div className="absolute top-3 right-3 flex gap-1"
-    initial={{ scale: 0, opacity: 0 }}
-    animate={{ scale: 1, opacity: 1 }}
-    transition={{ delay: index * 0.1 + 0.3 }}
-  >
-    {(Array.isArray(project.category) ? project.category : [project.category]).map(cat => (
-      <Badge key={cat} variant="outline" className="px-2 py-0.5 flex items-center gap-1 border-primary/20">
-        {getCategoryIcon(cat)}
-        <span className="text-xs font-medium">{cat}</span>
-      </Badge>
-    ))}
-  </motion.div>
-</div>
-
-
-      {/* Content */}
       <div className="p-6">
         <h3 className={`text-xl font-semibold transition-colors duration-300 ${isHovered ? 'text-primary' : 'text-foreground'}`}>{project.title}</h3>
         <p className="text-muted-foreground mb-4 mt-2">{project.description}</p>
