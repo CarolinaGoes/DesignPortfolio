@@ -1,17 +1,9 @@
 import * as React from "react"
 
-export interface ToastProps {
-  id?: string
-  title?: React.ReactNode
-  description?: React.ReactNode
-  action?: React.ReactNode
-  variant?: "default" | "destructive"
-  duration?: number
-  open?: boolean
-  onOpenChange?: (open: boolean) => void
-}
-
-export type ToastActionElement = React.ReactElement
+import type {
+  ToastActionElement,
+  ToastProps,
+} from "@/components/ui/toast"
 
 const TOAST_LIMIT = 1
 const TOAST_REMOVE_DELAY = 1000000
@@ -98,6 +90,7 @@ export const reducer = (state: State, action: Action): State => {
     case "DISMISS_TOAST": {
       const { toastId } = action
 
+      
       if (toastId) {
         addToRemoveQueue(toastId)
       } else {
@@ -162,10 +155,9 @@ function toast({ ...props }: Toast) {
       id,
       open: true,
       onOpenChange: (open: boolean) => {
-        if (!open) dismiss();
-      },
-    }
-  })
+  if (!open) dismiss();
+},
+  }})
 
   return {
     id: id,

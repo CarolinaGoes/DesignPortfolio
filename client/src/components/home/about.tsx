@@ -7,8 +7,6 @@ import { FiBookOpen, FiBriefcase} from "react-icons/fi";
 import profileImage from "../../assets/profileImage.jpg";
 import {Download} from 'lucide-react';
 
-type EducationItem = { degree: string; institution: string; year: string };
-type ExperienceItem = { role: string; company: string; period: string };
 
 const pdfUrl = "/assets/CV-Carolina-Rocha-Sampaio-de-Goes.pdf";
 
@@ -143,7 +141,7 @@ export default function About() {
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <Button variant="outline" className="flex items-center gap-2">
+                <Button variant="outline" className="flex items-center gap-2" onClick={() => window.open(pdfUrl, '_blank')}>
                   <Download className="h-4 w-4" />
                   <span>Download CV</span>
                 </Button>
