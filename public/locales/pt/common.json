@@ -13,7 +13,13 @@
     "description": "Transformando ideias em experiências digitais incríveis, com foco em acessibilidade, usabilidade e design moderno.",
     "contactButton": "Entrar em contato",
     "projectsButton": "Ver projetos",
-    "imageAlt": "Foto de perfil de Carolina Goes"
+    "imageAlt": "Foto de perfil de Carolina Goes",
+    "socialDescriptions": {
+      "github": "Veja meus projetos e contribuições no GitHub",
+      "linkedin": "Conecte-se comigo profissionalmente no LinkedIn",
+      "whatsapp": "Entre em contato via WhatsApp",
+      "email": "Envie-me um e-mail"
+    }
   },
   "carousel": {
     "previousSlide": "Slide anterior",
@@ -106,6 +112,16 @@
       "react": "React & Next.js",
       "git": "Git & GitHub",
       "accessibility": "Acessibilidade Web (WCAG)"
+    },
+    "descriptions": {
+      "htmlCss": "Fundamentos da web: HTML para estruturação semântica e CSS para estilização avançada. Experiência em criar layouts responsivos, flexbox, grid layout e animações CSS.",
+      "javascript": "Linguagem de programação para desenvolvimento web interativo. Domínio de ES6+, manipulação de DOM, APIs assíncronas, promises, async/await e programação funcional.",
+      "typescript": "JavaScript com tipagem estática para desenvolvimento mais seguro e escalável. Experiência em interfaces, tipos genéricos, union types e configuração de projetos TypeScript.",
+      "react": "Biblioteca moderna para construção de interfaces de usuário. Hooks (useState, useEffect, useContext), Context API, componentes funcionais e gerenciamento de estado.",
+      "tailwind": "Framework CSS utilitário para desenvolvimento rápido e consistente. Design responsivo, componentes customizáveis, dark mode e otimização de performance.",
+      "sqlite": "Banco de dados relacional embutido para aplicações leves. Experiência em design de schemas, queries SQL, migrations e integração com backends.",
+      "git": "Sistema de controle de versão distribuído. Fluxo de trabalho colaborativo (Git Flow), branches, merges, rebase e integração com GitHub para deploy contínuo.",
+      "accessibility": "Desenvolvimento web acessível seguindo as diretrizes WCAG. ARIA labels, navegação por teclado, contraste de cores, screen readers e design inclusivo."
     }
   },
   "projects": {
@@ -321,11 +337,11 @@
     "more": "Mais"
   },
   "success": {
-  "title": "Sucesso!",
-  "message": "Mensagem enviada com sucesso!"
-},
-"error": {
-  "title": "Erro",
-  "message": "Erro ao enviar mensagem. Por favor, tente novamente."
-}
+    "title": "Sucesso!",
+    "message": "Mensagem enviada com sucesso!"
+  },
+  "error": {
+    "title": "Erro",
+    "message": "Erro ao enviar mensagem. Por favor, tente novamente."
+  }
 }

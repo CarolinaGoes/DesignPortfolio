@@ -10,7 +10,7 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section id="home" className="py-16 md:py-24 bg-secondary dark:bg-accent/10 transition-colors duration-300 overflow-hidden relative">
+    <section id="home" className="min-h-screen flex items-center justify-center py-16 md:py-24 bg-secondary dark:bg-accent/10 transition-colors duration-300 overflow-hidden relative">
       <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl opacity-50"></div>
       <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-primary/30 rounded-full blur-3xl opacity-60"></div>
       

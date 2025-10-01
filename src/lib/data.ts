@@ -97,11 +97,46 @@
 
 
 export const skillsData = [
-  { nameKey: "skills.tech.html", icon: "html5-css3" },
-  { nameKey: "skills.tech.js", icon: "js-square" },
-  { nameKey: "skills.tech.react", icon: "react" },
-  { nameKey: "skills.tech.git", icon: "git-alt" },
-  { nameKey: "skills.tech.accessibility", icon: "universal-access" }
+  { 
+    nameKey: 'HTML & CSS', 
+    icon: 'html5-css3',
+    descriptionKey: 'skills.descriptions.htmlCss'
+  },
+  { 
+    nameKey: 'JavaScript', 
+    icon: 'javascript',
+    descriptionKey: 'skills.descriptions.javascript'
+  },
+  { 
+    nameKey: 'Typescript', 
+    icon: 'typescript',
+    descriptionKey: 'skills.descriptions.typescript'
+  },
+  { 
+    nameKey: 'React', 
+    icon: 'react',
+    descriptionKey: 'skills.descriptions.react'
+  },
+  { 
+    nameKey: 'Tailwind', 
+    icon: 'tailwind',
+    descriptionKey: 'skills.descriptions.tailwind'
+  },
+  { 
+    nameKey: 'SQLite', 
+    icon: 'sqlite',
+    descriptionKey: 'skills.descriptions.sqlite'
+  },
+  { 
+    nameKey: 'Git & GitHub', 
+    icon: 'git',
+    descriptionKey: 'skills.descriptions.git'
+  },
+  { 
+    nameKey: 'Accessibility', 
+    icon: 'universal-access',
+    descriptionKey: 'skills.descriptions.accessibility'
+  },
 ];
 
 
