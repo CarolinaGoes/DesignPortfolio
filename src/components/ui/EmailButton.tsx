@@ -1,4 +1,3 @@
-// src/components/ui/EmailButton.tsx - VERSÃO ALTERNATIVA
 'use client';
 
 import { FiMail } from 'react-icons/fi';

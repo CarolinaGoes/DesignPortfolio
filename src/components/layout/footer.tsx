@@ -1,7 +1,6 @@
-import { Link } from 'wouter';
 import { useTranslation } from 'react-i18next';
 import { siteData } from '@/lib/data';
-import { FiCode, FiGithub, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi';
+import { FiCode, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const footerLinks = [
   { href: '#home', translationKey: 'navbar.home' },
@@ -21,10 +20,10 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center md:text-left">
           
           <div className="lg:col-span-1">
-            <Link href="#home" className="text-3xl font-bold text-primary flex items-center gap-2 justify-center md:justify-start">
+            <a href="#home" className="text-3xl font-bold text-primary flex items-center gap-2 justify-center md:justify-start">
               <FiCode className="h-6 w-6" />
               <span>{t('hero.name')}</span>
-            </Link>
+            </a>
             <p className="mt-2 text-gray-400 max-w-md mx-auto md:mx-0">
               {t('footer.tagline')}
             </p>
@@ -36,9 +35,9 @@ export default function Footer() {
               <ul className="space-y-2">
                 {footerLinks.map(({ href, translationKey }) => (
                   <li key={href}>
-                    <Link href={href} className="text-gray-400 hover:text-primary transition-colors duration-300">
+                    <a href={href} className="text-gray-400 hover:text-primary transition-colors duration-300">
                       {t(translationKey)}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -53,9 +52,7 @@ export default function Footer() {
                 <a href={siteData.socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary" aria-label={t('contact.socials.linkedin')}>
                   <FiLinkedin className="h-6 w-6" />
                 </a>
-                <a href={siteData.socialLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary" aria-label={t('contact.socials.whatsapp')}>
-                  <FiPhone className="h-6 w-6" />
-                </a>
+                
                 <a href={`mailto:${siteData.email}`} className="text-gray-400 hover:text-primary" aria-label={t('contact.socials.email')}>
                   <FiMail className="h-6 w-6" />
                 </a>
