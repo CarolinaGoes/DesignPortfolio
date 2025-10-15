@@ -1,0 +1,347 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Carolina Goes",
+    "title": "Frontend Developer",
+    "description": "Transforming ideas into amazing digital experiences with a focus on accessibility, usability, and modern design.",
+    "contactButton": "Get in touch",
+    "projectsButton": "View projects",
+    "imageAlt": "Profile picture of Carolina Goes",
+    "socialDescriptions": {
+      "github": "See my projects and contributions on GitHub",
+      "linkedin": "Connect with me professionally on LinkedIn",
+      "whatsapp": "Contact me via WhatsApp",
+      "email": "Send me an email"
+    }
+  },
+  "carousel": {
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "Did you get lost or forget to add the page to the router?"
+  },
+  "dialog": {
+    "close": "Close"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "goToPreviousPage": "Go to previous page",
+    "previous": "Previous",
+    "goToNextPage": "Go to next page",
+    "next": "Next",
+    "morePages": "More pages"
+  },
+  "sidebar": {
+    "toggle": "Toggle sidebar"
+  },
+  "about": {
+    "title": "About Me",
+    "imageAlt": "Profile picture of Carolina Goes",
+    "downloadButton": "Download CV",
+    "paragraphs": [
+      "Hi, I'm Carolina, a Software Engineering student focused on frontend development, currently specializing in technologies such as HTML, CSS, JavaScript, and React. I have been dedicated to practical projects, always seeking to write code strategically, cleanly, and innovatively. Before entering the tech field, I worked as a teacher and also in administrative routines in the educational sector. This experience provided me with a solid foundation in organization, communication, problem-solving, and continuous learning — skills I bring to the programming world. I am currently transitioning my career into technology and looking for an internship opportunity in frontend development. I want to combine my experience in education with the tech world, contributing with creative, efficient, and adaptable solutions.",
+      "📩 I'm open to new opportunities, connections, and learning in the tech ecosystem!"
+    ],
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "degree": "Software Engineering",
+          "institution": "Universidade Anhanguera",
+          "year": "2025-2028 (in progress)"
+        },
+        {
+          "degree": "Bachelor in Pedagogy",
+          "institution": "UNICID",
+          "year": "2015 - 2018"
+        },
+        {
+          "degree": "Contact Center Management",
+          "institution": "UNINOVE",
+          "year": "2008 - 2010"
+        }
+      ]
+    },
+    "experience": {
+      "title": "Experience",
+      "items": [
+        {
+          "role": "Freelancer",
+          "company": "Frontend Developer",
+          "period": "2024-Present"
+        },
+        {
+          "role": "São Paulo City Hall",
+          "company": "Teacher",
+          "period": "2023-2025"
+        },
+        {
+          "role": "São Paulo City Hall",
+          "company": "Educational Technical Assistant",
+          "period": "2021-2023"
+        },
+        {
+          "role": "Freelancer",
+          "company": "Party Entertainer",
+          "period": "2011-2021"
+        },
+        {
+          "role": "CONTAX S.A",
+          "company": "Collection Agent",
+          "period": "2007-2011"
+        }
+      ]
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "Always keeping up with the latest technologies and focusing on building accessible, high-quality experiences.",
+    "technologiesTitle": "Technologies and Tools",
+    "tech": {
+      "html": "HTML5 & CSS3",
+      "js": "JavaScript (ES6+)",
+      "react": "React & Next.js",
+      "git": "Git & GitHub",
+      "accessibility": "Web Accessibility (WCAG)"
+    },
+    "descriptions": {
+      "htmlCss": "Web fundamentals: HTML for semantic structuring and CSS for advanced styling. Experience in creating responsive layouts, flexbox, grid layout, and CSS animations.",
+      "javascript": "Programming language for interactive web development. Mastery of ES6+, DOM manipulation, asynchronous APIs, promises, async/await, and functional programming.",
+      "typescript": "JavaScript with static typing for safer and more scalable development. Experience with interfaces, generic types, union types, and TypeScript project configuration.",
+      "react": "Modern library for building user interfaces. Hooks (useState, useEffect, useContext), Context API, functional components, and state management.",
+      "tailwind": "Utility-first CSS framework for fast and consistent development. Responsive design, customizable components, dark mode, and performance optimization.",
+      "sqlite": "Embedded relational database for lightweight applications. Experience in schema design, SQL queries, migrations, and backend integration.",
+      "git": "Distributed version control system. Collaborative workflow (Git Flow), branches, merges, rebase, and GitHub integration for continuous deployment.",
+      "accessibility": "Web accessibility development following WCAG guidelines. ARIA labels, keyboard navigation, color contrast, screen readers, and inclusive design."
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Here are some of the projects I have recently worked on, combining attractive design with robust functionality.",
+    "filter": "Filter by category",
+    "viewAll": "View all projects",
+    "viewLive": "View live",
+    "viewOnGithub": "View on GitHub",
+    "noProjectsFound": "No projects found in this category.",
+    "categories": [
+      {
+        "id": "all",
+        "name": "All"
+      },
+      {
+        "id": "html-css",
+        "name": "HTML/CSS"
+      },
+      {
+        "id": "javascript",
+        "name": "JavaScript"
+      },
+      {
+        "id": "react",
+        "name": "React"
+      },
+      {
+        "id": "typescript",
+        "name": "TypeScript"
+      }
+    ],
+    "items": [
+      {
+        "id": 1,
+        "title": "Simple Animation - Tea Cup",
+        "description": "Simple page, a teacup with animated steam.",
+        "imageAlt": "Demo of the Teacup animation project",
+        "tags": ["html-css"]
+      },
+      {
+        "id": 2,
+        "title": "Study Website",
+        "description": "Educational website project with responsive layout.",
+        "imageAlt": "Demo of the Study Website project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 3,
+        "title": "Simple Landing Page - Online Menu",
+        "description": "Menu page for fictional products.",
+        "imageAlt": "Demo of the Online Menu Landing Page project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 4,
+        "title": "Game - Maze",
+        "description": "Game with interactive map generation and movement.",
+        "imageAlt": "Demo of the Maze Game project",
+        "tags": ["javascript"]
+      },
+      {
+        "id": 5,
+        "title": "School Search Website",
+        "description": "Website for searching schools with location and type filters.",
+        "imageAlt": "Demo of the School Search Website project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 6,
+        "title": "Shovel Game",
+        "description": "Move the sticks to remove the dirt from the shovel.",
+        "imageAlt": "Demo of the Simple E-commerce project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 7,
+        "title": "Personal Portfolio",
+        "description": "My first personal portfolio developed with HTML, CSS, and JavaScript.",
+        "imageAlt": "Demo of the Personal Portfolio project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 8,
+        "title": "Game - Tower of Hanoi",
+        "description": "Tower of Hanoi game with animations and piece movement.",
+        "imageAlt": "Demo of the Tower of Hanoi project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 9,
+        "title": "Game - Sliding Puzzle",
+        "description": "Sliding puzzle with customized images.",
+        "imageAlt": "Demo of the Sliding Puzzle project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 10,
+        "title": "E-commerce Interface",
+        "description": "Responsive landing page for an e-commerce.",
+        "imageAlt": "Demo of the E-commerce Interface project",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 11,
+        "title": "Online Tarot Website",
+        "description": "Online tarot reading website with modern and interactive design.",
+        "imageAlt": "Demo of the Online Tarot Website project",
+        "tags": ["react", "typescript"]
+      },
+      {
+        "id": 12,
+        "title": "Graphotechnical Expertise Website",
+        "description": "Institutional website for a handwriting expertise service.",
+        "imageAlt": "Demo of the Graphotechnical Expertise Website project",
+        "tags": ["react", "typescript"]
+      },
+      {
+        "id": 13,
+        "title": "Tic-Tac-Toe",
+        "description": "Interactive Tic-Tac-Toe game with scoreboard and game reset.",
+        "imageAlt": "Demo of the Tic-Tac-Toe project",
+        "tags": ["html-css", "javascript"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Do you have an interesting project or opportunity? I'm always open to new connections and collaborations.",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your full name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your.email@example.com"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "Message subject"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Your message... (minimum 10 characters)"
+      },
+      "send": "Send Message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "title": "Contact Information",
+      "emailLabel": "Email",
+      "locationLabel": "Location",
+      "locationValue": "São Paulo, SP - Brazil",
+      "socialTitle": "Connect with me"
+    },
+    "socials": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    },
+    "validation": {
+      "email": "Please enter a valid email",
+      "nameMin": "Name must be at least 3 characters long",
+      "subjectRequired": "Subject is required",
+      "messageMin": "Message must be at least 10 characters long"
+    },
+    "success": {
+      "title": "Success!",
+      "message": "Message sent successfully!"
+    },
+    "error": {
+      "title": "Error",
+      "message": "Error sending message. Please try again."
+    }
+  },
+  "chat": {
+    "openLabel": "Open chat",
+    "closeLabel": "Close chat",
+    "title": "Quick Chat",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can I help?",
+    "submitButton": "Send",
+    "toastSuccessTitle": "Message sent!",
+    "toastSuccessDescription": "Thanks for reaching out, I'll reply soon.",
+    "toastErrorTitle": "Error sending message",
+    "toastErrorDescription": "An error occurred while sending your message. Please try again.",
+    "validation": {
+      "nameMin": "Name must be at least 2 characters long",
+      "messageMin": "Message must be at least 5 characters long"
+    }
+  },
+  "footer": {
+    "tagline": "Building intuitive, accessible, and visually appealing interfaces with the most modern technologies.",
+    "quickLinksTitle": "Quick Links",
+    "copyright": "© {{year}} {{name}}. All rights reserved.",
+    "rights": "All rights reserved",
+    "backToTop": "Back to top"
+  },
+  "accessibility": {
+    "buttonLabel": "Accessibility options",
+    "menuTitle": "Accessibility",
+    "fontSizeLabel": "Font size: {{percent}}%",
+    "highContrastLabel": "High contrast",
+    "reduceMotionLabel": "Reduce animations",
+    "resetButton": "Reset settings"
+  },
+  "breadcrumb": {
+    "label": "Breadcrumb navigation",
+    "more": "More"
+  },
+  "success": {
+    "title": "Success!",
+    "message": "Message sent successfully!"
+  },
+  "error": {
+    "title": "Error", 
+    "message": "Error sending message. Please try again."
+  }
+}

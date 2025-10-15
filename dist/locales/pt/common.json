@@ -1,0 +1,347 @@
+{
+  "navbar": {
+    "home": "Início",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Carolina Goes",
+    "title": "Desenvolvedora Frontend",
+    "description": "Transformando ideias em experiências digitais incríveis, com foco em acessibilidade, usabilidade e design moderno.",
+    "contactButton": "Entrar em contato",
+    "projectsButton": "Ver projetos",
+    "imageAlt": "Foto de perfil de Carolina Goes",
+    "socialDescriptions": {
+      "github": "Veja meus projetos e contribuições no GitHub",
+      "linkedin": "Conecte-se comigo profissionalmente no LinkedIn",
+      "whatsapp": "Entre em contato via WhatsApp",
+      "email": "Envie-me um e-mail"
+    }
+  },
+  "carousel": {
+    "previousSlide": "Slide anterior",
+    "nextSlide": "Próximo slide"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "Você se perdeu ou esqueceu de adicionar a página ao roteador?"
+  },
+  "dialog": {
+    "close": "Fechar"
+  },
+  "pagination": {
+    "label": "Paginação",
+    "goToPreviousPage": "Ir para a página anterior",
+    "previous": "Anterior",
+    "goToNextPage": "Ir para a próxima página",
+    "next": "Próxima",
+    "morePages": "Mais páginas"
+  },
+  "sidebar": {
+    "toggle": "Alternar barra lateral"
+  },
+  "about": {
+    "title": "Sobre mim",
+    "imageAlt": "Foto de perfil de Carolina Goes",
+    "downloadButton": "Baixar CV",
+    "paragraphs": [
+      "Olá, eu sou Carolina, estudante de Engenharia de Software focada em desenvolvimento frontend, atualmente me especializando em tecnologias como HTML, CSS, JavaScript e React. Tenho me dedicado a projetos práticos, sempre buscando escrever código de forma estratégica, limpa e inovadora. Antes de entrar na área de tecnologia, atuei como professora e também com rotinas administrativas no setor educacional. Essa experiência me proporcionou uma base sólida em organização, comunicação, resolução de problemas e aprendizado contínuo — habilidades que levo para o mundo da programação. Atualmente estou em transição de carreira para tecnologia e busco uma oportunidade de estágio em desenvolvimento frontend. Quero unir minha experiência na educação com o mundo tech, contribuindo com soluções criativas, eficientes e adaptáveis.",
+      "📩 Estou aberta a novas oportunidades, conexões e aprendizados no ecossistema de tecnologia!"
+    ],
+    "education": {
+      "title": "Formação Acadêmica",
+      "items": [
+        {
+          "degree": "Engenharia de Software",
+          "institution": "Universidade Anhanguera",
+          "year": "2025-2028 (em andamento)"
+        },
+        {
+          "degree": "Licenciatura em Pedagogia",
+          "institution": "UNICID",
+          "year": "2015 - 2018"
+        },
+        {
+          "degree": "Gestão de Contact Center",
+          "institution": "UNINOVE",
+          "year": "2008 - 2010"
+        }
+      ]
+    },
+    "experience": {
+      "title": "Experiência",
+      "items": [
+        {
+          "role": "Freelancer",
+          "company": "Desenvolvedora Frontend",
+          "period": "2024-Atualmente"
+        },
+        {
+          "role": "Prefeitura de São Paulo",
+          "company": "Professora",
+          "period": "2023-2025"
+        },
+        {
+          "role": "Prefeitura de São Paulo",
+          "company": "Auxiliar Técnico de Educação",
+          "period": "2021-2023"
+        },
+        {
+          "role": "Freelancer",
+          "company": "Recreadora de Festas",
+          "period": "2011-2021"
+        },
+        {
+          "role": "CONTAX S.A",
+          "company": "Agente de Cobrança",
+          "period": "2007-2011"
+        }
+      ]
+    }
+  },
+  "skills": {
+    "title": "Minhas Habilidades",
+    "description": "Sempre acompanhando as tecnologias mais recentes e focando em construir experiências acessíveis e de alta qualidade.",
+    "technologiesTitle": "Tecnologias e Ferramentas",
+    "tech": {
+      "html": "HTML5 & CSS3",
+      "js": "JavaScript (ES6+)",
+      "react": "React & Next.js",
+      "git": "Git & GitHub",
+      "accessibility": "Acessibilidade Web (WCAG)"
+    },
+    "descriptions": {
+      "htmlCss": "Fundamentos da web: HTML para estruturação semântica e CSS para estilização avançada. Experiência em criar layouts responsivos, flexbox, grid layout e animações CSS.",
+      "javascript": "Linguagem de programação para desenvolvimento web interativo. Domínio de ES6+, manipulação de DOM, APIs assíncronas, promises, async/await e programação funcional.",
+      "typescript": "JavaScript com tipagem estática para desenvolvimento mais seguro e escalável. Experiência em interfaces, tipos genéricos, union types e configuração de projetos TypeScript.",
+      "react": "Biblioteca moderna para construção de interfaces de usuário. Hooks (useState, useEffect, useContext), Context API, componentes funcionais e gerenciamento de estado.",
+      "tailwind": "Framework CSS utilitário para desenvolvimento rápido e consistente. Design responsivo, componentes customizáveis, dark mode e otimização de performance.",
+      "sqlite": "Banco de dados relacional embutido para aplicações leves. Experiência em design de schemas, queries SQL, migrations e integração com backends.",
+      "git": "Sistema de controle de versão distribuído. Fluxo de trabalho colaborativo (Git Flow), branches, merges, rebase e integração com GitHub para deploy contínuo.",
+      "accessibility": "Desenvolvimento web acessível seguindo as diretrizes WCAG. ARIA labels, navegação por teclado, contraste de cores, screen readers e design inclusivo."
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Aqui estão alguns dos projetos em que trabalhei recentemente, unindo design atrativo com funcionalidade robusta.",
+    "filter": "Filtrar por categoria",
+    "viewAll": "Ver todos os projetos",
+    "viewLive": "Ver ao vivo",
+    "viewOnGithub": "Ver código no GitHub",
+    "noProjectsFound": "Nenhum projeto encontrado nesta categoria.",
+    "categories": [
+      {
+        "id": "all",
+        "name": "Todos"
+      },
+      {
+        "id": "html-css",
+        "name": "HTML/CSS"
+      },
+      {
+        "id": "javascript",
+        "name": "JavaScript"
+      },
+      {
+        "id": "react",
+        "name": "React"
+      },
+      {
+        "id": "typescript",
+        "name": "TypeScript"
+      }
+    ],
+    "items": [
+      {
+        "id": 1,
+        "title": "Animação simples - Xícara de chá",
+        "description": "Página simples, uma xícara de chá com vapor animado.",
+        "imageAlt": "Demonstração do projeto Xícara de chá",
+        "tags": ["html-css"]
+      },
+      {
+        "id": 2,
+        "title": "Site de Estudos",
+        "description": "Projeto de site educacional com layout responsivo.",
+        "imageAlt": "Demonstração do projeto Site de Estudos",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 3,
+        "title": "Landing Page simples - Cardápio online",
+        "description": "Página de cardápio para produtos fictícios.",
+        "imageAlt": "Demonstração do projeto Landing Page Cardápio online",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 4,
+        "title": "Jogo - Labirinto",
+        "description": "Jogo com geração de mapas interativos e movimentação.",
+        "imageAlt": "Demonstração do projeto Jogo Labirinto",
+        "tags": ["javascript"]
+      },
+      {
+        "id": 5,
+        "title": "Site de busca de escolas",
+        "description": "Site para busca de escolas com filtros por localização e tipo.",
+        "imageAlt": "Demonstração do projeto Site de busca de escolas",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 6,
+        "title": "Jogo da Pá",
+        "description": "Mova os palitinhos para retirar a sujeira da pá.",
+        "imageAlt": "Demonstração do projeto Jogo da Pá",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 7,
+        "title": "Portfólio Pessoal",
+        "description": "Meu primeiro portfólio pessoal desenvolvido em HTML, CSS e JavaScript.",
+        "imageAlt": "Demonstração do projeto Portfólio Pessoal",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 8,
+        "title": "Jogo - Torre de Hanoi",
+        "description": "Jogo da Torre de Hanoi com animações e movimentação de peças.",
+        "imageAlt": "Demonstração do projeto Torre de Hanoi",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 9,
+        "title": "Jogo - Quebra-cabeça Deslizante",
+        "description": "Quebra-cabeça deslizante com imagens personalizadas.",
+        "imageAlt": "Demonstração do projeto Quebra-cabeça Deslizante",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 10,
+        "title": "Interface de um E-commerce",
+        "description": "Landing page responsiva de um e-commerce.",
+        "imageAlt": "Demonstração do projeto Interface de um E-commerce",
+        "tags": ["html-css", "javascript"]
+      },
+      {
+        "id": 11,
+        "title": "Site de Tarot Online",
+        "description": "Site de leitura de tarot online com design moderno e interativo.",
+        "imageAlt": "Demonstração do projeto Site de Tarot Online",
+        "tags": ["react", "typescript"]
+      },
+      {
+        "id": 12,
+        "title": "Site Perícia Grafotécnica",
+        "description": "Site institucional para um serviço de perícia grafotécnica.",
+        "imageAlt": "Demonstração do projeto Site Perícia Grafotécnica",
+        "tags": ["react", "typescript"]
+      },
+      {
+        "id": 13,
+        "title": "Jogo da Velha",
+        "description": "Jogo da velha interativo com placar e reinício de jogo.",
+        "imageAlt": "Demonstração do projeto Jogo da Velha",
+        "tags": ["html-css", "javascript"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Tem um projeto ou oportunidade interessante? Estou sempre aberta a novas conexões e colaborações.",
+    "form": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Seu nome completo"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "seu.email@exemplo.com"
+      },
+      "subject": {
+        "label": "Assunto",
+        "placeholder": "Assunto da mensagem"
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Sua mensagem... (mínimo 10 caracteres)"
+      },
+      "send": "Enviar Mensagem",
+      "sending": "Enviando..."
+    },
+    "info": {
+      "title": "Informações de Contato",
+      "emailLabel": "E-mail",
+      "locationLabel": "Localização",
+      "locationValue": "São Paulo, SP - Brasil",
+      "socialTitle": "Conecte-se comigo"
+    },
+    "socials": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "email": "E-mail"
+    },
+    "validation": {
+      "email": "Por favor, insira um e-mail válido",
+      "nameMin": "O nome deve ter pelo menos 3 caracteres",
+      "subjectRequired": "O assunto é obrigatório",
+      "messageMin": "A mensagem deve ter pelo menos 10 caracteres"
+    },
+    "success": {
+      "title": "Sucesso!",
+      "message": "Mensagem enviada com sucesso!"
+    },
+    "error": {
+      "title": "Erro",
+      "message": "Erro ao enviar mensagem. Por favor, tente novamente."
+    }
+  },
+  "chat": {
+    "openLabel": "Abrir chat",
+    "closeLabel": "Fechar chat",
+    "title": "Chat Rápido",
+    "nameLabel": "Nome",
+    "namePlaceholder": "Seu nome",
+    "messageLabel": "Mensagem",
+    "messagePlaceholder": "Como posso ajudar?",
+    "submitButton": "Enviar",
+    "toastSuccessTitle": "Mensagem enviada!",
+    "toastSuccessDescription": "Obrigado pelo contato, em breve responderei.",
+    "toastErrorTitle": "Erro ao enviar mensagem",
+    "toastErrorDescription": "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.",
+    "validation": {
+      "nameMin": "O nome deve ter pelo menos 2 caracteres",
+      "messageMin": "A mensagem deve ter pelo menos 5 caracteres"
+    }
+  },
+  "footer": {
+    "tagline": "Construindo interfaces intuitivas, acessíveis e visualmente atraentes com as tecnologias mais modernas.",
+    "quickLinksTitle": "Links Rápidos",
+    "copyright": "© {{year}} {{name}}. Todos os direitos reservados.",
+    "rights": "Todos os direitos reservados",
+    "backToTop": "Voltar ao topo"
+  },
+  "accessibility": {
+    "buttonLabel": "Opções de acessibilidade",
+    "menuTitle": "Acessibilidade",
+    "fontSizeLabel": "Tamanho da fonte: {{percent}}%",
+    "highContrastLabel": "Alto contraste",
+    "reduceMotionLabel": "Reduzir animações",
+    "resetButton": "Redefinir configurações"
+  },
+  "breadcrumb": {
+    "label": "Navegação breadcrumb",
+    "more": "Mais"
+  },
+  "success": {
+    "title": "Sucesso!",
+    "message": "Mensagem enviada com sucesso!"
+  },
+  "error": {
+    "title": "Erro",
+    "message": "Erro ao enviar mensagem. Por favor, tente novamente."
+  }
+}

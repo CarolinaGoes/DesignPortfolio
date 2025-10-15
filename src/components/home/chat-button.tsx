@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMessageSquare, FiX, FiSend, FiUser, FiPhone, FiCheck } from 'react-icons/fi';
+import { FiMessageSquare, FiX, FiSend, FiUser, FiPhone } from 'react-icons/fi';
 import { popIn } from '@/lib/animations';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
