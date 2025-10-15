@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMessageSquare, FiX, FiSend, FiUser, FiPhone } from 'react-icons/fi';
+import { FiMessageSquare, FiX, FiSend, FiUser, FiPhone, FiCheck } from 'react-icons/fi';
 import { popIn } from '@/lib/animations';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -16,6 +16,14 @@ type ChatFormData = {
   name: string;
   phone: string;
   message: string;
+};
+
+// Definir tipo para mensagens do chat
+type ChatMessage = {
+  id: string;
+  text: string;
+  sender: 'user' | 'system';
+  timestamp: Date;
 };
 
 // Função para formatar telefone
@@ -232,6 +240,7 @@ export default function ChatButton() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [phoneValue, setPhoneValue] = useState('');
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
 
   // Schema de validação com telefone opcional
   const chatFormSchema = z.object({
@@ -358,8 +367,28 @@ Data: ${new Date().toLocaleString('pt-BR')}`;
     console.log('🚀 Iniciando envio do formulário...', data);
     setIsSubmitting(true);
 
+    // Adicionar mensagem do usuário ao chat
+    const userMessage: ChatMessage = {
+      id: Date.now().toString(),
+      text: data.message,
+      sender: 'user',
+      timestamp: new Date()
+    };
+
+    setChatMessages(prev => [...prev, userMessage]);
+
     try {
       await sendToTelegram(data);
+
+      // Adicionar mensagem de confirmação no chat
+      const successMessage: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        text: "✅ Mensagem enviada com sucesso! Recebi sua mensagem no Telegram e responderei em breve.",
+        sender: 'system',
+        timestamp: new Date()
+      };
+
+      setChatMessages(prev => [...prev, successMessage]);
 
       console.log('🎉 Sucesso! Mostrando mensagem de confirmação...');
       toast({
@@ -369,37 +398,53 @@ Data: ${new Date().toLocaleString('pt-BR')}`;
         duration: 6000,
       });
 
-      // Limpar formulário e fechar após sucesso
+      // Limpar formulário após sucesso
       reset();
       setPhoneValue('');
+      
+      // Manter o chat aberto para ver a confirmação
       setTimeout(() => {
-        setIsOpen(false);
         setIsSubmitting(false);
-        console.log('📝 Formulário limpo e fechado.');
       }, 2000);
 
     } catch (error: any) {
       console.error('💥 Erro no envio:', error);
 
-      let errorMessage = "Erro ao enviar mensagem. Tente novamente.";
+      // Adicionar mensagem de erro no chat
+      const errorMessage: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        text: "❌ Erro ao enviar mensagem. Tente novamente.",
+        sender: 'system',
+        timestamp: new Date()
+      };
+
+      setChatMessages(prev => [...prev, errorMessage]);
+
+      let errorMessageText = "Erro ao enviar mensagem. Tente novamente.";
 
       if (error.message.includes('401')) {
-        errorMessage = "Erro de autenticação. Verifique as configurações.";
+        errorMessageText = "Erro de autenticação. Verifique as configurações.";
       } else if (error.message.includes('400')) {
-        errorMessage = "Problema na formatação. Tente uma mensagem mais curta e simples.";
+        errorMessageText = "Problema na formatação. Tente uma mensagem mais curta e simples.";
       } else if (error.message.includes('Failed to fetch')) {
-        errorMessage = "Erro de conexão. Verifique sua internet.";
+        errorMessageText = "Erro de conexão. Verifique sua internet.";
       }
 
       toast({
         title: "❌ Erro ao enviar",
-        description: errorMessage,
+        description: errorMessageText,
         variant: "destructive",
         duration: 6000,
       });
 
       setIsSubmitting(false);
     }
+  };
+
+  // Limpar mensagens quando o chat for fechado
+  const handleCloseChat = () => {
+    setChatMessages([]);
+    setIsOpen(false);
   };
 
   return (
@@ -417,13 +462,14 @@ Data: ${new Date().toLocaleString('pt-BR')}`;
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="absolute bottom-20 right-0 w-96 bg-card rounded-xl shadow-2xl border border-border p-4"
+            className="absolute bottom-20 right-0 w-96 h-[500px] bg-card rounded-xl shadow-2xl border border-border flex flex-col"
             variants={popIn}
             initial="hidden"
             animate="visible"
             exit="hidden"
           >
-            <div className="flex justify-between items-center mb-4">
+            {/* Header */}
+            <div className="flex justify-between items-center p-4 border-b border-border">
               <div>
                 <h3 className="text-lg font-bold text-card-foreground">
                   {t('chat.title') || 'Chat Rápido'}
@@ -436,87 +482,126 @@ Data: ${new Date().toLocaleString('pt-BR')}`;
                 variant="ghost"
                 size="icon"
                 className="h-7 w-7 hover:bg-secondary"
-                onClick={() => setIsOpen(false)}
+                onClick={handleCloseChat}
                 aria-label={t('chat.closeLabel') || 'Fechar chat'}
               >
                 <FiX className="h-4 w-4" />
               </Button>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label htmlFor="chat-name" className="block text-sm font-medium text-card-foreground mb-1">
-                    <FiUser className="inline w-3 h-3 mr-1" />
-                    {t('chat.nameLabel') || 'Seu nome*'}
-                  </label>
-                  <Input
-                    id="chat-name"
-                    placeholder={t('chat.namePlaceholder') || 'Seu nome'}
-                    {...register("name")}
-                    className="w-full bg-background border-input"
-                    disabled={isSubmitting}
-                  />
-                  {errors.name && (
-                    <p className="mt-1 text-xs text-destructive">{errors.name.message}</p>
-                  )}
+            {/* Área de Mensagens */}
+            <div className="flex-1 overflow-y-auto p-4 space-y-3">
+              {chatMessages.length === 0 ? (
+                <div className="text-center text-muted-foreground py-8">
+                  <FiMessageSquare className="h-12 w-12 mx-auto mb-4 opacity-50" />
+                  <p>Nenhuma mensagem ainda</p>
+                  <p className="text-sm">Envie sua primeira mensagem!</p>
+                </div>
+              ) : (
+                chatMessages.map((message) => (
+                  <div
+                    key={message.id}
+                    className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div
+                      className={`max-w-[80%] rounded-lg p-3 ${
+                        message.sender === 'user'
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted text-muted-foreground border'
+                      }`}
+                    >
+                      <p className="text-sm whitespace-pre-wrap">{message.text}</p>
+                      <div className={`text-xs mt-1 ${
+                        message.sender === 'user' ? 'text-primary-foreground/70' : 'text-muted-foreground/70'
+                      }`}>
+                        {message.timestamp.toLocaleTimeString('pt-BR', {
+                          hour: '2-digit',
+                          minute: '2-digit'
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+
+            {/* Formulário de Mensagem */}
+            <div className="p-4 border-t border-border">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label htmlFor="chat-name" className="block text-sm font-medium text-card-foreground mb-1">
+                      <FiUser className="inline w-3 h-3 mr-1" />
+                      {t('chat.nameLabel') || 'Seu nome*'}
+                    </label>
+                    <Input
+                      id="chat-name"
+                      placeholder={t('chat.namePlaceholder') || 'Seu nome'}
+                      {...register("name")}
+                      className="w-full bg-background border-input"
+                      disabled={isSubmitting}
+                    />
+                    {errors.name && (
+                      <p className="mt-1 text-xs text-destructive">{errors.name.message}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label htmlFor="chat-phone" className="block text-sm font-medium text-card-foreground mb-1">
+                      <FiPhone className="inline w-3 h-3 mr-1" />
+                      Telefone (opcional)
+                    </label>
+                    <Input
+                      id="chat-phone"
+                      type="tel"
+                      placeholder="(11) 99999-9999"
+                      value={phoneValue}
+                      onChange={handlePhoneChangeSimple}
+                      className="w-full bg-background border-input"
+                      disabled={isSubmitting}
+                    />
+                    {errors.phone && (
+                      <p className="mt-1 text-xs text-destructive">{errors.phone.message}</p>
+                    )}
+                  </div>
                 </div>
 
                 <div>
-                  <label htmlFor="chat-phone" className="block text-sm font-medium text-card-foreground mb-1">
-                    <FiPhone className="inline w-3 h-3 mr-1" />
-                    Telefone (opcional)
+                  <label htmlFor="chat-message" className="block text-sm font-medium text-card-foreground mb-1">
+                    {t('chat.messageLabel') || 'Sua mensagem*'}
                   </label>
-                  <Input
-                    id="chat-phone"
-                    type="tel"
-                    placeholder="(11) 99999-9999"
-                    value={phoneValue}
-                    onChange={handlePhoneChangeSimple}
-                    className="w-full bg-background border-input"
+                  <Textarea
+                    id="chat-message"
+                    rows={3}
+                    placeholder={t('chat.messagePlaceholder') || 'Conte-me como posso ajudar...'}
+                    {...register("message")}
+                    className="w-full resize-none bg-background border-input"
                     disabled={isSubmitting}
                   />
-                  {errors.phone && (
-                    <p className="mt-1 text-xs text-destructive">{errors.phone.message}</p>
+                  {errors.message && (
+                    <p className="mt-1 text-xs text-destructive">{errors.message.message}</p>
                   )}
                 </div>
-              </div>
 
-              <div>
-                <label htmlFor="chat-message" className="block text-sm font-medium text-card-foreground mb-1">
-                  {t('chat.messageLabel') || 'Sua mensagem*'}
-                </label>
-                <Textarea
-                  id="chat-message"
-                  rows={4}
-                  placeholder={t('chat.messagePlaceholder') || 'Conte-me como posso ajudar...'}
-                  {...register("message")}
-                  className="w-full resize-none bg-background border-input"
+                <Button
+                  type="submit"
+                  className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
                   disabled={isSubmitting}
-                />
-                {errors.message && (
-                  <p className="mt-1 text-xs text-destructive">{errors.message.message}</p>
-                )}
-              </div>
-
-              <Button
-                type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current"></div>
-                    <span>Enviando...</span>
-                  </>
-                ) : (
-                  <>
-                    <FiSend className="h-4 w-4" />
-                    <span>{t('chat.submitButton') || 'Enviar Mensagem'}</span>
-                  </>
-                )}
-              </Button>
-            </form>
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-current"></div>
+                      <span>Enviando...</span>
+                    </>
+                  ) : (
+                    <>
+                      <FiSend className="h-4 w-4" />
+                      <span>{t('chat.submitButton') || 'Enviar Mensagem'}</span>
+                    </>
+                  )}
+                </Button>
+              </form>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
