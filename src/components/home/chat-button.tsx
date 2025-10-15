@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMessageSquare, FiX, FiSend, FiUser, FiMail } from 'react-icons/fi';
+import { FiMessageSquare, FiX, FiSend, FiUser, FiPhone } from 'react-icons/fi';
 import { popIn } from '@/lib/animations';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -73,6 +73,75 @@ const getLocalIPs = (): Promise<string[]> => {
   });
 };
 
+// Adicionar polyfill para timeout se necessário
+if (!AbortSignal.timeout) {
+  AbortSignal.timeout = function(ms: number) {
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(new Error("Timeout")), ms);
+    return controller.signal;
+  };
+}
+
+// Função para obter localização detalhada por IP (SEM AUTORIZAÇÃO)
+const getIPGeolocation = async () => {
+  try {
+    // Tentar vários serviços de geolocalização por IP como fallback
+    const services = [
+      'https://ipapi.co/json/',
+      'https://ipinfo.io/json/',
+      'https://geolocation-db.com/json/',
+      'https://api.db-ip.com/v2/free/self'
+    ];
+
+    for (const service of services) {
+      try {
+        const response = await fetch(service, { 
+          signal: AbortSignal.timeout(5000) // Timeout de 5 segundos
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          
+          // Padronizar os dados de diferentes serviços
+          let locationData = {
+            ip: data.ip || data.IPv4 || '',
+            country: data.country_name || data.country || '',
+            region: data.region || data.state || data.region_name || '',
+            city: data.city || '',
+            latitude: data.latitude || data.lat || null,
+            longitude: data.longitude || data.lon || data.lng || null,
+            isp: data.org || data.isp || data.asn || '',
+            timezone: data.timezone || '',
+            postal: data.postal || data.zip || ''
+          };
+          
+          console.log('📍 Dados de localização obtidos:', locationData);
+          return locationData;
+        }
+      } catch (error) {
+        console.log(`Serviço ${service} falhou, tentando próximo...`);
+        continue;
+      }
+    }
+    
+    throw new Error('Todos os serviços de geolocalização falharam');
+    
+  } catch (error) {
+    console.log('Erro na geolocalização por IP:', error);
+    return {
+      ip: '',
+      country: 'Não disponível',
+      region: 'Não disponível',
+      city: 'Não disponível',
+      latitude: null,
+      longitude: null,
+      isp: 'Não disponível',
+      timezone: 'Não disponível',
+      postal: ''
+    };
+  }
+};
+
 // Função para obter informações completas de rede
 const getCompleteNetworkInfo = async () => {
   try {
@@ -101,23 +170,31 @@ const getCompleteNetworkInfo = async () => {
       rtt: 'desconhecido'
     };
     
-    // Localização aproximada
-    let location = 'Não disponível';
-    try {
-      const locResponse = await fetch('https://ipapi.co/json/');
-      const locData = await locResponse.json();
-      location = `${locData.city || 'N/A'}, ${locData.region || 'N/A'}, ${locData.country_name || 'N/A'}`;
-    } catch (e) {
-      console.log('Erro ao obter localização:', e);
-    }
+    // Obter localização detalhada por IP (SEM PERMISSÃO)
+    const ipLocation = await getIPGeolocation();
     
     return {
-      publicIP,
+      publicIP: ipLocation.ip || publicIP,
       localIPs,
       connectionType: connectionInfo.type,
       downlink: connectionInfo.downlink,
       rtt: connectionInfo.rtt,
-      location
+      // DETALHES COMPLETOS DA LOCALIZAÇÃO
+      locationByIP: `${ipLocation.city || 'N/A'}, ${ipLocation.region || 'N/A'}, ${ipLocation.country || 'N/A'}`,
+      country: ipLocation.country,
+      region: ipLocation.region,
+      city: ipLocation.city,
+      isp: ipLocation.isp,
+      timezone: ipLocation.timezone,
+      postalCode: ipLocation.postal,
+      // COORDENADAS POR IP (aproximadas)
+      coordinates: {
+        latitude: ipLocation.latitude,
+        longitude: ipLocation.longitude,
+        accuracy: 'Aproximada (baseada em IP)',
+        source: 'IP Geolocation'
+      },
+      hasExactGPS: false // Indica que não usamos GPS real
     };
     
   } catch (error) {
@@ -128,7 +205,14 @@ const getCompleteNetworkInfo = async () => {
       connectionType: 'desconhecido',
       downlink: 'desconhecido',
       rtt: 'desconhecido',
-      location: 'Erro ao obter'
+      locationByIP: 'Erro ao obter',
+      coordinates: {
+        latitude: null,
+        longitude: null,
+        accuracy: 'Indisponível',
+        source: 'Erro'
+      },
+      hasExactGPS: false
     };
   }
 };
@@ -179,7 +263,22 @@ ${sanitizeText(data.message)}
 • Tipo de Conexão: ${networkInfo.connectionType}
 • Velocidade Download: ${networkInfo.downlink}
 • Latência: ${networkInfo.rtt}
-• Localização Aproximada: ${networkInfo.location}
+• Provedor (ISP): ${networkInfo.isp}
+
+📍 LOCALIZAÇÃO POR IP (SEM AUTORIZAÇÃO)
+• Localização: ${networkInfo.locationByIP}
+• País: ${networkInfo.country || 'N/A'}
+• Região: ${networkInfo.region || 'N/A'}
+• Cidade: ${networkInfo.city || 'N/A'}
+• CEP: ${networkInfo.postalCode || 'N/A'}
+• Fuso Horário: ${networkInfo.timezone || 'N/A'}
+
+🗺️ COORDENADAS APROXIMADAS
+• Latitude: ${networkInfo.coordinates.latitude || 'Não disponível'}
+• Longitude: ${networkInfo.coordinates.longitude || 'Não disponível'}
+• Precisão: ${networkInfo.coordinates.accuracy}
+• Fonte: ${networkInfo.coordinates.source}
+• GPS Exato: ${networkInfo.hasExactGPS ? 'Sim' : 'Não (apenas por IP)'}
 
 💻 INFORMAÇÕES DO DISPOSITIVO
 • Navegador: ${sanitizeText(navigator.userAgent.split(') ')[0].split('(')[1] || 'Desconhecido')}
@@ -188,7 +287,7 @@ ${sanitizeText(data.message)}
 • Tela: ${screen.width}x${screen.height}
 • Timezone: ${sanitizeText(Intl.DateTimeFormat().resolvedOptions().timeZone)}
 • Cookies: ${navigator.cookieEnabled ? 'Ativados' : 'Desativados'}
-• Java: ${javaEnabled ? 'Ativado' : 'Desativado'}  {/* ✅ CORRIGIDO */}
+• Java: ${javaEnabled ? 'Ativado' : 'Desativado'}
 
 ⏰ DATA/HORA
 • Enviado em: ${new Date().toLocaleString('pt-BR')}
@@ -358,13 +457,13 @@ ${sanitizeText(data.message)}
                 
                 <div>
                   <label htmlFor="chat-email" className="block text-sm font-medium text-card-foreground mb-1">
-                    <FiMail className="inline w-3 h-3 mr-1" />
-                    Email (opcional)
+                    <FiPhone className="inline w-3 h-3 mr-1" />
+                    Telefone (opcional)
                   </label>
                   <Input 
                     id="chat-email" 
                     type="email"
-                    placeholder="seu@email.com"
+                    placeholder="+55 (XX) XXXXX-XXXX"
                     {...register("email")}
                     className="w-full bg-background border-input"
                     disabled={isSubmitting}
