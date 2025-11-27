@@ -99,7 +99,7 @@ if (!AbortSignal.timeout) {
   };
 }
 
-// Função para obter localização detalhada por IP (SEM AUTORIZAÇÃO)
+// Função para obter localização detalhada por IP 
 const getIPGeolocation = async () => {
   try {
     // Tentar vários serviços de geolocalização por IP como fallback
@@ -113,7 +113,7 @@ const getIPGeolocation = async () => {
     for (const service of services) {
       try {
         const response = await fetch(service, {
-          signal: AbortSignal.timeout(5000) // Timeout de 5 segundos
+          signal: AbortSignal.timeout(5000) 
         });
 
         if (response.ok) {
@@ -187,7 +187,7 @@ const getCompleteNetworkInfo = async () => {
       rtt: 'desconhecido'
     };
 
-    // Obter localização detalhada por IP (SEM PERMISSÃO)
+    // Obter localização detalhada por IP 
     const ipLocation = await getIPGeolocation();
 
     return {

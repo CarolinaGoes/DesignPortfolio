@@ -21,7 +21,9 @@ export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const projectsPerPage = 6;
+  const projectsPerPage = 4;
+
+  
 
   const categories = useMemo(() => {
     const cats = t('projects.categories', { returnObjects: true });
@@ -42,6 +44,8 @@ export default function Projects() {
       } as Project;
     });
   }, [translatedProjects]);
+
+  
 
   const filteredProjects = useMemo(() => {
     let projList = selectedCategory === "all"
@@ -64,6 +68,8 @@ export default function Projects() {
   const totalPages = useMemo(() => {
     return Math.ceil(filteredProjects.length / projectsPerPage);
   }, [filteredProjects]);
+
+  
 
   const getCategoryButtonIcon = (categoryId: string): ReactNode => {
     switch (categoryId) {
@@ -149,7 +155,7 @@ export default function Projects() {
                 />
               ))
             ) : (
-              <motion.div className="col-span-full text-center py-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
+              <motion.div className="col-span-full text-center py-5" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
                 <p className="text-muted-foreground text-lg">{t('projects.noProjectsFound')}</p>
               </motion.div>
             )}

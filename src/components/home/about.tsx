@@ -2,10 +2,8 @@ import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "../../lib/hooks/use-scroll-animation";
 import { motion } from "framer-motion";
 import { staggerContainer, staggerItem, slideRight } from "../../lib/animations";
-import { Button } from "../ui/button";
 import { FiBookOpen, FiBriefcase } from "react-icons/fi";
 import profileImage from "../../../public/assets/profileImage.jpg";
-import { Download } from 'lucide-react';
 
 
 
@@ -140,21 +138,7 @@ export default function About() {
               </motion.div>
 
               <motion.div variants={staggerItem}>
-                <Button
-                  variant="outline"
-                  className="flex items-center gap-2"
-                  asChild
-                >
-                  <a
-                    href="../../../public/assets/CV - Carolina Rocha Sampaio de Goes.pdf"
-                    download="CV-Carolina-Goes.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Download className="h-4 w-4" />
-                    <span>Download CV</span>
-                  </a>
-                </Button>
+              
               </motion.div>
             </motion.div>
           </div>

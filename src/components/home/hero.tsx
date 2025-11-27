@@ -6,33 +6,13 @@ import { siteData } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { EmailButton } from '@/components/ui/EmailButton';
 import profileImage from "../../../public/assets/profileImage.jpg";
-import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { FiArrowRight, FiGithub, FiLinkedin } from 'react-icons/fi';
 
-// Fallback component caso o EmailButton não funcione
-function EmailFallback({ email, label }: { email: string; label: string }) {
-  return (
-    <a 
-      href={`mailto:${email}`}
-      onClick={(e) => {
-        e.preventDefault();
-        // Forçar a abertura no mesmo contexto
-        const win = window.open(`mailto:${email}`, '_self');
-        if (!win) {
-          // Se não abrir, tentar método alternativo
-          window.location.href = `mailto:${email}`;
-        }
-      }}
-      className="text-muted-foreground hover:text-primary transition-colors p-2 rounded-lg bg-background/50 hover:bg-background/80 border border-border/50 hover:border-primary/30 flex items-center justify-center" 
-      aria-label={label}
-    >
-      <FiMail className="h-5 w-5" />
-    </a>
-  );
-}
+
 
 export default function Hero() {
   const { t } = useTranslation();
-  const email = siteData.email || "carolinagoes@example.com";
+  const email = siteData.email || "carolinarocha.89@hotmail.com";
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center py-16 md:py-24 bg-secondary dark:bg-accent/10 transition-colors duration-300 overflow-hidden relative">
