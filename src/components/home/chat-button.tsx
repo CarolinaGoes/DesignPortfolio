@@ -150,11 +150,15 @@ export default function ChatButton() {
 
       const telegramMessage = `🔔 *NOVA MENSAGEM DO SITE*\n\n👤 *Nome:* ${data.name}\n📞 *Telefone:* ${data.phone ? formatPhone(data.phone) : 'N/A'}\n💬 *Mensagem:* ${data.message}\n\n🌐 *Rede:*\n📍 *IP/Sessão:* ${sessionId}\n🗺️ *Local:* ${geolocation.city}, ${geolocation.country}\n🕒 *Data:* ${new Date().toLocaleString('pt-BR')}`;
 
-      await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text: telegramMessage, parse_mode: 'Markdown' }),
-      });
+     await fetch(`/api/telegram-webhook`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ 
+    chat_id: chatId, 
+    text: telegramMessage, 
+    sessionId: sessionId // Adicione isso para o backend saber quem é
+  }),
+});
 
       setShowWaitMessage(true);
       toast({ title: "✅ Enviado com sucesso!" });
