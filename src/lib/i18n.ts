@@ -9,15 +9,17 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'en',
-    lng: 'pt', // idioma padrão
+    lng: 'pt', 
     debug: import.meta.env.DEV,
+    ns: ['common'],       
+    defaultNS: 'common',
 
     interpolation: {
       escapeValue: false,
     },
 
     backend: {
-      loadPath: '/locales/{{lng}}/common.json', // 🔥 agora carrega o common.json
+      loadPath: '/locales/{{lng}}/common.json', 
     },
 
     detection: {

@@ -86,7 +86,7 @@ export default function Contact() {
       const result = await emailjs.send(serviceID, templateID, templateParams, publicKey);
       
       if (result.status === 200) {
-        // Mensagem de sucesso elaborada
+       
         toast({
           title: "🎉 Mensagem Enviada com Sucesso!",
           description: "Obrigada pelo contato! Responderei em breve.",
@@ -141,7 +141,7 @@ export default function Contact() {
 
             <AnimatePresence>
               {isSuccess ? (
-                // Mensagem de sucesso
+               
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}

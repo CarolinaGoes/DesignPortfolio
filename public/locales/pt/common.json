@@ -302,9 +302,13 @@
   "chat": {
     "openLabel": "Abrir chat",
     "closeLabel": "Fechar chat",
-    "title": "Chat Rápido",
+    "headerTitle": "Chat Rápido",
+    "headerSubtitle": "Mensagem instantânea",
+    "placeholder": "Envie sua Mensagem!",
+    "welcome": "Olá! Como posso ajudar?",
     "nameLabel": "Nome",
     "namePlaceholder": "Seu nome",
+    "phonePlaceholder": "Seu telefone",
     "messageLabel": "Mensagem",
     "messagePlaceholder": "Como posso ajudar?",
     "submitButton": "Enviar",
@@ -314,7 +318,8 @@
     "toastErrorDescription": "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente.",
     "validation": {
       "nameMin": "O nome deve ter pelo menos 2 caracteres",
-      "messageMin": "A mensagem deve ter pelo menos 5 caracteres"
+      "messageMin": "A mensagem deve ter pelo menos 2 caracteres",
+      "successTitle": "Mensagem enviada com sucesso!"
     }
   },
   "footer": {

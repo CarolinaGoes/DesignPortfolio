@@ -302,11 +302,15 @@
   "chat": {
     "openLabel": "Open chat",
     "closeLabel": "Close chat",
-    "title": "Quick Chat",
+    "headerTitle": "Quick Chat",
+    "headerSubtitle": "Instant messaging",
+    "placeholder": "Sent your Message!",
+    "welcome": "Hello! How can I help you?",
     "nameLabel": "Name",
     "namePlaceholder": "Your name",
+    "phonePlaceholder": "Your phone",
     "messageLabel": "Message",
-    "messagePlaceholder": "How can I help?",
+    "messagePlaceholder": "How can I help you?",
     "submitButton": "Send",
     "toastSuccessTitle": "Message sent!",
     "toastSuccessDescription": "Thanks for reaching out, I'll reply soon.",
@@ -314,7 +318,8 @@
     "toastErrorDescription": "An error occurred while sending your message. Please try again.",
     "validation": {
       "nameMin": "Name must be at least 2 characters long",
-      "messageMin": "Message must be at least 5 characters long"
+      "messageMin": "Message must be at least 2 characters long",
+      "successTitle": "Message sent successfully!!"
     }
   },
   "footer": {
