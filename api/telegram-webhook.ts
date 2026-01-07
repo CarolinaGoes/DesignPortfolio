@@ -3,8 +3,7 @@ import { getDatabase } from 'firebase-admin/database';
 
 // Inicializa o Firebase Admin usando a Service Account
 if (!getApps().length) {
-  const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY as string);
-  
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT || process.env.FIREBASE_SERVICE_ACCOUNT_KEY as string);  
   initializeApp({
     credential: cert(serviceAccount),
     databaseURL: process.env.VITE_FIREBASE_DATABASE_URL
