@@ -150,7 +150,7 @@ export default function ChatButton() {
 
       const telegramMessage = `🔔 *NOVA MENSAGEM DO SITE*\n\n👤 *Nome:* ${data.name}\n📞 *Telefone:* ${data.phone ? formatPhone(data.phone) : 'N/A'}\n💬 *Mensagem:* ${data.message}\n\n🌐 *Rede:*\n📍 *IP/Sessão:* ${sessionId}\n🗺️ *Local:* ${geolocation.city}, ${geolocation.country}\n🕒 *Data:* ${new Date().toLocaleString('pt-BR')}`;
 
-     await fetch(`/api/telegram-webhook`, {
+    await fetch(`/api/telegram-webhook`, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ 
