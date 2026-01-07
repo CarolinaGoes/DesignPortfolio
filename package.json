@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build --mode production --config vite.config.ts",
-    "preview": "vite preview"
+    "start": "npx vite",
+    "dev": "npx vite",
+    "build": "npx vite build --mode production --config vite.config.ts",
+    "preview": "npx vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
